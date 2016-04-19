@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tasks>
+  <task id="SharePointPortal" name="Crear SharePoint Portal" plugin="Microsoft.ProjectCreationWizard.Portal" completionMessage="Sitio del portal del proyecto creado.">
+    <taskXml>
+      <Portal>
+        <site template="Portal de proyecto de Team Foundation Server" language="3082" />
+        <documentLibraries>
+          <documentLibrary name="Administración de proyectos" description="Administración de proyectos" />
+          <documentLibrary name="Documentos generales" description="Documentos generales para el equipo" />
+          <documentLibrary name="Guía de procesos" description="Cómo aprovechar al máximo las herramientas y los procesos de Team Foundation Server" isProcessGuidance="true" />
+        </documentLibraries>
+        <folders>
+          <folder documentLibrary="Guía de procesos" name="Supporting Files" />
+        </folders>
+        <files>
+          <!-- Project Management -->
+          <file source="Windows SharePoint Services\Project Management\Wiki.htm" documentLibrary="Administración de proyectos" target="Wiki.htm" />
+          <file source="Windows SharePoint Services\Project Management\Issues.xlsx" documentLibrary="Administración de proyectos" target="Problemas.xlsx" queryId="Solución de problemas/Incidencias abiertas" />
+          <file source="Windows SharePoint Services\Project Management\Triage.xlsx" documentLibrary="Administración de proyectos" target="Evaluación de errores.xlsx" queryId="Planeación y seguimiento/Elementos de trabajo sin evaluar" />
+          <file source="Windows SharePoint Services\Project Management\Development Project Plan.mpp" documentLibrary="Administración de proyectos" target="Plan de proyecto de desarrollo.mpp" />
+          <file source="Windows SharePoint Services\Project Management\Test Development Plan.mpp" documentLibrary="Administración de proyectos" target="Plan de desarrollo de pruebas.mpp" />
+          <!-- General Documents -->
+          <file source="Windows SharePoint Services\General Documents\AuditPlan.dotx" documentLibrary="Documentos generales" target="Plan de auditoría.dotx" />
+          <file source="Windows SharePoint Services\General Documents\AuditReport.dotx" documentLibrary="Documentos generales" target="Informe de auditoría.dotx" />
+          <file source="Windows SharePoint Services\General Documents\Commitments.dotx" documentLibrary="Documentos generales" target="Compromisos.dotx" />
+          <file source="Windows SharePoint Services\General Documents\CommunicationPlan.dotx" documentLibrary="Documentos generales" target="Plan de comunicación.dotx" />
+          <file source="Windows SharePoint Services\General Documents\CorrectiveActionPlan.dotx" documentLibrary="Documentos generales" target="Plan de acción correctiva.dotx" />
+          <file source="Windows SharePoint Services\General Documents\DocumentationPlan.dotx" documentLibrary="Documentos generales" target="Plan de documentación.dotx" />
+          <file source="Windows SharePoint Services\General Documents\ImprovementSuggestion.dotx" documentLibrary="Documentos generales" target="Sugerencia de mejora.dotx" />
+          <file source="Windows SharePoint Services\General Documents\LAAAMAssessmentMatrix.xltx" documentLibrary="Documentos generales" target="Matriz de evaluación LAAAM.xltx" />
+          <file source="Windows SharePoint Services\General Documents\LifestyleSnapshot.dotx" documentLibrary="Documentos generales" target="Instantánea de estilo de vida.dotx" />
+          <file source="Windows SharePoint Services\General Documents\MSF CMMI Reference.xlsx" documentLibrary="Documentos generales" target="Referencia CMMI de MSF.xlsx" />
+          <file source="Windows SharePoint Services\General Documents\Performance Model.dotx" documentLibrary="Documentos generales" target="Modelo de rendimiento.dotx" />
+          <file source="Windows SharePoint Services\General Documents\RiskCategoriesandSources.dotx" documentLibrary="Documentos generales" target="Categorías de riesgo y orígenes.dotx" />
+          <file source="Windows SharePoint Services\General Documents\SharedVisionPresentation.pptx" documentLibrary="Documentos generales" target="Presentación de visión compartida.pptx" />
+          <!-- Process Guidance -->
+          <file source="Windows SharePoint Services\Process Guidance\ProcessGuidance.html" documentLibrary="Guía de procesos" target="ProcessGuidance.html" />
+          <file source="Windows SharePoint Services\Process Guidance\ProcessGuidance.html" documentLibrary="Guía de procesos" target="ProcessGuidance.aspx" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\AboutWorkItems.htm" documentLibrary="Guía de procesos" target="Supporting Files/AboutWorkItems.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\AboutWorkItems.htm" documentLibrary="Guía de procesos" target="Supporting Files/AboutWorkItems.aspx" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\Bug.htm" documentLibrary="Guía de procesos" target="Supporting Files/Error.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\Bug.htm" documentLibrary="Guía de procesos" target="Supporting Files/Error.aspx" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\ChangeRequest.htm" documentLibrary="Guía de procesos" target="Supporting Files/Solicitud de cambio.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\ChangeRequest.htm" documentLibrary="Guía de procesos" target="Supporting Files/Solicitud de cambio.aspx" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\CodeReviewRequest.htm" documentLibrary="Guía de procesos" target="Supporting Files/Solicitud de revisión de código.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\CodeReviewRequest.htm" documentLibrary="Guía de procesos" target="Supporting Files/Solicitud de revisión de código.aspx" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\CodeReviewResponse.htm" documentLibrary="Guía de procesos" target="Supporting Files/Respuesta de revisión de código.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\CodeReviewResponse.htm" documentLibrary="Guía de procesos" target="Supporting Files/Respuesta de revisión de código.aspx" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\Feature.htm" documentLibrary="Guía de procesos" target="Supporting Files/Característica.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\Feature.htm" documentLibrary="Guía de procesos" target="Supporting Files/Característica.aspx" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\FeedbackRequest.htm" documentLibrary="Guía de procesos" target="Supporting Files/Solicitud de comentarios.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\FeedbackRequest.htm" documentLibrary="Guía de procesos" target="Supporting Files/Solicitud de comentarios.aspx" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\FeedbackResponse.htm" documentLibrary="Guía de procesos" target="Supporting Files/Respuesta a comentarios.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\FeedbackResponse.htm" documentLibrary="Guía de procesos" target="Supporting Files/Respuesta a comentarios.aspx" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\Issue.htm" documentLibrary="Guía de procesos" target="Supporting Files/Problema.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\Issue.htm" documentLibrary="Guía de procesos" target="Supporting Files/Problema.aspx" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\Requirement.htm" documentLibrary="Guía de procesos" target="Supporting Files/Requisito.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\Requirement.htm" documentLibrary="Guía de procesos" target="Supporting Files/Requisito.aspx" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\Review.htm" documentLibrary="Guía de procesos" target="Supporting Files/Revisión.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\Review.htm" documentLibrary="Guía de procesos" target="Supporting Files/Revisión.aspx" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\Risk.htm" documentLibrary="Guía de procesos" target="Supporting Files/Riesgo.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\Risk.htm" documentLibrary="Guía de procesos" target="Supporting Files/Riesgo.aspx" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\SharedSteps.htm" documentLibrary="Guía de procesos" target="Supporting Files/Pasos compartidos.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\SharedSteps.htm" documentLibrary="Guía de procesos" target="Supporting Files/Pasos compartidos.aspx" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\Task.htm" documentLibrary="Guía de procesos" target="Supporting Files/Tarea.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\Task.htm" documentLibrary="Guía de procesos" target="Supporting Files/Tarea.aspx" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\TestCase.htm" documentLibrary="Guía de procesos" target="Supporting Files/Caso de prueba.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\TestCase.htm" documentLibrary="Guía de procesos" target="Supporting Files/Caso de prueba.aspx" />
+          <file source="Windows SharePoint Services\Process Guidance\ProcessGuidance.html" documentLibrary="Guía de procesos" target="Supporting Files/ProcessGuidance.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\ProcessGuidance.html" documentLibrary="Guía de procesos" target="Supporting Files/ProcessGuidance.aspx" />
+        </files>
+        <activateFeatures>
+          <!-- TfsDashboardCmmiMoss -->
+          <feature featureId="3D0BA288-BF8E-47F0-9680-7556EDEF6318" />
+          <!-- TfsDashboardCmmiProcessDocLibraries -->
+          <feature featureId="8610B95B-063F-4FB5-837C-BCF2FE9423C6" />
+        </activateFeatures>
+      </Portal>
+    </taskXml>
+  </task>
+</tasks>

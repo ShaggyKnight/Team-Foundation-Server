@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+  <WORKITEMTYPE name="Caso de prueba">
+    <DESCRIPTION>Datos de servidor para un conjunto de pasos que se van a probar.</DESCRIPTION>
+    <FIELDS>
+      <FIELD name="Título" refname="System.Title" type="String" reportable="dimension">
+        <REQUIRED />
+        <HELPTEXT>Breve descripción del caso de prueba que sirve para diferenciarlo en una lista o informe</HELPTEXT>
+      </FIELD>
+      <FIELD name="Estado de tarea" refname="System.State" type="String" reportable="dimension">
+        <HELPTEXT>Estado del flujo de trabajo del caso de prueba</HELPTEXT>
+      </FIELD>
+      <FIELD name="Rev" refname="System.Rev" type="Integer" reportable="dimension" />
+      <FIELD name="Modificado por" refname="System.ChangedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <VALIDUSER />
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD name="Fecha de cambio de estado" refname="Microsoft.VSTS.Common.StateChangeDate" type="DateTime">
+        <WHENCHANGED field="System.State">
+          <SERVERDEFAULT from="clock" />
+        </WHENCHANGED>
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Fecha de activación" refname="Microsoft.VSTS.Common.ActivatedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Activado por" refname="Microsoft.VSTS.Common.ActivatedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD name="Motivo" refname="System.Reason" type="String" reportable="dimension">
+        <HELPTEXT>Motivo por el que el caso de prueba está en el estado actual</HELPTEXT>
+      </FIELD>
+      <FIELD name="Asignado a" refname="System.AssignedTo" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+        <HELPTEXT>Persona que trabaja actualmente en este caso de prueba</HELPTEXT>
+      </FIELD>
+      <FIELD name="Fecha de cierre" refname="Microsoft.VSTS.Common.ClosedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Cerrado por" refname="Microsoft.VSTS.Common.ClosedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD name="Prioridad" refname="Microsoft.VSTS.Common.Priority" type="Integer" reportable="dimension">
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="1" />
+          <LISTITEM value="2" />
+          <LISTITEM value="3" />
+          <LISTITEM value="4" />
+        </ALLOWEDVALUES>
+        <HELPTEXT>Importancia de este caso de prueba para los objetivos de negocio del producto. 1=Máxima importancia.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Fecha de creación" refname="System.CreatedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Creado por" refname="System.CreatedBy" type="String" syncnamechanges="true" reportable="dimension" />
+      <FIELD name="Pasos" refname="Microsoft.VSTS.TCM.Steps" type="HTML">
+        <HELPTEXT>Pasos necesarios para realizar la prueba</HELPTEXT>
+      </FIELD>
+      <FIELD name="Descripción" refname="System.Description" type="HTML">
+        <HELPTEXT>Finalidad de esta prueba; requisito probado</HELPTEXT>
+      </FIELD>
+      <FIELD name="Historial" refname="System.History" type="History">
+        <HELPTEXT>Hilo de discusión y otra información histórica</HELPTEXT>
+      </FIELD>
+      <FIELD name="Proyecto de equipo" refname="System.TeamProject" type="String" reportable="dimension" />
+      <FIELD name="Ruta de acceso del área" refname="System.AreaPath" type="TreePath" reportable="dimension">
+        <HELPTEXT>Área del producto a la que está asociado este caso de prueba</HELPTEXT>
+      </FIELD>
+      <FIELD name="Ruta de acceso de la iteración" refname="System.IterationPath" type="TreePath" reportable="dimension">
+        <HELPTEXT>Iteración dentro de la que se corregirá este error</HELPTEXT>
+      </FIELD>
+      <FIELD name="Fecha de revisión" refname="System.RevisedDate" type="DateTime" reportable="detail" />
+      <FIELD name="Fecha de modificación" refname="System.ChangedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension" />
+      <FIELD name="Identificador de área" refname="System.AreaId" type="Integer" />
+      <FIELD name="Autorizado como" refname="System.AuthorizedAs" type="String" />
+      <FIELD name="Nombre de prueba automatizada" refname="Microsoft.VSTS.TCM.AutomatedTestName" type="String">
+        <HELPTEXT>Nombre de la prueba que automatiza este caso de prueba</HELPTEXT>
+      </FIELD>
+      <FIELD name="Almacenamiento de prueba automatizada" refname="Microsoft.VSTS.TCM.AutomatedTestStorage" type="String">
+        <HELPTEXT>Ensamblado que contiene la prueba que automatiza este caso de prueba</HELPTEXT>
+      </FIELD>
+      <FIELD name="Identificador de prueba automatizada" refname="Microsoft.VSTS.TCM.AutomatedTestId" type="String">
+        <HELPTEXT>Id. de la prueba que automatiza este caso de prueba</HELPTEXT>
+      </FIELD>
+      <FIELD name="Tipo de prueba automatizada" refname="Microsoft.VSTS.TCM.AutomatedTestType" type="String">
+        <HELPTEXT>Tipo de la prueba que automatiza este caso de prueba</HELPTEXT>
+      </FIELD>
+      <FIELD name="Parámetros" refname="Microsoft.VSTS.TCM.Parameters" type="HTML" />
+      <FIELD name="Origen de datos local" refname="Microsoft.VSTS.TCM.LocalDataSource" type="HTML" />
+      <FIELD reportable="dimension" type="String" name="Estado de automatización" refname="Microsoft.VSTS.TCM.AutomationStatus">
+        <WHEN field="Microsoft.VSTS.TCM.AutomatedTestId" value="">
+          <ALLOWEDVALUES expanditems="true">
+            <LISTITEM value="No automatizado" />
+            <LISTITEM value="Planeado" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHENNOT field="Microsoft.VSTS.TCM.AutomatedTestId" value="">
+          <ALLOWEDVALUES expanditems="true">
+            <LISTITEM value="Automatizada" />
+          </ALLOWEDVALUES>
+          <COPY from="value" value="Automatizada" />
+        </WHENNOT>
+      </FIELD>
+      <!-- **************** Team Build Integration Fields **************  -->
+      <FIELD name="Integración de compilación" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
+        <SUGGESTEDVALUES expanditems="true">
+          <LISTITEM value="&lt;Ninguno&gt;" />
+        </SUGGESTEDVALUES>
+        <HELPTEXT>Compilación en la que se corrigió el error</HELPTEXT>
+      </FIELD>
+    </FIELDS>
+    <WORKFLOW>
+      <STATES>
+        <STATE value="Listo">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <EMPTY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Cerrado" />
+        <STATE value="Diseño" />
+      </STATES>
+      <TRANSITIONS>
+        <TRANSITION from="" to="Diseño">
+          <REASONS>
+            <DEFAULTREASON value="Nuevo" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="System.AssignedTo">
+              <DEFAULT from="currentuser" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.Priority">
+              <DEFAULT from="value" value="2" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.TCM.AutomationStatus">
+              <DEFAULT from="value" value="No automatizado" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Diseño" to="Cerrado">
+          <REASONS>
+            <REASON value="Aplazado" />
+            <REASON value="Duplicado" />
+            <DEFAULTREASON value="Obsoleto" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Diseño" to="Listo">
+          <REASONS>
+            <DEFAULTREASON value="Completado" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="Listo" to="Cerrado">
+          <REASONS>
+            <REASON value="Aplazado" />
+            <REASON value="Duplicado" />
+            <DEFAULTREASON value="Obsoleto" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Listo" to="Diseño">
+          <REASONS>
+            <DEFAULTREASON value="Actualizar caso de prueba" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="Cerrado" to="Diseño">
+          <REASONS>
+            <DEFAULTREASON value="Reactivado" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Cerrado" to="Listo">
+          <REASONS>
+            <DEFAULTREASON value="Reactivado" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+      </TRANSITIONS>
+    </WORKFLOW>
+    <FORM>
+      <Layout HideReadOnlyEmptyFields="true" HideControlBorders="true">
+        <Group Margin="(4,0,0,0)">
+          <Column PercentWidth="100">
+            <Control FieldName="System.Title" Type="FieldControl" ControlFontSize="large" EmptyText="&lt;Escriba aquí el título&gt;" LabelPosition="Top" />
+          </Column>
+        </Group>
+        <Group Margin="(10,0,0,0)">
+          <Column PercentWidth="50">
+            <Group Label="Estado">
+              <Column PercentWidth="100">
+                <Control FieldName="System.AssignedTo" EmptyText="&lt;Ninguno&gt;" Type="FieldControl" Label="Asi&amp;gnado a" LabelPosition="Left" />
+                <Control FieldName="System.State" Type="FieldControl" Label="&amp;Estado" LabelPosition="Left" />
+                <Control FieldName="Microsoft.VSTS.Common.Priority" Type="FieldControl" Label="Prioridad" LabelPosition="Left" />
+                <Control FieldName="Microsoft.VSTS.TCM.AutomationStatus" Type="FieldControl" Label="Estado de automatización" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+          <Column PercentWidth="50">
+            <Group Label="Clasificación">
+              <Column PercentWidth="100">
+                <Control FieldName="System.AreaPath" Type="WorkItemClassificationControl" Label="Á&amp;rea" LabelPosition="Left" />
+                <Control FieldName="System.IterationPath" Type="WorkItemClassificationControl" Label="I&amp;teración" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+        </Group>
+        <TabGroup Margin="(0,10,0,0)">
+          <Tab Label="Pasos">
+            <Control FieldName="Microsoft.VSTS.TCM.Steps" Type="TestStepsControl" LabelPosition="Top" Dock="Fill">
+              <CustomControlOptions />
+            </Control>
+          </Tab>
+          <Tab Label="Resumen">
+            <Group>
+              <Column PercentWidth="50">
+                <Control FieldName="System.Description" Type="HtmlFieldControl" Label="Descripción" LabelPosition="Top" Dock="Fill" />
+              </Column>
+              <Column PercentWidth="50">
+                <Control FieldName="System.History" Type="WorkItemLogControl" Label="&amp;Historial" LabelPosition="Top" Dock="Fill" />
+              </Column>
+            </Group>
+          </Tab>
+          <Tab Label="Requisitos probados">
+            <Control Type="LinksControl" Name="Tested" LabelPosition="Top">
+              <LinksControlOptions>
+                <WorkItemLinkFilters FilterType="include">
+                  <Filter LinkType="Microsoft.VSTS.Common.TestedBy" FilterOn="reversename" />
+                </WorkItemLinkFilters>
+                <WorkItemTypeFilters FilterType="include">
+                  <Filter WorkItemType="Requisito" />
+                </WorkItemTypeFilters>
+                <ExternalLinkFilters FilterType="excludeAll" />
+                <LinkColumns>
+                  <LinkColumn RefName="System.ID" />
+                  <LinkColumn RefName="System.WorkItemType" />
+                  <LinkColumn RefName="System.Title" />
+                  <LinkColumn RefName="System.AssignedTo" />
+                  <LinkColumn RefName="System.State" />
+                  <LinkColumn LinkAttribute="System.Links.Comment" />
+                </LinkColumns>
+              </LinksControlOptions>
+            </Control>
+          </Tab>
+          <Tab Label="Todos los vínculos">
+            <Control Type="LinksControl" Name="GeneralLinks" LabelPosition="Top">
+              <LinksControlOptions>
+                <LinkColumns>
+                  <LinkColumn RefName="System.ID" />
+                  <LinkColumn RefName="System.WorkItemType" />
+                  <LinkColumn RefName="System.Title" />
+                  <LinkColumn RefName="System.AssignedTo" />
+                  <LinkColumn RefName="System.State" />
+                  <LinkColumn LinkAttribute="System.Links.Comment" />
+                </LinkColumns>
+              </LinksControlOptions>
+            </Control>
+          </Tab>
+          <Tab Label="Datos adjuntos">
+            <Control Type="AttachmentsControl" LabelPosition="Top" />
+          </Tab>
+          <Tab Label="Automatización asociada">
+            <Control Type="AssociatedAutomationControl" LabelPosition="Top" Dock="Fill">
+              <CustomControlOptions />
+            </Control>
+          </Tab>
+        </TabGroup>
+      </Layout>
+    </FORM>
+  </WORKITEMTYPE>
+</Witd:WITD>

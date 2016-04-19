@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+  <WORKITEMTYPE name="Plan de pruebas">
+    <DESCRIPTION>Registra las actividades de pruebas para un hito o una versión determinados.</DESCRIPTION>
+    <FIELDS>
+      <FIELD name="Ruta de acceso de la iteración" refname="System.IterationPath" type="TreePath" reportable="dimension">
+        <HELPTEXT>La iteración en que este plan de pruebas se ejecutará.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Ruta de acceso del área" refname="System.AreaPath" type="TreePath" reportable="dimension">
+        <HELPTEXT>El área del producto asociado con este plan de pruebas.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension" />
+      <FIELD name="Título" refname="System.Title" type="String" reportable="dimension">
+        <REQUIRED />
+        <HELPTEXT>Breve descripción del plan de pruebas.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Estado de tarea" refname="System.State" type="String" reportable="dimension">
+        <HELPTEXT>Estado del flujo de trabajo.  Activo = hay que ejecutar pruebas en este plan; Inactivo = ya no hay que ejecutar pruebas en este plan</HELPTEXT>
+      </FIELD>
+      <FIELD name="Motivo" refname="System.Reason" type="String" reportable="dimension">
+        <HELPTEXT>Razón del estado actual del plan de pruebas.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Asignado a" refname="System.AssignedTo" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+        <HELPTEXT>La razón que justifica actualmente este plan de pruebas.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Descripción" refname="System.Description" type="HTML">
+        <HELPTEXT>Finalidad del plan de pruebas</HELPTEXT>
+      </FIELD>
+      <FIELD name="Historial" refname="System.History" type="History">
+        <HELPTEXT>Hilo de discusión y registro automático de cambios</HELPTEXT>
+      </FIELD>
+      <FIELD name="Fecha de inicio" refname="Microsoft.VSTS.Scheduling.StartDate" type="DateTime" reportable="dimension">
+        <HELPTEXT>La fecha de inicio para ejecutar las pruebas de este plan.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Fecha de fin" refname="Microsoft.VSTS.Scheduling.FinishDate" type="DateTime" reportable="dimension">
+        <HELPTEXT>La fecha de finalización para ejecutar todas las pruebas de este plan.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Integración de compilación" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
+        <SUGGESTEDVALUES expanditems="true">
+          <LISTITEM value="&lt;None&gt;" />
+        </SUGGESTEDVALUES>
+        <HELPTEXT>La compilación en la que se ejecutó el plan de pruebas</HELPTEXT>
+      </FIELD>
+    </FIELDS>
+    <WORKFLOW>
+      <STATES>
+        <STATE value="Activo" />
+        <STATE value="Inactivo" />
+      </STATES>
+      <TRANSITIONS>
+        <TRANSITION from="" to="Activo">
+          <REASONS>
+            <DEFAULTREASON value="Nuevo plan de pruebas" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="Activo" to="Inactivo">
+          <REASONS>
+            <DEFAULTREASON value="Plan de pruebas desactivado" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="Inactivo" to="Activo">
+          <REASONS>
+            <DEFAULTREASON value="Plan de pruebas reactivado" />
+          </REASONS>
+        </TRANSITION>
+      </TRANSITIONS>
+    </WORKFLOW>
+    <FORM>
+      <Layout HideControlBorders="true" HideReadOnlyEmptyFields="true">
+        <Group Margin="(4,0,0,0)">
+          <Column PercentWidth="100">
+            <Control FieldName="System.Title" Type="FieldControl" LabelPosition="Top" ControlFontSize="large" EmptyText="&lt;Escriba aquí el título&gt;" />
+          </Column>
+        </Group>
+        <Group Margin="(10,0,0,0)">
+          <Column PercentWidth="33">
+            <Group Label="Estado">
+              <Column PercentWidth="100">
+                <Control FieldName="System.AssignedTo" Type="FieldControl" Label="Asi&amp;gnado a" LabelPosition="Left" />
+                <Control FieldName="System.State" Type="FieldControl" Label="&amp;Estado" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+          <Column PercentWidth="33">
+            <Group Label="Clasificación">
+              <Column PercentWidth="100">
+                <Control FieldName="System.AreaPath" Type="WorkItemClassificationControl" Label="Á&amp;rea" LabelPosition="Left" />
+                <Control FieldName="System.IterationPath" Type="WorkItemClassificationControl" Label="I&amp;teración" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+          <Column PercentWidth="33">
+            <Group Label="Escalas de tiempo">
+              <Column PercentWidth="100">
+                <Control FieldName="Microsoft.VSTS.Scheduling.StartDate" Type="DateTimeControl" Label="Fecha de inicio" LabelPosition="Left" />
+                <Control FieldName="Microsoft.VSTS.Scheduling.FinishDate" Type="DateTimeControl" Label="Fecha de fin" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+        </Group>
+        <Group>
+          <Column PercentWidth="50">
+            <TabGroup Margin="(5,0,0,0)">
+              <Tab Label="Resumen">
+                <Group>
+                  <Column PercentWidth="50">
+                    <Control FieldName="System.Description" Type="HtmlFieldControl" Label="Descripción" LabelPosition="Top" Dock="Fill" />
+                  </Column>
+                  <Column PercentWidth="50">
+                    <Control FieldName="System.History" Type="WorkItemLogControl" Label="&amp;Historial" LabelPosition="Top" Dock="Fill" />
+                  </Column>
+                </Group>
+              </Tab>
+              <Tab Label="Datos adjuntos">
+                <Control Type="AttachmentsControl" LabelPosition="Top" />
+              </Tab>
+              <Tab Label="Todos los vínculos">
+                <Control Type="LinksControl" Name="GeneralLinks" LabelPosition="Top">
+                  <LinksControlOptions>
+                    <LinkColumns>
+                      <LinkColumn RefName="System.Id" />
+                      <LinkColumn RefName="System.WorkItemType" />
+                      <LinkColumn RefName="System.Title" />
+                      <LinkColumn RefName="System.AssignedTo" />
+                      <LinkColumn RefName="System.State" />
+                      <LinkColumn LinkAttribute="System.Links.Comment" />
+                    </LinkColumns>
+                    <WorkItemLinkFilters FilterType="includeAll" />
+                    <ExternalLinkFilters FilterType="includeAll" />
+                    <WorkItemTypeFilters FilterType="includeAll" />
+                  </LinksControlOptions>
+                </Control>
+              </Tab>
+            </TabGroup>
+          </Column>
+        </Group>
+      </Layout>
+    </FORM>
+  </WORKITEMTYPE>
+</Witd:WITD>

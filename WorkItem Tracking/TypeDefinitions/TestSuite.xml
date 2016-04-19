@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+  <WORKITEMTYPE name="Conjunto de pruebas">
+    <DESCRIPTION>Sigue las actividades de prueba para una característica, un requisito o un caso de usuario determinados.</DESCRIPTION>
+    <FIELDS>
+      <FIELD name="Ruta de acceso de la iteración" refname="System.IterationPath" type="TreePath" reportable="dimension">
+        <HELPTEXT>La iteración de este conjunto de pruebas.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Ruta de acceso del área" refname="System.AreaPath" type="TreePath" reportable="dimension">
+        <HELPTEXT>El área del producto asociado con este conjunto de pruebas.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension" />
+      <FIELD name="Título" refname="System.Title" type="String" reportable="dimension">
+        <REQUIRED />
+        <HELPTEXT>Breve descripción del conjunto de pruebas.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Estado de tarea" refname="System.State" type="String" reportable="dimension">
+        <HELPTEXT>El estado del flujo de trabajo del caso de prueba.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Motivo" refname="System.Reason" type="String" reportable="dimension">
+        <HELPTEXT>La razón por la que el conjunto de pruebas actual tiene el estado actual.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Asignado a" refname="System.AssignedTo" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+        <HELPTEXT>La persona asignada al conjunto de pruebas actualmente.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Descripción" refname="System.Description" type="HTML">
+        <HELPTEXT>Finalidad de este conjunto de pruebas</HELPTEXT>
+      </FIELD>
+      <FIELD name="Historial" refname="System.History" type="History">
+        <HELPTEXT>Hilo de discusión y registro automático de cambios</HELPTEXT>
+      </FIELD>
+      <FIELD name="Integración de compilación" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
+        <SUGGESTEDVALUES expanditems="true">
+          <LISTITEM value="&lt;None&gt;" />
+        </SUGGESTEDVALUES>
+        <HELPTEXT>La compilación en la que se ejecutó el conjunto de pruebas</HELPTEXT>
+      </FIELD>
+      <FIELD name="Identificación de tipo de conjunto de pruebas" refname="Microsoft.VSTS.TCM.TestSuiteTypeId" type="Integer">
+        <DEFAULT from="value" value="1" />
+        <REQUIRED />
+        <FROZEN />
+      </FIELD>
+      <FIELD name="Tipo del conjunto de pruebas" refname="Microsoft.VSTS.TCM.TestSuiteType" type="String" reportable="dimension">
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="Estático" />
+          <LISTITEM value="Basado en consulta" />
+          <LISTITEM value="Basado en requisito" />
+        </ALLOWEDVALUES>
+        <WHENNOTCHANGED field="Microsoft.VSTS.TCM.TestSuiteTypeId">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <REQUIRED />
+        <HELPTEXT>Especifica la categoría del conjunto de pruebas.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Texto de consulta" refname="Microsoft.VSTS.TCM.QueryText" type="PlainText">
+        <WHEN field="Microsoft.VSTS.TCM.TestSuiteTypeId" value="2">
+          <REQUIRED />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Auditoría de conjunto de pruebas" refname="Microsoft.VSTS.TCM.TestSuiteAudit" type="PlainText">
+        <HELPTEXT>Captura la traza de auditoría del conjunto de pruebas.</HELPTEXT>
+      </FIELD>
+    </FIELDS>
+    <WORKFLOW>
+      <STATES>
+        <STATE value="En planeación" />
+        <STATE value="En curso" />
+        <STATE value="Completado" />
+      </STATES>
+      <TRANSITIONS>
+        <TRANSITION from="" to="En curso">
+          <REASONS>
+            <DEFAULTREASON value="Nuevo conjunto de pruebas" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.TCM.TestSuiteType">
+              <WHEN field="Microsoft.VSTS.TCM.TestSuiteTypeId" value="1">
+                <COPY from="value" value="Estático" />
+              </WHEN>
+              <WHEN field="Microsoft.VSTS.TCM.TestSuiteTypeId" value="2">
+                <COPY from="value" value="Basado en consulta" />
+              </WHEN>
+              <WHEN field="Microsoft.VSTS.TCM.TestSuiteTypeId" value="3">
+                <COPY from="value" value="Basado en requisito" />
+              </WHEN>
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="En curso" to="En planeación">
+          <REASONS>
+            <DEFAULTREASON value="Planear casos de prueba de este conjunto de pruebas" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="En curso" to="Completado">
+          <REASONS>
+            <DEFAULTREASON value="Pruebas de este conjunto de pruebas completadas" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="En planeación" to="En curso">
+          <REASONS>
+            <DEFAULTREASON value="Las pruebas de este conjunto de pruebas ya están activas y se pueden ejecutar" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="En planeación" to="Completado">
+          <REASONS>
+            <DEFAULTREASON value="Quitado de la planeación y la ejecución de pruebas" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="Completado" to="En curso">
+          <REASONS>
+            <DEFAULTREASON value="Reactivando para ejecutar las pruebas" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="Completado" to="En planeación">
+          <REASONS>
+            <DEFAULTREASON value="Reactivando para fase de planeación" />
+          </REASONS>
+        </TRANSITION>
+      </TRANSITIONS>
+    </WORKFLOW>
+    <FORM>
+      <Layout HideControlBorders="true" HideReadOnlyEmptyFields="true">
+        <Group Margin="(4,0,0,0)">
+          <Column PercentWidth="100">
+            <Control FieldName="System.Title" Type="FieldControl" LabelPosition="Top" ControlFontSize="large" EmptyText="&lt;Escriba aquí el título&gt;" />
+          </Column>
+        </Group>
+        <Group Margin="(10,0,0,0)">
+          <Column PercentWidth="50">
+            <Group Label="Estado">
+              <Column PercentWidth="100">
+                <Control FieldName="System.AssignedTo" Type="FieldControl" Label="Asi&amp;gnado a" LabelPosition="Left" />
+                <Control FieldName="System.State" Type="FieldControl" Label="&amp;Estado" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+          <Column PercentWidth="50">
+            <Group Label="Clasificación">
+              <Column PercentWidth="100">
+                <Control FieldName="System.AreaPath" Type="WorkItemClassificationControl" Label="Á&amp;rea" LabelPosition="Left" />
+                <Control FieldName="System.IterationPath" Type="WorkItemClassificationControl" Label="I&amp;teración" LabelPosition="Left" />
+                <Control FieldName="Microsoft.VSTS.TCM.TestSuiteType" Type="FieldControl" Label="Tipo del conjunto de pruebas" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+        </Group>
+        <Group>
+          <Column PercentWidth="100">
+            <TabGroup Margin="(5,0,0,0)">
+              <Tab Label="Resumen">
+                <Group>
+                  <Column PercentWidth="50">
+                    <Control FieldName="System.Description" Type="HtmlFieldControl" Label="Descripción" LabelPosition="Top" Dock="Fill" />
+                  </Column>
+                  <Column PercentWidth="50">
+                    <Control FieldName="System.History" Type="WorkItemLogControl" Label="&amp;Historial" LabelPosition="Top" Dock="Fill" />
+                  </Column>
+                </Group>
+              </Tab>
+              <Tab Label="Datos adjuntos">
+                <Control Type="AttachmentsControl" LabelPosition="Top" />
+              </Tab>
+              <Tab Label="Todos los vínculos">
+                <Control Type="LinksControl" Name="GeneralLinks" LabelPosition="Top">
+                  <LinksControlOptions>
+                    <LinkColumns>
+                      <LinkColumn RefName="System.Id" />
+                      <LinkColumn RefName="System.WorkItemType" />
+                      <LinkColumn RefName="System.Title" />
+                      <LinkColumn RefName="System.AssignedTo" />
+                      <LinkColumn RefName="System.State" />
+                      <LinkColumn LinkAttribute="System.Links.Comment" />
+                    </LinkColumns>
+                    <WorkItemLinkFilters FilterType="includeAll" />
+                    <ExternalLinkFilters FilterType="includeAll" />
+                    <WorkItemTypeFilters FilterType="includeAll" />
+                  </LinksControlOptions>
+                </Control>
+              </Tab>
+            </TabGroup>
+          </Column>
+        </Group>
+      </Layout>
+    </FORM>
+  </WORKITEMTYPE>
+</Witd:WITD>

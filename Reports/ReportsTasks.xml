@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tasks>
+  <task id="Site" plugin="Microsoft.ProjectCreationWizard.Reporting" completionMessage="Sitio de informes del proyecto creado.">
+    <taskXml>
+      <ReportingServices>
+        <site></site>
+      </ReportingServices>
+    </taskXml>
+  </task>
+  <task id="Populate Reports" plugin="Microsoft.ProjectCreationWizard.Reporting" completionMessage="Informes del proyecto cargados.">
+    <dependencies>
+      <dependency taskId="Site" />
+    </dependencies>
+    <taskXml>
+      <ReportingServices>
+        <folders>
+          <folder path="Errores" />
+          <folder path="Compilaciones" />
+          <folder path="Administración de proyectos" />
+          <folder path="Pruebas" />
+          <folder path="Paneles" />
+        </folders>
+        <reports>
+          <report name="Estado del error" filename="Reports\Bug Status.rdl" folder="Errores" cacheExpiration="30">
+            <parameters>
+              <parameter name="ExplicitProject" value="" />
+            </parameters>
+            <datasources>
+              <reference name="/Tfs2010OlapReportDS" dsname="TfsOlapReportDS" />
+              <reference name="/Tfs2010ReportDS" dsname="TfsReportDS" />
+            </datasources>
+          </report>
+          <report name="Tendencias de errores" filename="Reports\Bug Trends.rdl" folder="Errores" cacheExpiration="30">
+            <parameters>
+              <parameter name="ExplicitProject" value="" />
+            </parameters>
+            <datasources>
+              <reference name="/Tfs2010OlapReportDS" dsname="TfsOlapReportDS" />
+              <reference name="/Tfs2010ReportDS" dsname="TfsReportDS" />
+            </datasources>
+          </report>
+          <report name="Reactivaciones" filename="Reports\Reactivations.rdl" folder="Errores" cacheExpiration="30">
+            <parameters>
+              <parameter name="ExplicitProject" value="" />
+            </parameters>
+            <datasources>
+              <reference name="/Tfs2010OlapReportDS" dsname="TfsOlapReportDS" />
+              <reference name="/Tfs2010ReportDS" dsname="TfsReportDS" />
+            </datasources>
+          </report>
+          <report name="Indicadores de calidad de la compilación" filename="Reports\Build Quality Indicators.rdl" folder="Compilaciones" cacheExpiration="30">
+            <parameters>
+              <parameter name="ExplicitProject" value="" />
+            </parameters>
+            <datasources>
+              <reference name="/Tfs2010OlapReportDS" dsname="TfsOlapReportDS" />
+              <reference name="/Tfs2010ReportDS" dsname="TfsReportDS" />
+            </datasources>
+          </report>
+          <report name="Informe de compilaciones correctas" filename="Reports\Build Success over Time.rdl" folder="Compilaciones" cacheExpiration="30">
+            <parameters>
+              <parameter name="ExplicitProject" value="" />
+            </parameters>
+            <datasources>
+              <reference name="/Tfs2010ReportDS" dsname="TfsReportDS" />
+            </datasources>
+          </report>
+          <report name="Resumen de la compilación" filename="Reports\Build Summary.rdl" folder="Compilaciones" cacheExpiration="30">
+            <parameters>
+              <parameter name="ExplicitProject" value="" />
+            </parameters>
+            <datasources>
+              <reference name="/Tfs2010ReportDS" dsname="TfsReportDS" />
+            </datasources>
+          </report>
+          <report name="Evolución y tasa de evolución" filename="Reports\Burndown and Burn Rate.rdl" folder="Administración de proyectos" cacheExpiration="30">
+            <parameters>
+              <parameter name="ExplicitProject" value="" />
+            </parameters>
+            <datasources>
+              <reference name="/Tfs2010OlapReportDS" dsname="TfsOlapReportDS" />
+              <reference name="/Tfs2010ReportDS" dsname="TfsReportDS" />
+            </datasources>
+          </report>
+          <report name="Trabajo restante" filename="Reports\Remaining Work.rdl" folder="Administración de proyectos" cacheExpiration="30">
+            <parameters>
+              <parameter name="ExplicitProject" value="" />
+            </parameters>
+            <datasources>
+              <reference name="/Tfs2010OlapReportDS" dsname="TfsOlapReportDS" />
+              <reference name="/Tfs2010ReportDS" dsname="TfsReportDS" />
+            </datasources>
+          </report>
+          <report name="Trabajo no planeado" filename="Reports\Unplanned Work.rdl" folder="Administración de proyectos" cacheExpiration="30">
+            <parameters>
+              <parameter name="ExplicitProject" value="" />
+            </parameters>
+            <datasources>
+              <reference name="/Tfs2010OlapReportDS" dsname="TfsOlapReportDS" />
+              <reference name="/Tfs2010ReportDS" dsname="TfsReportDS" />
+            </datasources>
+          </report>
+          <report name="Trabajo restante" filename="Reports\Remaining Work - Dashboard.rdl" folder="Paneles" cacheExpiration="30">
+            <parameters>
+              <parameter name="ExplicitProject" value="" />
+            </parameters>
+            <datasources>
+              <reference name="/Tfs2010OlapReportDS" dsname="TfsOlapReportDS" />
+              <reference name="/Tfs2010ReportDS" dsname="TfsReportDS" />
+            </datasources>
+          </report>
+          <report name="Estado en todas las iteraciones" filename="Reports\Status on All Iterations.rdl" folder="Administración de proyectos" cacheExpiration="30">
+            <parameters>
+              <parameter name="ExplicitProject" value="" />
+            </parameters>
+            <datasources>
+              <reference name="/Tfs2010ReportDS" dsname="TfsReportDS" />
+            </datasources>
+          </report>
+          <report name="Información general sobre los requisitos" filename="Reports\Requirements Overview.rdl" folder="Administración de proyectos" cacheExpiration="30">
+            <parameters>
+              <parameter name="ExplicitProject" value="" />
+            </parameters>
+            <datasources>
+              <reference name="/Tfs2010ReportDS" dsname="TfsReportDS" />
+            </datasources>
+          </report>
+          <report name="Progreso de los requisitos" filename="Reports\Requirements Progress.rdl" folder="Administración de proyectos" cacheExpiration="30">
+            <parameters>
+              <parameter name="ExplicitProject" value="" />
+            </parameters>
+            <datasources>
+              <reference name="/Tfs2010ReportDS" dsname="TfsReportDS" />
+            </datasources>
+          </report>
+          <!--Nuevo Reporte Trazabilidad de requisitos-->
+          <report name="Trazabilidad de requisitos" filename="Reports\Requirements Traceability.rdl" folder="Administración de proyectos" cacheExpiration="30">
+            <parameters>
+              <parameter name="ExplicitProject" value="" />
+            </parameters>
+            <datasources>
+              <reference name="/Tfs2010ReportDS" dsname="TfsReportDS" />
+            </datasources>
+          </report>
+          <report name="Disponibilidad de casos de prueba" filename="Reports\Test Case Readiness.rdl" folder="Pruebas" cacheExpiration="30">
+            <parameters>
+              <parameter name="ExplicitProject" value="" />
+            </parameters>
+            <datasources>
+              <reference name="/Tfs2010OlapReportDS" dsname="TfsOlapReportDS" />
+              <reference name="/Tfs2010ReportDS" dsname="TfsReportDS" />
+            </datasources>
+          </report>
+          <report name="Progreso del plan de pruebas" filename="Reports\Test Plan Progress.rdl" folder="Pruebas" cacheExpiration="30">
+            <parameters>
+              <parameter name="ExplicitProject" value="" />
+            </parameters>
+            <datasources>
+              <reference name="/Tfs2010OlapReportDS" dsname="TfsOlapReportDS" />
+              <reference name="/Tfs2010ReportDS" dsname="TfsReportDS" />
+            </datasources>
+          </report>
+        </reports>
+      </ReportingServices>
+    </taskXml>
+  </task>
+</tasks>

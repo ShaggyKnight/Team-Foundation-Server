@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+  <WORKITEMTYPE name="Solicitud de revisión de código">
+    <DESCRIPTION>Representa el elemento de trabajo maestro para una revisión de código. Deben crearse elementos de trabajo secundarios de tipo Respuesta de revisión de código.</DESCRIPTION>
+    <FIELDS>
+      <!-- ********** Core fields ******************* -->
+      <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension" />
+      <FIELD name="Título" refname="System.Title" type="String" reportable="dimension">
+        <REQUIRED />
+      </FIELD>
+      <FIELD name="Asignado a" refname="System.AssignedTo" type="String" reportable="dimension" syncnamechanges="true">
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Fecha de creación" refname="System.CreatedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Creado por" refname="System.CreatedBy" type="String" reportable="dimension" syncnamechanges="true" />
+      <FIELD name="Fecha de modificación" refname="System.ChangedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Modificado por" refname="System.ChangedBy" type="String" reportable="dimension" syncnamechanges="true" />
+      <FIELD name="Fecha de cierre" refname="Microsoft.VSTS.Common.ClosedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Cerrado por" refname="Microsoft.VSTS.Common.ClosedBy" type="String" reportable="dimension" syncnamechanges="true" />
+      <FIELD name="Estado de tarea" refname="System.State" type="String" reportable="dimension" />
+      <FIELD name="Motivo" refname="System.Reason" type="String" reportable="dimension" />
+      <FIELD name="Historial" refname="System.History" type="History" />
+      <FIELD name="Ruta de acceso del área" refname="System.AreaPath" type="TreePath" reportable="dimension" />
+      <FIELD name="Ruta de acceso de la iteración" refname="System.IterationPath" type="TreePath" reportable="dimension" />
+      <FIELD name="Comentario de cierre" refname="Microsoft.VSTS.CodeReview.ClosingComment" type="String" />
+      <FIELD name="Código del contexto asociado" refname="Microsoft.VSTS.CodeReview.ContextCode" type="Integer">
+        <WHEN field="Microsoft.VSTS.CodeReview.ContextType" value="Conjunto de cambios aplazados">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHEN field="Microsoft.VSTS.CodeReview.ContextType" value="Conjunto de cambios">
+          <COPY from="value" value="2" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Tipo de contexto asociado" refname="Microsoft.VSTS.CodeReview.ContextType" type="String">
+        <WHEN field="Microsoft.VSTS.CodeReview.ContextCode" value="1">
+          <COPY from="value" value="Conjunto de cambios aplazados" />
+        </WHEN>
+        <WHEN field="Microsoft.VSTS.CodeReview.ContextCode" value="2">
+          <COPY from="value" value="Conjunto de cambios" />
+        </WHEN>
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="Conjunto de cambios aplazados" />
+          <LISTITEM value="Conjunto de cambios" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="Conjunto de cambios aplazados" />
+      </FIELD>
+      <FIELD name="Contexto asociado" refname="Microsoft.VSTS.CodeReview.Context" type="String">
+        <REQUIRED />
+      </FIELD>
+      <FIELD name="Propietario del contexto asociado" refname="Microsoft.VSTS.CodeReview.ContextOwner" type="String" />
+      <FIELD name="Código de estado cerrado" refname="Microsoft.VSTS.CodeReview.ClosedStatusCode" type="Integer">
+        <WHEN field="Microsoft.VSTS.CodeReview.ClosedStatus" value="">
+          <COPY from="value" value="0" />
+        </WHEN>
+        <WHEN field="Microsoft.VSTS.CodeReview.ClosedStatus" value="Abandonado">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHEN field="Microsoft.VSTS.CodeReview.ClosedStatus" value="Protegido">
+          <COPY from="value" value="2" />
+        </WHEN>
+        <WHEN field="Microsoft.VSTS.CodeReview.ClosedStatus" value="Completado">
+          <COPY from="value" value="3" />
+        </WHEN>
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="0" />
+          <LISTITEM value="1" />
+          <LISTITEM value="2" />
+          <LISTITEM value="3" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="0" />
+      </FIELD>
+      <FIELD name="Estado cerrado" refname="Microsoft.VSTS.CodeReview.ClosedStatus" type="String" reportable="dimension">
+        <WHEN field="Microsoft.VSTS.CodeReview.ClosedStatusCode" value="0">
+          <COPY from="value" value="" />
+        </WHEN>
+        <WHEN field="Microsoft.VSTS.CodeReview.ClosedStatusCode" value="1">
+          <COPY from="value" value="Abandonado" />
+        </WHEN>
+        <WHEN field="Microsoft.VSTS.CodeReview.ClosedStatusCode" value="2">
+          <COPY from="value" value="Protegido" />
+        </WHEN>
+        <WHEN field="Microsoft.VSTS.CodeReview.ClosedStatusCode" value="3">
+          <COPY from="value" value="Completado" />
+        </WHEN>
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="Abandonado" />
+          <LISTITEM value="Protegido" />
+          <LISTITEM value="Completado" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <!-- **************** Team Build Integration Fields **************  -->
+      <FIELD name="Integración de compilación" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
+        <SUGGESTEDVALUES expanditems="true">
+          <LISTITEM value="&lt;Ninguno&gt;" />
+        </SUGGESTEDVALUES>
+        <HELPTEXT>Compilación en la que se corrigió el error</HELPTEXT>
+      </FIELD>
+      <!-- **************** Mirror field to determine the current state in code -->
+      <FIELD name="Código de estado" refname="Microsoft.VSTS.Common.StateCode" type="Integer">
+        <WHEN field="System.State" value="Solicitado">
+          <COPY from="value" value="0" />
+        </WHEN>
+        <WHEN field="System.State" value="Cerrado">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="0" />
+          <LISTITEM value="1" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="0" />
+      </FIELD>
+    </FIELDS>
+    <!-- *************** Workflow ****************   -->
+    <WORKFLOW>
+      <STATES>
+        <STATE value="Solicitado">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.CodeReview.ClosingComment">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.CodeReview.ClosedStatus">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.CodeReview.ClosedStatusCode">
+              <READONLY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Cerrado">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.CodeReview.ClosedStatus">
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+      </STATES>
+      <TRANSITIONS>
+        <TRANSITION from="" to="Solicitado">
+          <REASONS>
+            <DEFAULTREASON value="Nuevo" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="System.AssignedTo">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Solicitado" to="Cerrado">
+          <ACTIONS>
+            <ACTION value="Microsoft.VSTS.Actions.Checkin" />
+            <ACTION value="Microsoft.VSTS.CodeReview.Abandon" />
+          </ACTIONS>
+          <REASONS>
+            <DEFAULTREASON value="Cerrado" />
+          </REASONS>
+          <FIELDS>
+            <!-- Set the closing date -->
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <!-- Set the closing person -->
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <!-- Unassign the workitem -->
+            <FIELD refname="System.AssignedTo">
+              <COPY from="value" value="" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.CodeReview.ClosedStatusCode">
+              <COPY from="value" value="2" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.CodeReview.ClosedStatus">
+              <COPY from="value" value="Protegido" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+      </TRANSITIONS>
+    </WORKFLOW>
+    <FORM>
+      <Layout HideControlBorders="true">
+        <Group>
+          <Column PercentWidth="100">
+            <Control ReadOnly="True" Type="FieldControl" FieldName="System.Title" ControlFontSize="large" EmptyText="&lt;Escriba aquí el título&gt;" LabelPosition="Top" />
+          </Column>
+        </Group>
+        <Group Margin="(5,0,0,0)">
+          <Column PercentWidth="50">
+            <Group Label="Información">
+              <Column PercentWidth="100">
+                <Control ReadOnly="True" Type="FieldControl" FieldName="System.AssignedTo" Label="Asi&amp;gnado a" LabelPosition="Left" EmptyText="&lt;Ninguno&gt;" />
+                <Control ReadOnly="True" Type="FieldControl" FieldName="Microsoft.VSTS.CodeReview.ContextType" Label="Tipo de contexto asociado" LabelPosition="Left" />
+                <Control ReadOnly="True" Type="FieldControl" FieldName="Microsoft.VSTS.CodeReview.Context" Label="Contexto asociado" LabelPosition="Left" />
+                <Control ReadOnly="True" Type="FieldControl" FieldName="Microsoft.VSTS.CodeReview.ContextOwner" Label="Propietario del contexto asociado" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+          <Column PercentWidth="50">
+            <Group Label="Clasificación">
+              <Column PercentWidth="100">
+                <Control ReadOnly="True" Type="WorkItemClassificationControl" FieldName="System.AreaPath" Label="Á&amp;rea" LabelPosition="Left" />
+                <Control ReadOnly="True" Type="WorkItemClassificationControl" FieldName="System.IterationPath" Label="I&amp;teración" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+        </Group>
+        <Group Margin="(5,0,0,0)">
+          <Column PercentWidth="50">
+            <Group Label="Estado">
+              <Column PercentWidth="100">
+                <Control ReadOnly="True" Type="FieldControl" FieldName="System.State" Label="&amp;Estado" LabelPosition="Left" />
+                <Control ReadOnly="True" Type="FieldControl" FieldName="System.Reason" Label="Motivo" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+          <Column PercentWidth="50">
+            <Group Label="Información del sistema">
+              <Column PercentWidth="100">
+                <Control ReadOnly="True" Type="FieldControl" FieldName="System.CreatedBy" Label="Creado por" LabelPosition="Left" />
+                <Control ReadOnly="True" Type="FieldControl" FieldName="System.CreatedDate" Label="Fecha de creación" LabelPosition="Left" />
+                <Control ReadOnly="True" Type="FieldControl" FieldName="System.ChangedBy" Label="Actualizado por" LabelPosition="Left" />
+                <Control ReadOnly="True" Type="FieldControl" FieldName="System.ChangedDate" Label="Fecha de actualización" LabelPosition="Left" />
+                <Control ReadOnly="True" Type="FieldControl" FieldName="Microsoft.VSTS.Common.ClosedBy" Label="Cerrado por" LabelPosition="Left" />
+                <Control ReadOnly="True" Type="FieldControl" FieldName="Microsoft.VSTS.Common.ClosedDate" Label="Fecha de cierre" LabelPosition="Left" />
+                <Control ReadOnly="True" Type="FieldControl" FieldName="Microsoft.VSTS.CodeReview.ClosedStatus" Label="Estado cerrado" LabelPosition="Left" />
+                <Control ReadOnly="True" Type="FieldControl" FieldName="Microsoft.VSTS.CodeReview.ClosingComment" Label="Comentario de cierre" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+        </Group>
+        <TabGroup>
+          <Tab Label="Detalles">
+            <Group>
+              <Column PercentWidth="50">
+                <Control ReadOnly="True" Type="HtmlFieldControl" FieldName="System.Description" Label="Descripción" LabelPosition="Top" Dock="Fill" />
+              </Column>
+              <Column PercentWidth="50">
+                <Control ReadOnly="True" Type="WorkItemLogControl" FieldName="System.History" Label="&amp;Historial" LabelPosition="Top" Dock="Fill" />
+              </Column>
+            </Group>
+          </Tab>
+          <Tab Label="Vínculos">
+            <Control ReadOnly="True" Type="LinksControl" Name="ChildLinks" Label="Solicitudes" LabelPosition="Top">
+              <LinksControlOptions>
+                <WorkItemLinkFilters FilterType="include">
+                  <Filter LinkType="System.LinkTypes.Hierarchy" />
+                </WorkItemLinkFilters>
+                <WorkItemTypeFilters FilterType="include">
+                  <Filter WorkItemType="Respuesta de revisión de código" />
+                </WorkItemTypeFilters>
+                <ExternalLinkFilters FilterType="excludeAll" />
+                <LinkColumns>
+                  <LinkColumn RefName="System.ID" />
+                  <LinkColumn RefName="System.WorkItemType" />
+                  <LinkColumn RefName="System.AssignedTo" />
+                  <LinkColumn RefName="System.State" />
+                  <LinkColumn RefName="Microsoft.VSTS.Common.ClosedBy" />
+                  <LinkColumn RefName="Microsoft.VSTS.CodeReview.ClosedStatus" />
+                  <LinkColumn RefName="Microsoft.VSTS.Common.ClosedDate" />
+                  <LinkColumn LinkAttribute="System.Links.Comment" />
+                </LinkColumns>
+              </LinksControlOptions>
+            </Control>
+          </Tab>
+        </TabGroup>
+      </Layout>
+    </FORM>
+  </WORKITEMTYPE>
+</Witd:WITD>
