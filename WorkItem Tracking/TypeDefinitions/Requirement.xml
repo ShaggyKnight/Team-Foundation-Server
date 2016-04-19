@@ -128,7 +128,7 @@
         <REQUIRED />
         <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="Pendiente" />
-          <LISTITEM value="Aprovada" />
+          <LISTITEM value="Aprobada" />
           <LISTITEM value="Rechazada" />
         </ALLOWEDVALUES>
         <DEFAULT from="value" value="Pendiente" />
@@ -654,7 +654,7 @@
                     <Control Type="FieldControl" FieldName="System.AssignedTo" Label="Asi&amp;gnado a" LabelPosition="Left" />
                     <Control Type="FieldControl" FieldName="System.State" Label="&amp;Estado" LabelPosition="Left" />
                     <Control Type="FieldControl" FieldName="System.Reason" Label="Motivo" LabelPosition="Left" />
-                    <Control Type="FieldControl" FieldName="Opendat.VSTS.Common.Triage" Label="Evaluación RP" LabelPosition="Left" />
+                    <Control Type="FieldControl" FieldName="Open.VSTS.Common.Triage" Label="Evaluación QA" LabelPosition="Left" />
                   </Column>
                 </Group>
                 <Group Label="Planeación">
