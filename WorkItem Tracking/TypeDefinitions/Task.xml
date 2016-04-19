@@ -109,11 +109,10 @@
       <FIELD name="Disciplina" refname="Microsoft.VSTS.Common.Discipline" type="String" reportable="dimension">
         <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="Inicialización" />
-          <LISTITEM value="Análisis" />
-          <LISTITEM value="Desarrollo" />
+          <LISTITEM value="Análisis y Desarrollo" />
           <LISTITEM value="Revisión de Par" />
-          <LISTITEM value="Prueba" />
-          <LISTITEM value="Release" />
+          <LISTITEM value="Testing y Publicación" />
+
         <!--
           <LISTITEM value="Experiencia del usuario" />
           <LISTITEM value="Datos académicos del usuario" />
