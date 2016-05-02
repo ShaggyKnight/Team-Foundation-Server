@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cat:CATEGORIES xmlns:cat="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/categories">
+  <!-- Usage: for resilience in Test system. Even if WITs have different name, they can be referred to by the category -->
+  
+  <!--************************* Categorías Opendat ***************************-->
+  <CATEGORY name="Categoría del Cliente" refname="Opendat.ClientCategory">
+    <DEFAULTWORKITEMTYPE name="Cliente" />
+  </CATEGORY>
+  <CATEGORY name="Categoría de Publicación" refname="Opendat.PublicacionCategory">
+    <DEFAULTWORKITEMTYPE name="Publicación" />
+  </CATEGORY>
+  <CATEGORY name="Categoría de la Solicitud de soporte" refname="Opendat.SuportRequestCategory">
+    <DEFAULTWORKITEMTYPE name="Solicitud de soporte" />
+  </CATEGORY>
+  <CATEGORY name="Categoría de la Solicitud de servicio" refname="Opendat.ServiceRequestCategory">
+    <DEFAULTWORKITEMTYPE name="Solicitud de soporte" />
+  </CATEGORY>
+  <!--************************* Categorías Opendat ***************************-->
+
+  <!--************************* Categorías Modificadas para Opendat ***************************-->
+  <CATEGORY name="Categoría de requisito" refname="Microsoft.RequirementCategory">
+    <DEFAULTWORKITEMTYPE name="Requisito" />
+    <WORKITEMTYPE name="Solicitud de soporte"/>
+    <WORKITEMTYPE name="Solicitud de servicio"/>
+  </CATEGORY>
+  <CATEGORY name="Categoría de tarea" refname="Microsoft.TaskCategory">
+    <DEFAULTWORKITEMTYPE name="Tarea" />
+    <WORKITEMTYPE name="Error" />
+    <WORKITEMTYPE name="Problema" />
+  </CATEGORY>
+  <!--
+  <CATEGORY name="Categoría de característica" refname="Microsoft.FeatureCategory">
+    <DEFAULTWORKITEMTYPE name="Característica" />
+  </CATEGORY>
+    -->
+  
+  <!--************************* Categorías Modificadas para Opendat ***************************-->
+  
+  <CATEGORY name="Categoría de error" refname="Microsoft.BugCategory">
+    <DEFAULTWORKITEMTYPE name="Error" />
+  </CATEGORY>
+  <CATEGORY name="Categoría de caso de prueba" refname="Microsoft.TestCaseCategory">
+    <DEFAULTWORKITEMTYPE name="Caso de prueba" />
+  </CATEGORY>
+  <CATEGORY name="Categoría de paso compartido" refname="Microsoft.SharedStepCategory">
+    <DEFAULTWORKITEMTYPE name="Pasos compartidos" />
+  </CATEGORY>
+  <CATEGORY name="Categoría de parámetro compartido" refname="Microsoft.SharedParameterCategory">
+    <DEFAULTWORKITEMTYPE name="Parámetro compartido" />
+  </CATEGORY>
+  <CATEGORY name="Categoría Solicitud de revisión de código" refname="Microsoft.CodeReviewRequestCategory">
+    <DEFAULTWORKITEMTYPE name="Solicitud de revisión de código" />
+  </CATEGORY>
+  <CATEGORY name="Categoría Respuesta de revisión de código" refname="Microsoft.CodeReviewResponseCategory">
+    <DEFAULTWORKITEMTYPE name="Respuesta de revisión de código" />
+  </CATEGORY>
+  <CATEGORY name="Categoría Solicitud de comentarios" refname="Microsoft.FeedbackRequestCategory">
+    <DEFAULTWORKITEMTYPE name="Solicitud de comentarios" />
+  </CATEGORY>
+  <CATEGORY name="Categoría Respuesta a comentarios" refname="Microsoft.FeedbackResponseCategory">
+    <DEFAULTWORKITEMTYPE name="Respuesta a comentarios" />
+  </CATEGORY>
+  <CATEGORY name="Categoría de plan de pruebas" refname="Microsoft.TestPlanCategory">
+    <DEFAULTWORKITEMTYPE name="Plan de pruebas" />
+  </CATEGORY>
+  <CATEGORY name="Categoría de conjunto de pruebas" refname="Microsoft.TestSuiteCategory">
+    <DEFAULTWORKITEMTYPE name="Conjunto de pruebas" />
+  </CATEGORY>
+  <CATEGORY name="Categoría Tipos ocultos" refname="Microsoft.HiddenCategory">
+    <DEFAULTWORKITEMTYPE name="Solicitud de revisión de código" />
+    <WORKITEMTYPE name="Respuesta de revisión de código" />
+    <WORKITEMTYPE name="Solicitud de comentarios" />
+    <WORKITEMTYPE name="Respuesta a comentarios" />
+    <WORKITEMTYPE name="Pasos compartidos" />
+    <WORKITEMTYPE name="Parámetro compartido" />
+    <WORKITEMTYPE name="Plan de pruebas" />
+    <WORKITEMTYPE name="Conjunto de pruebas" />
+  </CATEGORY>
+</cat:CATEGORIES>

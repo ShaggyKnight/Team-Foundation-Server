@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tasks>
+  <task id="LinkTypes" name="Definiciones de LinkType" plugin="Microsoft.ProjectCreationWizard.WorkItemTracking" completionMessage="Tipos de vínculos de elementos de trabajo creados">
+    <taskXml>
+      <LINKTYPES>
+        <LINKTYPE fileName="WorkItem Tracking\LinkTypes\SharedStep.xml" />
+        <LINKTYPE fileName="WorkItem Tracking\LinkTypes\TestedBy.xml" />
+        <LINKTYPE fileName="WorkItem Tracking\LinkTypes\Affects.xml" />
+        <LINKTYPE fileName="WorkItem Tracking\LinkTypes\SharedParameterLink.xml" />
+      </LINKTYPES>
+    </taskXml>
+  </task>
+  <task id="WITs" name="Definiciones de WorkItemType" plugin="Microsoft.ProjectCreationWizard.WorkItemTracking" completionMessage="Tipos de elemento de trabajo creados">
+    <dependencies>
+      <dependency taskId="LinkTypes" />
+    </dependencies>
+    <taskXml>
+      <WORKITEMTYPES>
+       <!--****************** Elementos Opendat ********************-->
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\Cliente.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\SuportRequest.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\Publicación.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\ServiceRequest.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\Requirement.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\Task.xml" />
+        <!--***************** Elementos Opendat ********************-->
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\Bug.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\CodeReviewRequest.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\CodeReviewResponse.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\FeedbackRequest.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\FeedbackResponse.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\Issue.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\ChangeRequest.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\Risk.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\Review.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\TestCase.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\TestPlan.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\TestSuite.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\SharedStep.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\SharedParameter.xml" />
+      </WORKITEMTYPES>
+    </taskXml>
+  </task>
+  <task id="Queries" name="Definiciones de consultas almacenadas" plugin="Microsoft.ProjectCreationWizard.WorkItemTracking" completionMessage="Consultas de elemento de trabajo cargadas">
+    <dependencies>
+      <dependency taskId="WITs" />
+    </dependencies>
+    <taskXml>
+      <QUERIES>
+        <Permission allow="Read, Contribute, Delete, ManagePermissions, FullControl" identity="[SERVER]\$$PROJECTCOLLECTIONADMINGROUP$$" />
+        <Permission allow="Read, Contribute, Delete, ManagePermissions, FullControl" identity="[$$PROJECTNAME$$]\$$PROJECTADMINGROUP$$" />
+        <Permission allow="Read" identity="[$$PROJECTNAME$$]\Readers" />
+        <Permission allow="Read" identity="[$$PROJECTNAME$$]\Colaboradores" />
+        <Permission allow="Read" identity="[$$PROJECTNAME$$]\Administradores de compilación" />
+        <QueryFolder name="Desarrollo y pruebas">
+          <Query name="Errores activos" fileName="WorkItem Tracking\Queries\ActiveBugs.wiq" />
+          <Query name="Tareas de desarrollo" fileName="WorkItem Tracking\Queries\DevelopmentTasks.wiq" />
+          <Query name="Mis casos de prueba" fileName="WorkItem Tracking\Queries\MyTestCases.wiq" />
+          <Query name="Tareas abiertas" fileName="WorkItem Tracking\Queries\OpenTasks.wiq" />
+          <Query name="Casos de prueba abiertos" fileName="WorkItem Tracking\Queries\OpenTestCases.wiq" />
+          <Query name="Errores resueltos" fileName="WorkItem Tracking\Queries\ResolvedBugs.wiq" />
+          <Query name="Tareas de prueba" fileName="WorkItem Tracking\Queries\TestTasks.wiq" />
+        </QueryFolder>
+        <QueryFolder name="Planeación y seguimiento">
+          <Query name="Requisitos del cliente" fileName="WorkItem Tracking\Queries\CustomerRequirements.wiq" />
+          <Query name="Requisitos abiertos" fileName="WorkItem Tracking\Queries\OpenRequirements.wiq" />
+          <Query name="Elementos de trabajo abiertos" fileName="WorkItem Tracking\Queries\OpenWorkItems.wiq" />
+          <Query name="Requisitos del producto" fileName="WorkItem Tracking\Queries\ProductRequirements.wiq" />
+          <Query name="Elementos de trabajo propuestos" fileName="WorkItem Tracking\Queries\ProposedWorkItems.wiq" />
+          <Query name="Requisitos abiertos sin casos de prueba" fileName="WorkItem Tracking\Queries\RequirementsWithoutTestCases.wiq" />
+          <Query name="Revisiones" fileName="WorkItem Tracking\Queries\Reviews.wiq" />
+          <Query name="Elementos de trabajo sin evaluar" fileName="WorkItem Tracking\Queries\UntriagedWorkItems.wiq" />
+          <Query name="Desglose del trabajo" fileName="WorkItem Tracking\Queries\WorkBreakdown.wiq" />
+          <Query name="Elementos de trabajo con valores de resumen" fileName="WorkItem Tracking\Queries\WorkItemsWithSummaryValues.wiq" />
+        </QueryFolder>
+        <QueryFolder name="Administración de cambios">
+          <Query name="Solicitudes de cambio" fileName="WorkItem Tracking\Queries\ChangeRequests.wiq" />
+          <Query name="Abrir solicitudes de cambio con requisitos" fileName="WorkItem Tracking\Queries\OpenChangeRequestsWithRequirements.wiq" />
+          <Query name="Requisitos con solicitudes de cambio abiertas" fileName="WorkItem Tracking\Queries\RequirementsWithOpenChangeRequests.wiq" />
+        </QueryFolder>
+        <QueryFolder name="Solución de problemas">
+          <Query name="Elementos de trabajo bloqueados" fileName="WorkItem Tracking\Queries\BlockedWorkItems.wiq" />
+          <Query name="Acciones correctivas" fileName="WorkItem Tracking\Queries\CorrectiveActions.wiq" />
+          <Query name="Acciones de mitigación" fileName="WorkItem Tracking\Queries\MitigationActions.wiq" />
+          <Query name="Incidencias abiertas" fileName="WorkItem Tracking\Queries\OpenIssues.wiq" />
+          <Query name="Riesgos" fileName="WorkItem Tracking\Queries\Risks.wiq" />
+        </QueryFolder>
+        <Query name="Mis elementos de trabajo" fileName="WorkItem Tracking\Queries\MyWorkItems.wiq" />
+        <Query name="Comentarios" fileName="WorkItem Tracking\Queries\Feedback.wiq" />
+      </QUERIES>
+    </taskXml>
+  </task>
+  <task id="Categories" name="Definiciones de categorías" plugin="Microsoft.ProjectCreationWizard.WorkItemTracking" completionMessage="Categorías de tipos de elemento de trabajo creadas">
+    <dependencies>
+      <dependency taskId="WITs" />
+    </dependencies>
+    <taskXml>
+      <CATEGORIES fileName="WorkItem Tracking\Categories.xml" />
+    </taskXml>
+  </task>
+  <task id="ProcessConfiguration" name="Configuración del proceso" plugin="Microsoft.ProjectCreationWizard.WorkItemTracking" completionMessage="Configuración del proceso cargada">
+    <dependencies>
+      <dependency taskId="WITs" />
+      <dependency taskId="Categories" />
+    </dependencies>
+    <taskXml>
+      <PROCESSCONFIGURATION>
+        <ProjectConfiguration fileName="WorkItem Tracking\Process\ProcessConfiguration.xml" />
+      </PROCESSCONFIGURATION>
+    </taskXml>
+  </task>
+  <task id="WIs" name="WorkItems" plugin="Microsoft.ProjectCreationWizard.WorkItemTracking" completionMessage="WorkItems uploaded">
+    <dependencies>
+      <dependency taskId="WITs" />
+    </dependencies>
+    <taskXml>
+      <WORKITEMS>
+        <WI type="Tarea">
+          <FIELD refname="System.Title" value="Analisis de impacto" />
+          <FIELD refname="System.AreaPath" value="$$PROJECTNAME$$" />
+          <FIELD refname="System.IterationPath" value="$$PROJECTNAME$$" />
+          <FIELD refname="System.State" value="Pendiente" />
+          <FIELD refname="System.Reason" value="nuevo" />
+          <FIELD refname="System.Description" value="Se ha de realizar un analisis de impacto del cambio de alcance, sobre el producto o sus caracteristicas y se ha de reflejar en la pestaña de impacto." />
+          <FIELD refname="Microsoft.VSTS.Common.Severity" value="3 - Medio" />
+          <FIELD refname="Microsoft.VSTS.Common.Discipline" value="Análisis" />
+          <FIELD refname="Microsoft.VSTS.CMMI.TaskType" value="Planeado" />
+          <FIELD refname="Microsoft.VSTS.CMMI.Blocked" value="No" />
+        </WI>
+        <WI type="Tarea">
+          <FIELD refname="System.Title" value="Validación de requerimientos" />
+          <FIELD refname="System.AreaPath" value="$$PROJECTNAME$$" />
+          <FIELD refname="System.IterationPath" value="$$PROJECTNAME$$" />
+          <FIELD refname="System.State" value="Pendiente" />
+          <FIELD refname="System.Description" value="Se han de validar las actividades a realizarse en el cambio de alcance, y asegurarse que se han comprendido a cabalidad" />
+          <FIELD refname="Microsoft.VSTS.Common.Severity" value="3 - Medio" />
+          <FIELD refname="Microsoft.VSTS.Common.Discipline" value="Análisis" />
+          <FIELD refname="Microsoft.VSTS.CMMI.TaskType" value="Acción correctiva" />
+          <FIELD refname="Microsoft.VSTS.CMMI.Blocked" value="No" />
+        </WI>
+        <WI type="Tarea">
+          <FIELD refname="System.Title" value="Solicitud de Objetos" />
+          <FIELD refname="System.AreaPath" value="$$PROJECTNAME$$" />
+          <FIELD refname="System.IterationPath" value="$$PROJECTNAME$$" />
+          <FIELD refname="System.State" value="Pendiente" />
+          <FIELD refname="System.Description" value="Solicitar los Objetos necesarios para el desarrollo del cambio de alcance al CM" />
+          <FIELD refname="Microsoft.VSTS.Common.Severity" value="3 - Medio" />
+          <FIELD refname="Microsoft.VSTS.Common.Discipline" value="Desarrollo" />
+          <FIELD refname="Microsoft.VSTS.CMMI.TaskType" value="Planeado" />
+          <FIELD refname="Microsoft.VSTS.CMMI.Blocked" value="No" />
+        </WI>
+        <WI type="Tarea">
+          <FIELD refname="System.Title" value="Contruccion" />
+          <FIELD refname="System.AreaPath" value="$$PROJECTNAME$$" />
+          <FIELD refname="System.IterationPath" value="$$PROJECTNAME$$" />
+          <FIELD refname="System.State" value="Pendiente" />
+          <FIELD refname="System.Description" value="Desarrollar el cambio de alcance" />
+          <FIELD refname="Microsoft.VSTS.Common.Severity" value="3 - Medio" />
+          <FIELD refname="Microsoft.VSTS.Common.Discipline" value="Desarrollo" />
+          <FIELD refname="Microsoft.VSTS.CMMI.TaskType" value="Planeado" />
+          <FIELD refname="Microsoft.VSTS.CMMI.Blocked" value="No" />
+        </WI>
+        <WI type="Tarea">
+          <FIELD refname="System.Title" value="Documentación" />
+          <FIELD refname="System.AreaPath" value="$$PROJECTNAME$$" />
+          <FIELD refname="System.IterationPath" value="$$PROJECTNAME$$" />
+          <FIELD refname="System.State" value="Pendiente" />
+          <FIELD refname="System.Description" value="Construir los manuales&#xD;&#xA;  - AS Built&#xD;&#xA;  - Instalación&#xD;&#xA;  - Usuario&#xD;&#xA;  - Operación" />
+          <FIELD refname="Microsoft.VSTS.Common.Severity" value="2 - Alto" />
+          <FIELD refname="Microsoft.VSTS.Common.Discipline" value="Desarrollo" />
+          <FIELD refname="Microsoft.VSTS.CMMI.TaskType" value="Planeado" />
+          <FIELD refname="Microsoft.VSTS.CMMI.Blocked" value="No" />
+        </WI>
+        <WI type="Tarea">
+          <FIELD refname="System.Title" value="Revisión" />
+          <FIELD refname="System.AreaPath" value="$$PROJECTNAME$$" />
+          <FIELD refname="System.IterationPath" value="$$PROJECTNAME$$" />
+          <FIELD refname="System.State" value="Pendiente" />
+          <FIELD refname="System.Description" value="Revision de los documentos generados, y de los elementos de TFS" />
+          <FIELD refname="Microsoft.VSTS.Common.Severity" value="3 - Medio" />
+          <FIELD refname="Microsoft.VSTS.Common.Discipline" value="Prueba" />
+          <FIELD refname="Microsoft.VSTS.CMMI.TaskType" value="Acción correctiva" />
+          <FIELD refname="Microsoft.VSTS.CMMI.Blocked" value="No" />
+        </WI>
+        <WI type="Tarea">
+          <FIELD refname="System.Title" value="Testing" />
+          <FIELD refname="System.AreaPath" value="$$PROJECTNAME$$" />
+          <FIELD refname="System.IterationPath" value="$$PROJECTNAME$$" />
+          <FIELD refname="System.State" value="Pendiente" />
+          <FIELD refname="System.Description" value="Pruebas funcionales." />
+          <FIELD refname="Microsoft.VSTS.Common.Severity" value="2 - Alto" />
+          <FIELD refname="Microsoft.VSTS.Common.Discipline" value="Prueba" />
+          <FIELD refname="Microsoft.VSTS.CMMI.TaskType" value="Planeado" />
+          <FIELD refname="Microsoft.VSTS.CMMI.Blocked" value="No" />
+        </WI>
+      </WORKITEMS>
+    </taskXml>
+  </task>
+</tasks>
