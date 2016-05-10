@@ -1,0 +1,16 @@
+Opendat 
+	Matencion de Proceso
+Estructura Organizacional TFS-Opendat
+	
+	---> Opendat ( Collection)
+		# Operaciones Empresa
+		|---> Ordenes de Cambio (Team proyect)
+		|	|---> Orden  de Cambio (Change Request)
+		|	|	|---> Requerimiento 1
+		|	|	|	|--> Tarea 1 
+		|	|	|	|--> Tarea 2
+		|	|	|	|--> tarea 3
+		|	|	|---> Requerimiento 2
+		|	|	|---> Requerimiento 3
+		|---> Umbrall (team Proyect)
+		|---> Otros Proyectos

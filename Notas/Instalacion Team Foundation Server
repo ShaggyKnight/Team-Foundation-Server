@@ -1,0 +1,69 @@
+Instalacion Team Foundation Server
+
+Licencia : BVGTF-T7MVR-TP46H-9Q97G-XBXRB
+
+licencia express : 7PDGX-K8G48-99T9W-BDRH2-BG2XK
+
+Instalacion Local - Cliente
+	windows 7 x64
+
+	Problemas y complicaciones.
+		utilizando configuracion basica, instalando SQL server express
+		arroja errores de restriccion.
+			
+			/*
+
+			el idioma de presentación de Windows y el formato de configuración regional deben coincidir con el idioma de instalación de Team Foundation Server para que este asistente instale SQL Server Express
+
+			*/
+
+
+
+
+Instalacion Servidor - (debe ser de 64 bits)
+	Windows Server 2012 x64
+
+	Instalacion de Windows server 2008 en maquina virtual 
+
+	/*	
+		Requisitos Para instalacion en servidor de TFS
+			TFS 2012	Windows Server 2012 R2 (Essentials, Standard, Datacenter)
+			Windows Server 2012
+			Windows Server 2008 R2 (Standard, Enterprise, Datacenter)
+			Windows Server 2008 (minimum SP2)
+			Windows Small Business Server 2011 (Standard, Essentials, Premium Add-On)
+			Windows Home Server 2011
+	*/
+
+	La eleccion de windows server es : Windows Server 2008 R2 Enterprice instalado en VMware workstation 12 virtual machine
+
+	Licencia : 4DRHB-YCDQJ-J8M29-6P6CM-H4D2R
+
+	Configuracion servidor:
+		Computer Name: Opendat-TFS
+
+	Sitio Web para la aplicacion web de ShaePoint : http://Opendat-TFS/sites
+
+	Team Foundation Server: http://opendat-tfs:8080/tfs
+
+Compatibilidad entre versiones de Visual Studio y TFS
+
+	Instalacion de Visual Studio Team System 2005 Team Explorer en Visual Studio 2005 para conexion con TFS
+		# VSTFClient	
+		# Service Pack 1 for visual Studio 2005	
+
+
+######################################################
+Instalacion 
+	Basado en los manuales .ch #encontrados en Instalation/manual
+
+	Sobre Idioma.
+		el idioma elegido debe estar en el mismo que el de windows, sql server, y team foundation and sharepoint
+	
+Sharepoint:
+	cuenta de acceso a BD
+		user TFSService
+		pass opendat123
+
+	cuenta de configuracion sharepoint 
+		pass Opendat2016

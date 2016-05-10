@@ -1,0 +1,30 @@
+Presentacion.
+	Enfocadaal jefe de proyecto.
+
+	Que es lo que debe saber un jefe de proyecto?
+		Un jefe de proyecto ha de conocer como trabajar con la herramienta.
+
+	Que debe conocer?
+		Ha de conocer la metodologia empleada, y la idea detras de ésta.
+
+		La metodologia empleada es la definida por microsoft, la cual posee buenas practicas y experiencias recabadas por la compañia con años de experiencia, se basa en el manejo de un portafolio.
+			Crear el trabajo pendiente : https://msdn.microsoft.com/es-cl/library/ee518933(v=vs.120).aspx
+
+		Son metodologias de trabajo agile, por lo tanto se puede ser flexible con la forma de planificacion, dejando el trabajo principal ordenado de modo que los elementos superiores denoten los que deben ser realizados en primera instancia.
+
+		Ha de conocer la forma de trabajar con el panel Kanban
+
+		Crear elementos degtrabajo y como vincularlos
+
+		Trabajar con trabajos pendientes de cartera: https://msdn.microsoft.com/es-cl/library/dn237341(v=vs.120).aspx
+
+		LLenar los formularios de elementos, y entender los conceptosy la idea de estos
+
+	Porque
+
+		Conocer la metodologia le permite planear y entender lo que hace al momento de usar la herramienta, de esta forma administrar mejor el trabajo pendiente de un trabajo.
+
+		Conocer de la metodologia agile, permite entender de mejor forma como se comporta team foundation server
+
+		EL panel kanban de metodologias de trabajo
+

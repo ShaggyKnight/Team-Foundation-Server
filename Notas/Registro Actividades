@@ -1,0 +1,540 @@
+Registro Actividades
+
+6/01/2016
+	. Asignacion Investigacion sobre Team Foundation Server (TFS)
+		Objetivo: Implementar Team Foundation Server en Opendat
+
+	. Investigacion sobre Team Foundation Server
+		ver Team Foundation Server Notes - Why TFS
+
+	. Descarga Team Foundation Server
+		Peticion Licencia TFS
+		Instalacion local TFS
+		Creacion de Maquina Virtual (VMware PLaye) Windows Server 2008
+		solicitud licencia windows server 2008 R2
+		Instalacion windows Server 2008 R2 en maquina virtual
+		Instalacion SQL Server en Windows Server 2008 R2 (inconcluso)
+
+7/01/2016
+	. Continuacion Instalacion TFS on Virtual machine
+		Instalacion .Net Framework 4.5
+		Instalacion SQL Server
+				Notes
+					Instance ID: MSSQLSERVER
+					Server Administrator : OPENDAT-TFS\Opendat-TFS
+
+		Instalacion SharePoint 2013
+			Instalacion de Prerequisitos (necesarios para TFS)
+			Instalacion Sharepoint Server 2013
+				Especificacion Paramentros Base de Datos
+					Servidor de la base de Datos: OPENDAT-TFS
+					Nombre de la Base de Datos:  SharePoint_Config
+						# Modificacion de Nombre de la Base de Datos --> Nuevo Nombre : SharePoint_ConfigMOD
+
+					Nombre de Usuario: opendat\etapia	
+					Contraseña : Open2016
+					Puerto : 17012
+					Direccion de Admisitracion: http://opendat-tfs:17012/
+
+			FALLIDA-- Errores con usuario administrador de la base de datos, falta acceso.
+				# Posiblemente se use la configuracion existente de TFS en el servidor de la compañia.
+
+8/01/2016
+
+		Finalizada la configuracion de base de datos de SharePoint
+		Continuacion instalacion y configuracion de Team Foundation Server
+		 # Fallida, se completo la instalcion, se tiene el servicio local, sin embargo no se puede acceder con las credenciales web
+
+11/01/2016
+	
+		Inicio Planificacion Implementacion de TFS Opendat (Ver plan de Implementacion TFS)
+			Arquitectura de TFS, adaptabilidad a los componentes incorporados en Opendat
+
+			Modelo Actual de negocios de Opendat 
+				# Como afecta la implemetacion de TFS al modelo de negocios en Opendat
+				# Paradigma de modelo de desarrollo, CMMI, es necesario cambiarlo a metodologias Agiles? se ha hablado de ellas es posible un cambio en el tiempo?
+				# 
+
+			Decision de uso de Servidor para TFS  
+				Single Server - Multiserver
+					# Single server: mayor compatibilidad con la organizacion en teminos de simplicidad (Application and Data en un solo servidor)
+
+				Infraestructura local parece la mejor alternativa para la implementacion ( on-premises)
+
+			Decision de uso de sistema en base a usuarios que lo utilizaran
+				# Definicion de Roles de uso del sistema
+
+			Proyeccion en el tiempo
+				# Proyeccion de Opendat haciendo uso de TFS, crecimiento de la organizacion, 
+
+			Proyectos Actuales dentro de la Organizacion
+				# Posibles nuevos proyectos aparte de Umbral y SgCast
+
+			Decision de modelo de colecciones para TFS
+				# Una sola coleccion otorga mayores beneficios para los terminos de la organizacion
+				# Motivos:
+				#		mayor capacidad de Recursos Compartidos entre proyectos y equipos de trabajo.
+
+			Definicion de Estrategia de proyectos de equipo.
+				# Existen diferencias entre los equipos de trabajo, deben diferenciarse de alguna forma?
+				# Diferencias entre equipos de ciudades ( trabajan en el mismo proyecto SGCAST? )
+				# Proyecciones a futuros proyectos, y cambios en el equipo de trabajo?
+
+			Fin Instalacion TFS- Agregados Usuarios.
+
+12/01/2016
+		Inicio Pruebas TFS - Configuracion de Repositorios.
+		# se realiza configuracion de TF Build
+		# Inicializacion de nueva colleccion para alojar los proyectos
+		# Conexion entre visual studio y colleccion creada
+				# No olvidar agregar los usuarios pertenencientes a un grupo de trabajo en TFS Admin
+		# Pruebas con el sistema, repositorios funcionando correctamente
+		# Visualizacion de red funcionando correctamente
+		# Investigacion Test manager para TFS
+
+14/01/2016
+		
+		Instalacion Test Manager para TFS
+		Continuacion investigacion sobre TFS
+		Preparacion Presentacion, Alcance del proyecto de TFS
+ 
+15/01/2016
+		Investigacion Team Foundation Server
+			# Valor para Opendat
+		Revision Presentacion Alcance Proyecto
+			# revisada por Victor Barra
+
+18/01/2016
+
+		Team Foundation Server como valor para Opendat
+			#Presentacion a Victor Devia 
+		Presentacion sobre valor de TFS para Opendat
+			# Se plantearon los objetivos que se planea seguir para la implemtacion de TFS 
+			# en opendat y como se abordará la implementacion de este.
+			# se acuerda que existirá una puesta en marcha con el proyecto de ISGCAS
+			# Hay que capacitar a los stakeholders del sistema
+			# Preparar un manual de Usuario para la capacitacion y control de Proyectos en TFS
+			# Se acuerda realizar una presentacion el día viernes 22/01/2016 donde se muestra
+			# el avance sobre TFS
+				# Los avances que se mostraran en la presentacion se detallan en el documento To Do
+			# revision caracteristica de check out
+
+19/01/2016
+	
+		Pruebas del Sistema y Experimentacion
+			# Pruebas desarrolladas sobre el Control de versiones
+			# Objetivo: definir con exito un proyecto y controlarlo como jefe de Proyecto.
+			# revisar el control de versiones entre los miembros de un proyecto, enfasis en check out y proteccion de archivos
+		# Tareas Tecnicas Pendientes
+
+20/01/2016
+		
+		Preparacion Presentacion para 22/01/2016	
+			# Ventajas de la aplicacion desde el punto de Vista del Negocio
+			# Como la herramienta aporta a la situacion actual de la empresa
+			# Posibles Riesgos al implementar el ALM
+			# Como el nuevo ALM crea un valor para OPENDAT
+			# De que forma TFS se puede implemetar con el menor riesgo posible ( Control de Versiones, y Testing )
+			Seguir proyecto orientado a PMBOK,
+				# Matriz de Riesgos 
+				# Evaluar Tiempos 
+				# Oportunidades de Crecimiento con TFS
+				# 
+
+21/01/2016
+		Investigacion sobre valor de tfs a Opendat
+			# consideracion de modelo de negocios 
+			# evaluacion en base a criterios establecidos
+			# consultas a personal involucrado
+			# elaboracion de mapa mental de funcionamiento de la empresa
+		Puebas de integracion entre tFS y visual Studio 2005
+
+22/01/2016
+		
+		Finalizacion presentacion avance
+			# se incluyeron en la presentacioon:
+			# inclusion de criterios de evaluacion
+			# ventajas de la adopcion de TFS
+			# caracteristicas actuales y abordables al adoptar TFS
+			# Riesgos de adopcion de la Herramienta
+			# Recursos necesarios ante la adopcion de TFS
+
+
+25/01/2016
+		
+		Presentacion Avance TFS.
+		 # En la presentacion se discutió, sobre el alcance de TFS en la organizacion.
+		 	# se tomaron encuenta temas de gestion de proyectos para UmbraL.
+		 	# Dirigir TFS a caracteristicas de gestion de proyectos a Umbral
+		 	# Como se va a obtener un beneficio de parte de TFS a la Organizacion de Proyectos en Umbral?
+		 	# de que forma los nuevos proyectos se potenciarán mediante el uso de TFS 
+		 	# Tomar en consideracion los nuevos proyectos hacia TFS
+		 	# Opendat como compañia y control y mantencion de sus productos a travez de TFS
+		 	# Orientacion de TFS - > a modo de obtener un beneficio productivo con la mantencion de recursos
+		 			# Orientar TFS a modo se gestor de Proyectos
+		 				# Realizar capacitacione y orientacion a distintos recursos de TFS
+		 				# Como las generacion de Pruebas y Sprints dentro de TFS se adecuan a las capacidades actuales de OPENDAT
+		 				# Lograr establecer TFS como un control de versiones y gestor de Proyectos a modo de ser UN ALM productivo para Opendat.
+		 				# Vender o no vender=?¡¡¡?¡
+		 				# Investigar hacerca de las caracteristicas de gestion y control de documentos.
+		 
+
+		 Preparar Nueva Presentacion para dia Viernes.
+		 	# Sobre como se puede implementar TFS en los proyectos de Umbral, hacer participe a los Jefes de Proyecto.
+		 	# Metas a corto plazo de TFS ( matar una mosca con un cañon? ) 
+		 	# Como Herraminta , constituye una adopcion propia de las caracteristicas de TFS hacia Opendat.
+		 	# A modo de ALM, cumple con las caracteristicas requeridas por OPENDAT, como controlar los cambios de ALcance mediante TFS?=
+		 	# Es posible una administracion de recursos y proyectos mediante TFS 
+		 	# Control de Codigo fuente a modo de obtener beneficios.
+
+		 	# que caracteristicas de TFS sirven para garantizar los procesos de mantencion de la compañia hacia los clientes.
+
+		 Investigar Recursos de Check in, Check Out,  caracteristicas tecnicas de TFS.
+
+		 	# ventajas, Oportunidades al implemntar TFS a modo de que Opendat continue sus procesos de cambio de alcance y mantenimineto de las aplicaciones.
+			
+			# destacar, y poner en claro la forma en que se desarrolla el proceso de desarrollo, y como se integra con las pruebas.
+				# investigar el area de pruebas de TFS, y como se puede integrar  con los actuales cambios de alcance de Opendat
+				# establecer un proceso de control de aplicacion, donde se refleje el uso de la herramienta en un cambio de alcance real.
+				# mostar el uso de la herramienta, y como se pretende que esta se implemente a modo de controlar los cambios de alcance reales de Opendat.
+
+			# Inicializar las tareas de implementacion de TFS en los servidores y orientar los recursos a las Nuevas Caracteristicas que tendrá Umbral.
+			# Realizar Pruebas de Funcionalidad, y apoyarse con lls desarrolladores.
+
+26/01/2016
+	
+		Inicio Pruebas de Aplicacion.
+			# Objetivo: Lograr el proceso de Inicio a Fin, a modo de controlar los requerimientos y monitorizar
+			# Objetivo: Secundario, Integrar las Pruebas que deben realizarse en tFS
+				# Definir como adaptar los casos de Pruebas actuales a TFS
+		Investigacion y Documentacion de las Fases que se requieren para llevar a cabo un monitoreo de Desarrollo.
+			# Documentacion  de Ventanas y caracteristicas disponibles en TFS
+			# Investigaccion sobre la adecuacion del proceso de seguimiento de requerimientos de Opendat en TFS.
+
+
+
+27/01/2016
+		
+		Ingreso planificacion de proyecto de implemetacion de TFS a  Team Foundatiom
+			# Obejetivo: Tratar como un proyecto de Team Foundation la Implementacion del mismo, a modo de representar las capacidades que se
+			# pueden obtener mediante la adopcion de team foundation server
+		Planificacion de las iteraciones y como estas se reflejan en el esquema actual de Opendat
+			# integrar las caracteristicas de TFS con el proceso de desarrollo de Opendat
+			# comprender el modelo organizativo presente en Opendat y encontrar una representacion acorde que pueda ser usada
+			# en la herramienta de TFS
+		Preparar presentacion para reunion pre avance 
+			# Objetivo mostrar la estructura organizativa (orientacion que se le puede dar a TFS) en relacion a los proyectos o cambios de alcances
+			# y entregar una vision de como poder abordarlos sin modificar las caracteristicas de Opendat, adpatando las necesidades a lo que puede 
+			# ofrecer TFS.
+			# Definir los niveles de proyectos, clientes y  cambios de alcance a ser visualizados por la caracteristicas de Opendat.
+			# Objetivo secundario: Obtener una vision desde el punto de vista de el jefe de proyecto de como se observa la usabiliadad de la herramienta
+			# y como se adapta a los requerimientos administrativos de Opendat.
+			# Enteder el funcionamiento de la planeacion exisente en Opendat y como puedo reflejarla en TF
+			# Dar a conocer las principales caracteristicas de TF y como se pueden abordar en Opendat.
+			# recalcar la trazabilidad de requerimeintos y clientes a travez de TFS y como se ha avanzado en la misma, indicar a su vez como
+			# se pueden manejar los documentos en base a una tarea y como se pueden relacionar dependencias de tareas y requerimientos a 
+			# otros. indicar como los documentos quedan asociados a una tarea o requerimiento.
+			# Abordar el tema de Organizacion de proyectos y como se puede traducir los cambios de alcance a proyectos de clientes 
+
+		Se trata de implementar, o mas bien modelar el actual proceso de Opendat a la estructura de TFS
+			# Sin exito, encontrandose la mayor complicacion a modo de definir las iteraciones y adaptarlas a iteraciones presentes en Opendat
+			# se ha encontrar una forma de modelar el proceso
+
+		Consideraciones importantes sobre el modelo CMMI y la metodologia de desarrollo
+			# Es importante definir de 
+
+
+28/01/2016
+		Conversaciones, a modo de entender la vision de TFS por parte de los miembros de Opendat
+			# se converso con dn Pedro a modo de obtener su vision sobre el futuro de la organizacion.
+			# Consideraciones de Metodologias agiles
+		Realizar investigacion sobre adopcion de metodologias agiles en opendat, ( hibrido entre metoologias y 	principiso presentes)
+			# Idea : tartar de adaptar los modelos de desarrollo agil a las necesidades de la compañia
+			# enseñar, adoptar, facilitar las ideas de cambio.
+			# Crear cultura Organizacional en base a las metodologias de trabajo
+		Investigacion sobre metodologias agiles
+			# agile
+			# Scrum
+			# Modelo de desarrollo de Microsoft ( MSF: microsoft solutions framework
+			# MMetodologias agiles bajo un entorno en cascada.
+		Descarga de plantilla de metodologias agiles bajo un entorno en cascada desde gobdev for TFS
+			# https://govdevfortfs.codeplex.com/documentation.
+
+		Desarrollar lo que significa el pensamiento LEAN
+			# Investigar, entenderlo, aplicarlo y enseñarlo.
+
+29/01/2016
+		Investigacion sobre modelos agiles.
+			# Adaptacion de metodologias agiles a la situacion actual de Opendat
+		Practica con modelos agiles en TFS, organizar 
+		Reunion Sobre Metodologias Scrum
+			# Se trataron temas de Scrum, sobre las metodologias agiles, y como se ven reflejadas en Opendat
+			# forma de abordar el trabajo de Opendat en 
+
+		A modo de controlar versiones de Objetos econtrados en visual sourcesafe, o carpetas compartidas.
+		# Consideracio de proyecto
+			# incluir scripst en la solucion de visual Studio.
+			# crear carpetas aparte 
+
+
+01/02/2016
+		Lectura Professional team foundation server 2012
+			# Todo el dia.
+			# conversaciones sobre inquietudes de team foundation.
+		Idea
+			# Tomar Opendat como Fuente en TFS 
+			# Asociar collecciones a clientes, team proyects a Ordenes de Cambios.
+			# TeamProyects definen entonces un cambio de alcance y se deberia crear un team proyect por cada cambio de alcance. ( debe hacerlo el jefe de Proyecto desde Visual Studio)
+				# Luego debe definir Sprints, basado en experienci, y designar requerimientos y tareas.
+
+02/02/2016
+		Investigacion adaptacion de TFS a Opendat
+		Pruebas del sistema
+
+03/02/2016
+		Continuacion pruebas TFS
+		Curso sobre TFS admin
+		definir una plantilla de proceso personalizada
+			# definicion de terminos que deben utilizarse en la plantilla
+			# organizar la planilla de TFS.. adaptar las caracteristicas del proceso de mantencion.	
+
+04/02/2016
+		Aceso a maquina virtual como admin
+			user: opendat/Administrator
+			pass: OPE$$**NDAT.
+		Cambio de Alcance....	
+			Definicion de alcance CMMI
+			Abordar los procedimientos descritos en TFS con lo Definido en Opendat mediante el modelo CMMI, 
+			la adopccion de metodologias agiles debe documentarse y especificar los procedimientos utilizados, realizar la evaluacion en base a herraientas concretas mesurables, a modo de obtener un metodo concreto de implentacion de TFS en OPENDAT ( evaluar alternativa de proceso en Arena)
+		Levantamiento en servidor de TFS
+			# La actual maquina virtual se encuentra defectuosa.
+				# El uso de SQL express limita las posibilidades de reportabilidad de TFS 
+				# Especificacion de administradores de TFS. ( etapia, tanto administrador de dominio tendran acceso)
+				# A modo de agilizar los temas de maquina virtual se reinstalaran los servicions de SQL
+					# se desisntalaran los servicios de SQL server express y se instalara la versio estandar.
+					# Se necesitan una version de SQL server estandar o superior a modo de obtener los recursos de reportabilidad de TFS.
+					# 
+
+05/02/2016
+		Reunion CMMI con Luis Bariiga, Ramiro Lillo, y Cesar
+			# se discutieron temas de como abordar TFS desde el punto de vista que apoye a la certificacion CMMI que pretende Opendat"
+
+08/02/2016
+		Tareas Pendientes.
+			# Levantar Servidor TFS
+			# Instanciar el Proceso de Opendat en TFS
+			# Concluir una metodologia de trabajo ( a modo de plantilla para TFS)
+			# Pruebas de seguridad Postpuestas.
+
+			Enfoque primario.. Establecer el proceso de Opendat en TFS, a modo de realizar pruebas de codigo ( control de versiones )
+				# segundo establecer permisos asociados a los usuarios.
+		# Pruebas sobre areas, y usuarios.
+		# Consideraciones 
+			Acceder rapidamente a Ordenes de Cambio
+			Requerimientos 
+			Documentos asociados a un requerieminto.
+		
+
+09/02/2016
+		Modificacion Plantillas de Proceso adaptando Agile y CMMi template
+		# Creacion de Nueva plantilla para modelos agiles con CMMI
+
+10/02/2016
+		Enfermo all day
+
+11/02/2016
+		Continuacion modificacion Planilla
+		Definicion de queries.
+			# Necesito:
+				Jerarquia de Ordenes de Cambio
+				Vista de Tareas
+				Vista de Cambios de alcance
+				Vista de Requerimientos 
+				historico.
+		Instalacion de SQL SErver en servidor Opendat
+		Instalacion Sharepoint
+		Instalacion y configuracion TFS en Servidor Opendat
+			#Se encuentra funcionando el servidor de TFS
+		 	# se encuentra funcionando el servidor de sharepoint
+
+12/02/2016
+		Agendadada Presentacion sobre TFS
+		sharepoint como herramienta colaborativa
+			# Investigacion e integracion de Sharepoint a Portal web de TFS
+
+13/02/2016
+		Planteamiento de proceso microsoft como modelo a seguir en la organizacion
+		# iniciaicion modelo de TFS en Umbral
+		
+
+15/02/2016
+		# Conversaciones con Victor Barra sobre proceso de mantencion.
+			Destacar o enfocar Team foundation a la planificacion de recursos a modo de obtener costos de los cambios de alcance, mediante la estimacion de horas hombre. ( de que forma microsoft estima los costos )
+			# Opendat  deberia poder adoptar las metodologias de trabajo empleadas por microsoft
+				que beneficios obtiene con esto?
+					# La garantia de tener proceso y metodologias respaldadas por la experiencia de una empresa de renombre y amplitud como lo es microsoft, y garantizar un proceso de caliadad en sus operaciones teniendo como referencia el modelo utilizado por microsft ( el cual es un modelo de madurez bastante avanzado)
+					# posibilidad de certificaciones en el ambito de la metodologia de desarrollo de proyectos.
+			# Asimismo  y modo de mantener y no cambiar de forma drastica la metodología de trabajo empleada por opendat se han de mantener algunas caracteristicas que posee en este momento ( Revision de pares) de esta forma no perder los recursos que se encuentran actualmente en la empresa.
+				# para ello se ha de modificar la planilla de cmmi de MSF a modo de incluir un nuevo estado en el proceso de tareas, donde un nuevo estado seria en revision de par, para luego pasar a testing.
+					# se ha de definir entonces nuevos estados de transicion entre las tareas.
+					# los estados de las ordenes de cambio y los requerimientos quedarian de la misma forma
+			# dudas de Testing, como se realiza el plan de testing dentro de team foundation?, a traves de test manager?
+				# como se relaciona el plan de pruebas con los requerimientos abiertos en TFS
+		# Pruebas con microsoft project, la planificacion de proyect se ve automaticamente reflejada en TFS y las asignaciones de tareas tambien se ven reflejadas, tanto en el conjunto de tareas pendientes como en el panel kaban de TFS
+
+		#Inicio de actividades de Umbral con TFS, se converso con Dn Luis Emilio, explicandole las funcionalidades del portal web y como se utilizan para darle seguimiento a las tareas y requerimeintos suministrados por el cliente.
+			# Se envio las direcciones de portal a los integrantes del proyecto umbral , para que pudiesen partir con las tareas de gestion de proyecto y puedan utilziar la herramienta para darle seguimeinto a la misma.
+			# Se configuraron las alerta en TFS  a modo de que se envien correos a los miembros del equipo, siempre que se modifique algun elemento de trabajo relacionado, en la iteracion en la que se encuentran.
+
+
+
+
+16/02/2016
+		# Configuracion servidor smntp Team foundation server 10.0.167.6
+		# Cambio de plataforma de TFS.. 2012 ---> 2013
+			# PERMITE LA INTEGRACION DE nuevas caracteristicas, solucion a problemas encontrados
+			# visualizacion jerarquica de los trabajos realizados, en el seguimiento de proyectos.
+			# incorporacion de graficos estadisticos, para ser visualizados a nivel gerencial.
+
+
+17/02/2016
+		Problemas sobre la definicion de caracteristicas de TFS en Opendat.
+		Actualizacion de TFS de 2012 a 2013, nuevos conceptos y caracteristicas incluidas
+		definicion jerarquica de planificaccion de proyectos 
+
+		# Lineamientos de la Oprganizacion... Objetivos estrategicos de la Organizacion.
+			# Cuales Son la Vision Y la Mision de Opendat en base a como se estable
+
+
+18/02/2016
+	Conversaciones sobre las directrices de opendat en relacion a los lineaientos del negocio,
+	Definicion de los procesos de negocio que son abordados por team foundation server, y como se representn mediante el modelo de madurez de CMMI.
+	Detalle de los areas de proceso que cubre CMMI y como se abordan mediante TFS, detalle de las caracteristicas de team foundation que poyan a las dstintas areas de procesos, y cuales son las mas debiles en relacion a lo que establece el modelo CMMI.
+
+	# Como definir una buena estructura de proyecto, mediante el uso de la jerarquia entregada por el trabajo pendiente de TFS, (utilizar ordenes de cambio como primera caracteristica)
+	# Establecer como TFS abarca las areas de proceso definidas por CMMI
+
+19/02/2016
+	Investigacion
+		# Sobre caracteristicas de TFS
+		# estructuracion de Proyectos de TFS
+		# segumiento y planeacion de Iteraciones
+		# Como modelar los requerimientos
+	Estructuracion de modelos de proceso, adaptados a TFS 2013
+	mantencion de plantillas de procesos.
+	agregar nuevos proyectos de equipo
+
+22/02/2016
+	Configiracion de Plantillas CMMI para proyectos en Opendat
+		# finalizacion de definicion de planillas para mantencion y proyectos en Opendat
+		# se definieron dos planilals a modo de llevar un seguimiento de los proyectos 
+		# queda finalizada el area de planeacion de proyectos, almenos el tema de definicion de planillas
+			# Pendiente de planilla queda
+				- Desarrollo de nuevas queries, para obtener los elementos que son necesarios para opendat
+				- Cambios de Nombre de algunos elementos de trabajo
+		# Para conectar con TFS y modificar elementos de un proyecto ya establecido, se realiza a travez de la herramienta witadmin a travez de la consola de comandos.
+
+23/02/2016
+	Ultimas pruebas sobre plantillas de opendat para TFS
+	Configuracion de Sharepoint para proyectos de equipo
+		# se configura Sharepoint para proyectos de equipo
+		# se establece un sitio de proyectos para equipos
+		# Investigacion de como trabaja sharepoint con documentos
+			- La forma de trabajar, es tener " Bibliotrcas de docuemntos", en estas bibliotecas se ppueden definir plantillas que traen la informacion desde TFS. 
+			- En las bibliotecas se pueden manejar los documentos de la organizacion, al igual que en carpetas de red, sin embargo con la ventaja de tener versiones de documentos.
+			- la forma de trazar los documentos a requerimientos, se establece a travez de vinculos (hiperenlaces) a los documentos, estos se pueden establecer de forma manual en la pestaña de vinculos de un requerimeintos ( o de cualquier elemento de trabajo enrealidad) y manejarse ya sea por version o por el documento completo.
+24/02/2016
+	Investigacion sobre como linkear los elementos de trabajo a documentos en sharepoint (logrando que las versiones queden enlazadas a un elemento de trabajo) a modo de obtener trazabilidad de los documentos hacia el requerimiento (tambien llamado cambio de alcance en Opendat)
+
+	Incialiazcion Presentacion Final.
+		# Establecer que se presentará y como se abordará
+
+25/02/2016
+	preparacion de documentos en shapoint
+	Solucion de errores presentados en la implemetacion de TFS
+	Lectura e investigacion
+
+26/02/2016
+	Preparacion presentacion
+		# Analisis de la organizacion, establecer un punto de comparacion entre los estados actuales de opendat, las ventajas que ha de tener la organizacion al implementar TFS
+		# Conveersaciones con Ramiro
+			Internalizar el objetivo de convencer a Victor devia sobre las necesidades de estableces procesos estructurados y formalizados a travez de la herramienta.
+			 Como? convencerlo de sus tareas... preparar conciencia de lo que ha de enfrentar.. mostrarle cuales son las ventajas, y cuales son los monstruos con los que deberemos luchar.
+
+		# Conversaciones con Luis emilio
+			Dificultades al seguir el ritmo de proyectos con team foundation server, la herramienta aporta más cuando los usuarios se ven involucrados como equipo dentro de la organizacion.
+			Problemas con el borrado de elementos ( Nose se entienden los conceptos y la direccion que apunta microsoft sobre las buenas practicas.)
+
+		(idea) Abordar la planillas de relleno de team foundation para que se ingresen todos los datos, independiente, de tal forma se obliga a los usuarios a ingresar todos los campos... por lo tanto se han de retirar los campos donde no se utilice.
+
+
+29/02/2016
+	Definicion de proyecto en team foundation a modo de ejemplo para futuras referencias y control de proyecto.
+
+	Crear WBS para proyecto de Adopcion de Team Foundation Server
+	Estructurar team foundation server a modo de ejemplo de proyecto, en Team Foundation.
+	
+01/03/2016
+	Desarrollar presentacion de avance establecimiento de la herramienta, establecer una planilla de proceso que refleje las mantenciones ( version 3.0)
+
+02/03/2016
+	Cambio de presentacion
+		# establecer nuevas directrices de como abordarla
+	Conversaciones de como desarrollar el proceso de mantencion.
+	Se modifico la planilla de mantencion
+		# se quitaron campos en el elemento de requerimiento
+		# se crearon nuevas estructuras de proceso
+		# Plantilla refleja ahora de mejor forma el cambio de alcance
+		# se establecio un proyecto demo de tfs
+03/03/2016
+	Finalizacion de presentacion
+		# Presentacion 
+			Se estabecio una fecha de puesta en marcha del proceso de mantencion
+			El dia lunes 7 se ha de presentar una programacion de como se trabajará con el tema de mantencion.
+				# Propuestas sobre ello?, trabajar con elementos de trabajo pequeños antes de ir a produccion.
+				# Trabajar con proyectos pequeños
+
+04/03/2016
+	preparacion WBS
+
+07/03/2016
+	Preparacion WBS
+
+08/03/2016
+	investigacion sobre proyectos
+	Desarrollo de actividades de puesta en marcha de proyecto
+	Desarrollo de documentacion
+
+09/03/2016
+	Formalizacion del proyecto
+		Crear acta de constitucion del proyecto
+		
+10/03/2016
+	Discusiones sobre team foundation server y su implementacion
+		One project to control all
+		Presentacion Luis Barriga, Ramiro lillo
+
+
+11/03/2016
+	Definicion estados proceso
+		Cliente
+			Publicacion
+				Cambio Alcance
+					tarea.
+	plantilla de procesos 3.2
+
+14/03/2016
+
+	Plantilla de Procesos.
+	Documentacion diagramas de estado.
+
+24/03/2015
+	Durante la semana se ha trabajado con TFS respecto a resolver siertas complicaciónes y problemas que se han encontrado a la Hora de implementar, definir correctamente el proceso de mantencion y los estados de cada uno de sus elementos. 
+
+28/03/2015
+
+	Inicio Uso de TFS por parte de Opendat
+
+	- Configuaración de Permisos
+		# Asignación de Usuarios a Team Foundation Server
+		

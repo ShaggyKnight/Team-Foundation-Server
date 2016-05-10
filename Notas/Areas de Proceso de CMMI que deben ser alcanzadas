@@ -1,0 +1,39 @@
+Areas de Proceso de CMMI que deben ser alcanzadas para la certificacion nivel 2
+	
+	Administración de requisitos
+		# a travez de seguimientos en el portal de proyecto de TFS.
+		# trazabilidad y control de ellos a traves de queries e informes
+		# especificacion de los requerimientos mediante las plantillas de TFS
+		# valoracion de la prioridad de los requerimientos
+		# asignacion de requerimientos a al equipo.
+		# control de cambios de estado de los requisistos ( etapas )
+
+	Planeación de proyectos
+		# Control de iteraciones ( fechas de entrega de productos ... Publicaciones )
+		# asignacion de recursos al equipo (horas de trabajo)
+		# especificacion de areas y equipos de trabajo
+
+	Control y supervisión de proyectos
+		# Programacion de Tareas 
+		# Desgloce de los elementos de trabajo.
+		# Priorizacion Actividades
+		# visualizacion grafica de la evolucion de los elementos de trabajo.
+
+	Medida y análisis
+		# reportabilidad de estados de los elementos de trabajo 
+		# analisis grafico de la evolucion de los proyectos
+		# estadisticas de uso de los elementos de trabajo
+
+	Control de calidad de procesos y productos
+		# control de calidad mediante elementos de trabajo como bugs 
+		# control de cambios
+		# elementos de prueba
+		# Seguimiento e historial de elementos
+		
+	Administración de configuración
+
+	Administración de acuerdos con proveedores
+
+
+/* Extracto Microsoft */
+Resulta demasiado fácil confundir el modelo con una definición de proceso e intentar seguirlo en lugar de considerarlo como un mapa que identifica las lagunas en los procesos existentes que habría que rellenar.

@@ -1,0 +1,38 @@
+Team Foundation Server
+
+Cubre toda el cilo de vida de desarrollo de una aplicación, provee herramientas que permiten:
+	. Control del Codigo fuente (control de versiones)
+	. Reportabilidad
+	. Administración de Requerimientos
+	. Administración de Proyectos (Metodologias Agiles y Desarrollo en cascada)
+	. Compilaciones automatizadas ( Supongo que se refire a pruebas de codigo automatizadas*)
+	. Administracion de Laboratorios
+	. Capacidades de Pruebas y Administracion de Entregas de Software.
+
+Permite a un equipo colaborar y coordinar sus esfuerzos a la hora de crear un producto o llevar a cabo un proyecto. (Finalidad Principal)
+
+Caracteristicas TFS
+	Colaborativas
+		Comunicacion: 
+			El concepto central cuando se trabaja con Team Foundation es el proyecto de equipo
+		Portal Proyecto:
+			Cada proyecto de equipo tiene un portal asociado que es un sitio Web de Windows SharePoint
+		Team Explorer:
+			Todos los miembros del equipo trabajan con proyectos de equipo usando Team Explorer en el entorno de desarrollo integrado (IDE) de Visual Studio
+		Alertas:
+			Team Foundation proporciona alertas que se envían a los miembros del equipo a través del correo electrónico cuando se realiza algún cambio en el proyecto de equipo
+		Control Codigo Fuente:
+			Control de versiones de Team Foundation permite al equipo administrar todos los archivos de código fuente del proyecto.
+		Generaciones:
+			Team Foundation Build permite al equipo crear y administrar regularmente generaciones del producto.
+		Seguimiento del Trabajo:
+			El propósito del seguimiento del estado del trabajo es vigilar la salud del proyecto, conocer a quién se le ha asignado trabajo y cuál es el estado de dicho trabajo
+		Historial:
+			Todos los elementos de trabajo tienen un historial en el que se registra toda la actividad.
+		Consultas:
+			Las consultas de elementos de trabajo permiten buscar los elementos de trabajo que cumplen un grupo concreto de criterios
+		Integración de Microsoft Project y Excel:
+			Es posible importar y hacer un seguimiento de copias de  elementos almacenados en la base de datos de TFS en Microsoft Project u Microsoft Excel
+		Informes:
+			Permiten hacer un seguimiento de la información de estado y de tendencias a lo largo del tiempo en el proyecto de equipo
+

@@ -1,0 +1,456 @@
+<Node StructureType="ProjectLifecycle" Name="Iteración" xmlns="">
+          <Children>
+            <Node StructureType="ProjectLifecycle" Name="2016">
+              <Children>
+                <Node StructureType="ProjectLifecycle" Name="Mes 1 - Enero" >
+                    <Children>
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                    </Children>
+                </Node>  
+                <Node StructureType="ProjectLifecycle" Name="Mes 2 - Febrero" >
+                  <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 3 - Marzo" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 4 - Abril" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" /> 
+                </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 5 - Mayo" >
+                    <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 5" />  
+                </Node>               
+                <Node StructureType="ProjectLifecycle" Name="Mes 6 - Junio" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 7 - Julio" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 8 - Agosto" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 9 - Septiembre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 10 - Octubre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 11 - Noviembre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 12 - Diciembre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />                    
+                  </Node>
+              </Children>
+            </Node>
+            <Node StructureType="ProjectLifecycle" Name="2017">
+              <Children>
+                <Node StructureType="ProjectLifecycle" Name="Mes 1 - Enero" >
+                    <Children>
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                    </Children>
+                </Node>  
+                <Node StructureType="ProjectLifecycle" Name="Mes 2 - Febrero" >
+                  <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 3 - Marzo" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 4 - Abril" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" /> 
+                </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 5 - Mayo" >
+                    <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 5" />  
+                </Node>              
+                <Node StructureType="ProjectLifecycle" Name="Mes 6 - Junio" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 7 - Julio" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 8 - Agosto" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 9 - Septiembre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 10 - Octubre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 11 - Noviembre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 12 - Diciembre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />                    
+                  </Node>
+              </Children>
+            </Node>
+            <Node StructureType="ProjectLifecycle" Name="2018">
+              <Children>
+                <Node StructureType="ProjectLifecycle" Name="Mes 1 - Enero" >
+                    <Children>
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                    </Children>
+                </Node>  
+                <Node StructureType="ProjectLifecycle" Name="Mes 2 - Febrero" >
+                  <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 3 - Marzo" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 4 - Abril" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" /> 
+                </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 5 - Mayo" >
+                    <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 5" />  
+                </Node>                 
+                <Node StructureType="ProjectLifecycle" Name="Mes 6 - Junio" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 7 - Julio" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 8 - Agosto" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 9 - Septiembre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 10 - Octubre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 11 - Noviembre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 12 - Diciembre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />                    
+                  </Node>
+              </Children>
+            </Node>
+            <Node StructureType="ProjectLifecycle" Name="2020">
+              <Children>
+                <Node StructureType="ProjectLifecycle" Name="Mes 1 - Enero" >
+                    <Children>
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                    </Children>
+                </Node>  
+                <Node StructureType="ProjectLifecycle" Name="Mes 2 - Febrero" >
+                  <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 3 - Marzo" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 4 - Abril" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" /> 
+                </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 5 - Mayo" >
+                    <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 5" />  
+                </Node>
+                  
+                <Node StructureType="ProjectLifecycle" Name="Mes 6 - Junio" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 7 - Julio" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 8 - Agosto" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 9 - Septiembre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 10 - Octubre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 11 - Noviembre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 12 - Diciembre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />                    
+                  </Node>
+              </Children>
+            </Node>
+            <Node StructureType="ProjectLifecycle" Name="2019">
+              <Children>
+                <Node StructureType="ProjectLifecycle" Name="Mes 1 - Enero" >
+                    <Children>
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                    </Children>
+                </Node>  
+                <Node StructureType="ProjectLifecycle" Name="Mes 2 - Febrero" >
+                  <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 3 - Marzo" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 4 - Abril" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" /> 
+                </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 5 - Mayo" >
+                    <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                    <Node StructureType="ProjectLifecycle" Name="Semana 5" />  
+                </Node>
+                  
+                <Node StructureType="ProjectLifecycle" Name="Mes 6 - Junio" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 7 - Julio" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 8 - Agosto" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 9 - Septiembre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 10 - Octubre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 11 - Noviembre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />
+                  </Node>
+                <Node StructureType="ProjectLifecycle" Name="Mes 12 - Diciembre" >
+                        <Node StructureType="ProjectLifecycle" Name="Semana 1" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 2" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 3" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 4" />
+                        <Node StructureType="ProjectLifecycle" Name="Semana 5" />                    
+                  </Node>
+              </Children>
+            </Node>
+          </Children>
+        </Node>

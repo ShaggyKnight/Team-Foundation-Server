@@ -1,0 +1,74 @@
+Plan de Implementación TFS
+
+Puntos Importantes:	
+	TFS es un ALM (aplication lifecicle management), basado en tres puntos claves.
+		Governance.  
+		Desarrollo.
+		Mantenimiento.
+
+#####################################################################################################
+
+PLanning
+	# En base a https://msdn.microsoft.com/es-es/library/ms400691(v=vs.90).aspx
+
+	Consideraciones
+	# consideraciones importantes referentes a la implementacion de team foundation server en Opendat
+		
+		Topologia de la Organizacion
+			
+			Equipos en grupo de trabajo ? Si.
+			# Dado que los equipos se encuentran organizados en un grupo de trabajo 
+			# Se ha de implementar TFS en un solo Servidor.
+
+			Los equipos se encuentran bajo un dominio? Si.
+			# Implementacion en un unico servidor.
+
+		Tamaño del equipo de trabajo
+			# Posibilidad de extender los equipos de trabajo (Proyeccion en el Tiempo... 100 empleados en los proximos 20 años)
+			# Estimacion baasada en Intuicion, por lo que se trabajaria eon un rango de 20-200 equipos
+			# Distribucion de los equipos de trabajo? se cosidera que el equipo de trabajo se encuentra en una sola ubicacion.
+
+		Numero y Tipos de proyectos a desarrollar.
+			# Actualmente se encuentran dos proyectos funcionando en Opendat, SGCAST y Umbral, sin embargo se consideran furutos N proyectos.
+
+		Ciclo de Vida de Proyectos
+			# El proyecto actual de Opendat SGCAST se encuentra actualmente en operacion.
+			# la forma de abordar nuevos proyectos se referirá a cambios de alcance que puedan ocurrir en el sistema
+			# Nuevos Proyectos
+			# Dado que el ciclo de vida medio de cada proyecto no debería sobrepasar meses de vida.
+				# Implementacion de TFS en un solo Servidor
+
+		Mantenimiento y disponibilidad
+			# Si team foundation no estubiese disponible pone en riesgo el proyecto?
+				# Dada las caracteristicas de la compañia, no se vuelve un tema critico, dada la organizacion de Opendat se puede obtener el codigo fuente directamente de los equipos, ademas el proyecto principal ya se encuentra en operacion, por lo que una falla critica de los servidores no corresponde a un paro en la produccion u operacion del producto principal.
+
+	En Base a las consideraciones tomadas anteriormente se, concluye que una Arquitectura Fisica de un solo servidor para hospedar Team Foundation server es la más adecuada para la compañia Opendat.
+
+
+	Topologias Soportadas ( o compatibles con Opendat)
+
+		# La capa de aplicacion y de datos se implementarán en un servidor con Windows Server 2008 R2 y SQL Server 2008 R2 o 2012 (otras versiones de SQL Server no son compatibles con TFS 2012)
+		# No existen problemas de compatibilidad entre Team Foundation server 2012 y clientes de windows, como tambien con visual studio 2010 
+			# Obtenido de https://msdn.microsoft.com/en-us/Library/vs/alm/TFS/administer/requirements
+
+		# las cuentas de Servicio de TFS deben pertenecer a un dominio 
+		# los equipos han de poder comunicarse, cliente-servidor Aplicacion (capa de datos con capa de aplicacion)
+
+		# La eleccion que se adapta de mejor forma a opendat es un tipo de topologia simple de un solo servidor ( capa de aplicacion y datos) como se describe en el siguiente link:
+			https://msdn.microsoft.com/es-es/library/ms400693(v=vs.90).aspx
+		# La eleccion de una topologia simple de eleccion de servidor se debe a que la compañia no cuenta un equipo de desarrollo no mayor a 100 empleados.
+
+
+	Procesos ( CMMI )
+		# se han de definir o modificar las planillas existentes en TFS para que se adapten a las necesidades de la compañia.
+
+	Procesos ( Agile )
+		# Se han de investigar , probar, experimentar con las planillas existentes de Agile, a modo de comprobar que se adapten a las necesidades operacionales de Opendat, incluyendo la necesidad de realizar modificaciones a la plantilla de proceso.
+
+
+
+
+
+
+
+

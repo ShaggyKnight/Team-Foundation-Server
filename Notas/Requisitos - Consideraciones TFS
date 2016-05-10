@@ -1,0 +1,27 @@
+Requisitos
+	Mejorar la Calidad del Proceso de Software.
+	Mejorar la Trazabiliadad de documentos, y requerimientos.
+	Estandarizar Pruebas Unitarias para aplicaciones.
+
+	Ventajas adicionales
+
+	Gobernabiliadad del Proceso de Software.
+	Integracion Con caracteristicas y herramientas de Microsoft.
+	Control de Versiones a traves del Servidor de TFS.
+	Integracion Futura con Herramientas de Microsoft, tales como microsoft Office y sharepoint.
+
+	Oportunididades Observadas mediante la Adopccion.
+		
+		Control de cambios a traves de un portal web, vision de tareas, requerimientos. (informacion centralizada)
+		Delegacion de responsabilidades a traves de TFS, reflejado en el equipo de trabajo o proyecto de desarrollo.
+		Control y monitoreo de Usuarios, y sus actividades dentro del Proyecto de desarrollo.
+		Planeacion de Recursos y Cronograma a travez de TFS.
+		Obtencion de estadisticas y reportes basados en la evolucion de los proyectos y los datos recolectados por TFS.
+
+
+	Posibles Riesgos
+
+		Los riesgos Observados, en  base a tres consideraciones. Operacional, Tecnica, Y estrategica.
+
+		Operacional
+			

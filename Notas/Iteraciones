@@ -1,0 +1,37 @@
+Manejo de Iteraciones en Opendat
+	A modo de controlar los periodos en donde se realizan actividades dentro de un cambio de alcance, se han definido el nivel de iteraciones en Team Foundation Server y se describe a continuacion.
+
+	-- Año
+		--> Mes [numero] [Nombre Mes]
+			--> Semana [1-5]*
+
+	* Semana de Iteracion del trabajo pendiente. Durante esta semana se podran observar los cambios de alcance, que se encuentran En Proceso** (Los que no se encuentran Cerrados) y sus respectivas tareas.
+	* Las Semanas se encuentran organizadas en 5 semanas, sin embargo si en un mes solo va a considerar 4 o menos, debe seleccionar solo las semanas que necesita observar. ver paso 6°
+
+	**
+	Los Cambios de alcance se encuentran "En Proceso" cuando se encuentran en cualquiera de estos estados:
+		# Pendiente
+		# Activo
+		# Revisión
+		# Pruebas
+
+
+
+	Pasos para Configurar iteraciones:
+
+1° Entrar a la plataforma web de Team Foundation. http://tfs-server:8080/tfs
+
+2° Abrir un proyecto de equipo
+
+3° Seleccionar configurar iteraciones.
+
+4° Modifique u Agregue Iteraciones.	
+	4.1 Puede agregar nuevos hijos a los elementos. 
+	4.2 Puede eliminar o cambiar elementos
+
+	
+
+5° Establezca una fecha para cada elemento
+
+6° selecciones los meses semanas u años que desea visualizar.
+	Los elementos se encuentran estructurados de manera jerarquica, donde el seleccionar a un padre, no implica que se podra ver a los hijos; si se quiere ver las semanas, se deben seleccionar los elementos de semanas.

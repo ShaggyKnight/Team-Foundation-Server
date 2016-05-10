@@ -1,0 +1,11 @@
+Web serverhosted in Linux with apache 
+
+Pasos:	
+	Instalacion Apache2
+	Creacion de directorios		
+	asignacion de direcciones /var/host
+	abrir puertos de http en router # 80
+	creacion cuenta NO-IP
+	descarga cliente linux from no-ip
+	asignar dns en Router.
+	Cuenta castelana.ddns.net

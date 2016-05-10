@@ -1,0 +1,100 @@
+why TFS?
+
+TFS es una herramienta para el control del ciclo de vida de aplicaciones.
+Governance. Desarrollo. Mantenimiento.
+
+Innovacion, Eficiencia, Agilidad y velocidad.
+
+Administracion de proyectos y desarrollo de software.
+Integracion de Roles.
+
+Integracion de Herramientas..
+Trazabilidad de Procedomientos, requerimientos y problematicas.
+Oportunidad de Construccion automatica de testing y reportes.
+SQL SERVER - Licencia Incluidad para uso de TFS, Share Point Incluido
+Licencias de servidor Incluida.
+
+Gestor de Repositorios - Gestor de Codigo.
+Proyecciones de Tiempo en Proyectos, de acuerdo al historial de cambios en el proyecto.
+
+
+Metodologias Utilizadas en OpenDat?
+	cascada...?
+	TFS Apoya al proceso de desarrollo, y la union de roles tales como Administradores de Proyecto, Analistas de sistema, Diseñadores, DBA's, desarrolladores, Testers, Operaciones.
+
+
+Consideraciones Antes de Implementar:
+	Se trabaja en un equipo de trabajo?
+		Si.
+	Existen Dominios?
+		Si.
+		
+Criterios de evaluacion:
+
+	Integracion	
+		# TFS Se adapta nativamente a las herramientas actuales que se utilizan en Opendat, como es visual Studio, Windows Server, Microsoft Office y Team Explorer, asi como posibilidad de integracion con Test Manager, Web matrix (para desarrollo Web), Microsoft Share Point, entre otros posibles productos de microsoft
+
+	Reportabilidad
+		# TFS a travez de SQL server Ofrece Servicio de reportabilidad bajo el servidor de SQL server, esto implica la recoleccion y estimacion de datos a traves de un data warehouse, pudiendoserealizar reportes personalizables a medida.
+
+	Usabilidad
+		# Por usabilidad se entiende la forma en que los usiarios aceptan el sistema y se adaptan a el, facil o dificil de usar.
+
+	Costos
+		# Al encontrarse licenciados los productos de Microsoft no existen costos de licencias adicionales, ni de servidores. se podrian presentar costos de asesorias y/o capacitaciones.
+
+	Capacitacion
+		# es necesaria una capacitacion a los trabajadores, para usar las funciones de la herramienta y sacar el maximo provecho de ella
+
+	Orientacion
+		# La orientacion de TFS es la de Un ALM, incluye una vision Holistica del Proceso de desarrollo de software asi como un control total del ciclo de vida de la aplicacion. Se implementara siguiendo el modelo de desarrollo en cascada CMMI, con la posibiliadad de implementar metodologias agiles mediante el uso de la HErramienta y Sprints.
+	Recursos
+		# recursos disponibles o utilizables a lo largo del tiempo
+		Share point,
+
+	Eficiencia:
+		A considerar la eficiencia del proceso de software, presentado, TFS ofrece caracteristicas que aportan a mejorar la eficiencia como se desarrolla software en Opendat.
+
+	Impacto:
+		Se entiende por impacto, como afectará la implementacion de TFS en Opendat
+
+	Sostenibilidad:
+		De que forma se mantendra en el tiempo TFS en Openda
+}
+
+Recalacar las carasteriasticas de Control y Gestion de ciclo de vida las Aplicaciones.
+
+Caracteristicas de TFS
+Comunicacion
+Portal Proyecto
+Team Explorer
+Alertas
+Control Codigo Fuente
+Generaciones
+Seguimiento del Trabajo
+Historial
+Consultas
+Integración de Microsoft Project y Excel
+Informes
+
+
+
+
+*** Medicion de El grado de madurez de la oprganizacion actual ****
+
+*** Medicicion del grado de madurez de la organizacion al adoptar la herramienta ***
+
+
+
+Creacion de Valor mediante TFS: 
+
+	Permite controlar, monitorizar el proceso de desarrollo de software, la implementacion automatica de Pruebas, y el seguimiento continuo de Procesos.
+	Lo cual se traduce en desarrollos de calidad, y estandarizados mediante modelo CMMI
+	
+	que valor le entrega a Opendat la adpccion de TFS?
+		# La adopccion de TFS a Opendat, permite llevar un control y seguimiento de Proyectos a traves de un portal de administracion de proyectos , es en este donde se pueden observar los lineaminetos especificos del proyecto, sus caracteristicas, requerimientos y tareas. 
+		# El usos de metodologias y buenas practicas que llevan los lienamientos de empresas de gran madurez como microsoft, da la posibilidad a opendat a alcanzar un grado de madurez dentro de la organizacion.
+		# La trazabilidad entregada por TFS, permite dar seguimiento a las tareas llevadas a cabo por los ususarios, formalizar los procesos y las acciones que se llevan a cabo en opendat y sus procesos de seguimiento de proyectos.
+		# Un mayor grado de maduresz, y el usos de herramientas de vanguardia, permite a opendat alcanzar certificaciones, permitiendo entregar a sus clientes un mayor grado confiabiliadad de acuerdo a los servicios que Opendat entrega, Con posibiliadades de ampliar sus capacidades de potenciales clientes, lo que se traduce en una mejora en el poder adquisitivo de opendat, esto deja tambien abierto el paso a una cartera mas amplia de clientes con mayores exigencias de calidada.
+		# la calidad del servicio que entrega opendat tambien se ve potenciada por la herramienta, dado las caracteristicas de seguimiento de proyec
+

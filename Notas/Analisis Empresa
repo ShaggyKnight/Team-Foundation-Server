@@ -1,0 +1,115 @@
+Analisis
+	Basado en pregunstas 
+		Que?, Porque?, Para que? Como?, Quien?, cuando?
+	
+		Opendat: Empresa dedicada a el desarrollo de sistemas de alta tecnología.
+		Actualmente Consta de un Producto, al cual se le brinda mantención.
+
+Situacion Actual Opendat ( a Marzo del 2016 )
+	
+	Que es lo que realiza Opendat?
+		1.- Actualmente las Operaciones de Opendat se basan en la Mantencion de su Producto SGCAS
+		2.- Existe un Proyecto de Mejora del sistema actual, llamado Umbral.
+		3.- Proyectos Internos de la Organizacion, los cuales deben seguir los parametros establecidos.
+		4.- Posibilidad de Nuevos Proyectos de Desarrollo
+
+	Como?
+		1.- La mantencion del Producto se realiza en base a un proceso descrito en el cual se tiene el siguiente flujo:
+			
+			/* Los elementos entre [] representan los artefactos (documentos) que generan. */
+
+			Planificacion [Cambio de Alcance] ---> Desarrollo [Analisis de Proceso, Analisis de Impacto, Doc. Publicacion, As Built, Manual de Instalación, Manual de Usuario, Manual de Operación, Scripts BD]---> Revision de Par [Resolucion RP] ---> Control de Cambios ---> Testing [Plan de Pruebas, FCC (resumen ejecutivo de Doc Publicacion)]
+
+		2.- El Proyecto Umbral, se desarrolla de forma paralela a los proyectos de Opendat, y tiene relacion con la mejora continua y la investigacion de nuevas tecnologías, mediante el uso de un equipo de trabajo pequeño.
+
+		3.- Los proyectos internos se desarrollan en base a una planificaccion desarrollada ya sea en excel o proyect, haciendo uso de un programa perteneciente a opendat llamado ADMPRI, el cual es un software de planificacion de proyectos, donde se pueden cargar horas de esfuerzo, asignar tareas a los usuarios, y cargar documentos por tareas.
+
+		4.- Nuevos proyectos basados en las definiciones de procesos que ha detallado Opendat.
+
+	Para que?
+		1.- Principal fuente de ingresos de Opendat, la mantencion al producto que ofrecen a diversos clientes son el nucleo de la organizacion.
+
+		2.- El proyecto Umbral busca implementar nuevas tecnologias y abrirse camino a nuevos esquemas de negocios.
+
+		3.- Los proyectos Internos de la Organizacion se establecen a modo de controlar las horas de esfuerzp estimadas por los colaboradores
+
+		4.- Nuevos proyectos que impliquen nuevos, o actuales clientes de la organizacion, a modo de lucrar con el desarrollo de nuevos productos.
+
+	Cuando?
+		1.- Acciones continuas de opendat, se realiza durante todo el periodo anual de Opendat.
+		2.- Se realiza en paralelo a los proyectos de mantenimiento, durante un periodo indefinido.
+		3.- Realizados durante todo el Periodo de Vida de la Org.
+		4.- Sin fecha presente.
+
+	Quien? 
+		1.- Equipo de Trabajo de Opendat, que involucra a todos los involucrados en la Organizacion.
+		2.- Equipo de Umbral ( celula perteneciente a Opendat, pero sin relacion con sus procesos)
+
+
+
+Esquema sin Team Foundation
+
+	Que es lo que pretende Opendat al 2016?
+		1.- Como prioridad en Opendat, se encuentra el alcanzar el grado de certificacion CMMI.
+		2.- Apoyar el proceso de Mantencion, quitando carga a el area de testing y Configuración.
+
+	Porque?
+		1.- El grado de certificación CMMI, implica que Opendat ha alcanzado un grado de madurez empresarial, reconocible y cuantificable. 
+		2.- Actualmete el proceso de mantencion se ve sobrecargado al momento de llegar a Testing, dado que se arrastran problemas, tales como responsabilidades no cumplidas por otros colaboradores, o el incumplimiento de tareas anteriores.
+
+	Para que?
+		1.- Mediante la adquicision de una certificacion, Opendat garantiza a sus clientes que esta entregando un producto de calidad, que cuenta con un proceso institucional reconocido, y respaldado por los estandares establecidos en el modelo CMMI. Ademas el grado de certificacion abre las puertas a Opendat a mercados más exigentes.
+		2.- Disminuir la Carga que enfrenta el CM, mediante la implemetacion de pruebas automatizadas, y procesos que permitan la trazabilidad de las tareas y cambios que se han realizado durante el proceso de mantencion.
+	
+	Como?
+		1.- Utilizando definiciones de Procesos en Documentos, fijando parametros y definiendo artefactos que se utilizan en los procesos de proyectos.
+		2.- Evaluando la posibilidad de adoptar nuevas herramientas que apoyen al proceso.
+
+Esquema con Team Foundation
+	
+	Que es lo que aporta Team Foundation a Opendat?
+
+		1.- Apoyar el Proceso de Certificacion CMMI
+		2.- Establece una vision Holistica de los Proyectos de Opendat (Tanto proyectos de desarrollo, como de Mantención, y cualquier otro proyecto, que abarque planificacion y manejo de recursos)
+		3.- Entrega Trazabilidad de los elementos de trabajo asociados a un Proyecto
+		4.- Establece un marco de trabajo para todos los proyectos de la organizacion.
+		
+		
+	Como ?
+		1.- Team foudation posee planilla de trabajo, mediante la cual se pueden planear proyectos siguiendo un esquema formal de CMMI, es decir incluye caractersticas, que permiten formalizar las areas de proceso donde existen falencias.
+
+		Planeación de proyectos, Supervisión y control de proyectos, Administración integrada de proyectos, 																												Administración de riesgos y Administración cuantitativa de proyectos.
+		Todas las áreas, salvo la de Administración cuantitativa de proyectos, forman parte de los niveles de modelo 2 o 3. La Administración cuantitativa de proyectos es una actividad de nivel 4 del modelo que refleja cómo las organizaciones de gran madurez utilizan datos cuantitativos objetivos basados en estadísticas para tomar decisiones de administración y dirigir los proyectos hacia una meta adecuada y predecible. /*https://msdn.microsoft.com/es-cl/library/ee461565(v=vs.120).aspx*/
+
+		2.- Informes de estado a travez de reporting services, y trabajo pendiente del producto, Visualiazacion de portafolio, Graficos repreentativo de el estado de los requerimientos y tareras asociadas a los colaboradores.
+
+		3.- Seguimiento de los requerimientos, consultas personalizables a la base de datos, conexiones entre los elementos de trabajo ( requerimientos, ordenes de cambio, tareas, caracteristicas, errores) y docuementos.
+		Seguimiento a travez de paneles presentes en el portal de sharepoint.
+
+		4.- Basado en buenas practicas y estandares establecidos, tanto por las experiencias de Microsoft a travez de MSF (microsoft Solutions framework : Office, Visual Studio, Team Foundation, SharePoint, Test Manager)
+		Portal de Proyecto, Portal proyecto Sharepoint, visualizacion de actividades a travez de Visual Studio.
+
+	Para que?
+	
+		1.- El uso de la herramienta para apoyar al proceso CMMI, permite centralizar las capacidades de la organización, y establecer un marco de trabajo basado en el proceso CMMI. El uso de estas caracteristicas permite lograr avances en el marco de la certificación CMMI, donde los contenidos de la herramienta son contenidos auditables.
+		Evita la perdida de informacion, o el uso execivo de documentacion.
+
+		2.- Una vision Holistica, permite a las gerencias y jefes de proyectos mantener una vision del desarrollo de los proyectos a nivel global, lo que conlleva a una toma de deciciones mas acertada, basandose en datos cuantitativos que entrega la herramienta, en relacion a la evolucion de proyectos.
+
+		3.- La trazabilidad, abre paso a un mayor control sobre los artefactos que, maneja la organizacion, los colaboradores que realizaron cambios, y tener control sobre quienes son los que han llevado a cabo un cambio, o realizado tareas, trazar las fuentes en caso de posibles problemas que se den en la marcha del proyecto o en su entrega final.
+
+		4.- La formalizacion de los procesos involucrados en los proyectos, asegura que se sigue una metodologia, que puede ser auditable, y entrega un grado de madurez a la organizacion, que se traduce en posibilidades de nuevos clientes, o reafirmar lazos con clientes actuales.
+
+	por que?
+
+		1.- Se ha tratado en ocaciones anteriores de obtener certificaciones, sin exito, Microsoft a travez de las plantillas de trabajo para CMMI con las que viene integrada Team Foundation, establecen marcos de referencia hacerca de como trabajar, basadas en las experiencias de organizaciones como microsoft, ademas de abarcar madurez de procesos que abarcan los niveles mas altos establecidos por el modelo CMMI
+
+		2.- La toma de deciciones es uno de los aspectos mas criticos en una organizacion, donde las deciciones estrategicas, el tener una herramienta que integre los aspectos fundamentales, tanto de la administracion de proyectos, como el desarrollo de software ( Opendat al ser una empresa de desarrollo y querer certificarse en CMMI-dev), el control de cambios, y el manejo de los riesgos, Team foundation abarca todas estas actividades, y permite observarlas a travez de una unica herraminta.
+
+		3.- La trazabilidad, tanto de cambios, riesgos, requisitos, documentos, se vuekve critica al momentos de enfrentar algun riesgo (riesgo del tipo empresarial), asi como al momento de encontrar algun problema que deba ser corregido, se vuelve importante tener un registro de todos los elementos que fueron participes de tal problema.
+
+		4.- Un marco de trabajo establece, normas y buenas practicas que deben cumplirse a modo de obtener un proyecto exitoso, definir como la organizacion responde a los cambios, y garantizar a sus clientes que el producto final entregado ha pasado por un proceso de puede ser auditable.
+
+
+
+

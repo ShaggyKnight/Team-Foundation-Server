@@ -1,0 +1,38 @@
+Definicion de Alcance
+	Team Foundation Server en Opendat
+
+	A modo de obtener una gobernabilidad sobre el proceso de desarrollo de Software en Opendat, se ha optado por evaluar la herramienta Proporcionada por Microsoft Team Foundation Server, un ALM, que pretende Integrar la gobernabilidad del Proceso de TI, asi como el desarrollo, y monitoreo del proceso de desarrollo en una sola herramienta. El objetivo fundamental al implementar la Herramienta en Opendat, es lograr un control, tanto del proceso de desarrollo, en el ambito de seguimiento de requerimientos, cambios, y pruebas de software, obtener estadisticas de los ciclos de desarrollo de un proyecto, y manejar los stakeholders que participan en el proyecto. 
+	La ganancia que se obtiene mediante la organizacion de proyectos en TFS se ve reflajada en un  mayor control sobre los cambios de alcances dados en un proyecto, permitiendo entre otras caracteristicas, mejorar la calidad del proceso y por ende la calidad final del software entregado, al controlarse el ciclo de vida del software y seguir una trazabilidad de los posibles problemas que se presenten en el desarrollo del mismo.
+	
+	Adicionalmente el buen uso de la herramienta y la definicion de procesos estandarizados, da paso al proceso de certificacion para Opendat.
+	Las pruebas de aplicaciones tambien es una caracteristica de TFS mediante Test Manager, se han de definir pruebas estandarizadas, para todas las aplicaciones futuras que se desarrollen en Opendat.
+
+	# Adaptar TFS a los requerimientos de la empresa, integrando en TFS el proceso de mantencion de productos, utilizando conceptos de metodologias ágiles de forma hibrida con la metodologia actual que emplea Opendat.
+
+	# Puntos a tratar en Opendat.
+		- Levantar y administrar el servidor de TFS
+		- Modelar y documentar las caracteristicas del Proceso presente en Opendat, y como se ve reflejado en TFS.
+		- Obtener control sobre los proyectos mediante le uso de TFS
+		- capacitar al personal involucrado, sobre las funcionalidades que entrega TFS
+		- Migrar los productos de sourcesafe a TFSVC.
+		
+
+	TFS, al ser una herramienta muy extensa, permite la integracion con distintos productos ofrecidos por microsoft, entre ellos Visual Studio y Team explorer, tambien ofrece caracteristicas web a modo de control y monitoreo de los proyectos; En Opendat, las caracteristicas utilizadas corresponden a:
+		- Control de Versiones dado Por Team Fundation Version Control
+		- Visual Studio, el cual se integra con Team Foundation Server y Team Explorer.
+		- Portal Web Ofrecido por Team Foundation Server ( permite controlar y monitorear el ciclo de vida de los Proyectos de Software)
+		- Test Manager, a modo de definir pruebas estandarizadas.
+		- Posibilidad de integracion de documentos de Microsoft Office.
+
+	# Definicion de estrategia de implementacion ( Ver Plan de Implementación TFS )
+
+	Definicion de Requisitos, ventajas, riesgos y consideraciones ( Ver Requisitos - Consideraciones TFS )
+
+
+Chronograma
+
+	WBS
+
+Team Foundation Server en Opendat
+	Investigacion de la Herramienta.
+	

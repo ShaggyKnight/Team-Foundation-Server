@@ -1,0 +1,61 @@
+To do.
+Convencion de Terminos
+	+# Tarea Completada
+	-# Problemas en la Tarea (No completada, Imprevistos)
+	 # En desarrollo 
+
+Mision Vision Opendat
+	Aporte de TFS a la Organizacion de acuerdo a sus Necesidades.
+	# Es necesario un cambio de paradigma? en el modelo de desarrollo de software dentro de OpenDat?.
+
+
+Metodologia de Desarrollo - Estan definidas?
+	documentos, manuales
+	# Definido el Proceso de desarrollo iterativo en cascada, el proceso se ve reflejado en una imagen JPG.. por conseguir.
+
+Jerarquia Empresa
+	Roles De Usuarios, Desarrolladores, testers, Gestores de Proyectos.. etc.
+	+# Definidas en el servidor, a travez de los dominios de red
+
+Investigacion sobre uso y funcionalidad de Team Foundation server
+	+# Pendiente.
+
+Instalacion y configuracion servidor Team Foundation server
+	Pruebas de Funcionalidad 
+	# Instalacion de Pruebas en un unico servidor
+	# Posterior uso del servidor de TFS en el servidor de la organizacion.
+	
+
+Planificacion de la Implementacion de TFS
+	+# En desarrollo .... Planificacion terminada.. Se decidio por una implementacion de un Solo servidor.
+
+	# Pendiente documento oficial de planificacion y consideraciones.
+	# Manual de Instalacion
+
+	# Pendiente Investigacion sobre Funciones de Team Explorer en Visual Studio.
+
+	# Proyectos de equipo funcionando en servidor web y team explorer de Visual Studio.
+
+Presentacion Avance TFS
+	# Realizar Presentacion de Avance
+	 	# Crear Presentacion
+	 	# investigar conceptos importantes sobre TFS
+	 	# Planear un objetivo de la presentacion
+	 		# que avances se mostrarán en la presentacion?
+	 		# de que forma abordarla 
+	 		# de tipo tecnico o de tipo Organizacional
+	 			# Mostrar las caracteristicas principales de TFS como se asocian a OPENDAT
+	 			# Mostrar las caracteristicas tecnicas principales para el seguimiento de procesos
+	 			# Indicar la solucion mas viable para realizar un proyecto pequeño sin mayores
+	 			# contratiempos.
+
+Manual de Usuario 
+	# Uso de la aplicacion a nivel de Jefe de Proyecto
+	# uso de la aplicacion a nivel de desarrollador
+	# uso de la aplicacion a nivel de Admin del sistema
+	# uso de la aplicacion a nivel de Pruebas
+
+Investigacion Practica de TFS
+	# seguimiento de Proyectos
+	# control de codigo fuente ( check out )
+	

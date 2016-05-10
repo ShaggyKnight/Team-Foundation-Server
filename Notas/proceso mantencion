@@ -1,0 +1,32 @@
+Proceso de Mantencion.
+		Inicializacion.
+	Administracion:
+		Crear el proyecto de equipo.
+		Configurar sitio de sharepoint.
+		Documentos y artefactos asociados.
+		Definir consultas a mostrar en TWP
+			Consultas adicionales que se necesitaran
+		Configurar Alertas.	
+			Alerta al asignar un elemento de trabajo.
+			# Posibilidad de enviar correos al cambiar de estado.
+		Asignar Grupos de Trabajo
+		Asociar permisos y grupos.
+
+
+	Equipo de Trabajo.
+
+		Planificacion
+			Establecer Iteraciones ( Ver Iteraciones.)
+			establecer capacidades de los recursos. (dias libres, y asignacion de actividades.)
+			Crear elementos de trabajo.
+				Establecer campos obligatorios.
+				Establecer una etiqueta para futuros filtros.
+				
+				
+				# avisar a asociado que se le ha asignado un elemento.
+			Asignar tareas y horas de esfuerzo.
+
+		Ejecución
+			realizar tareas, activar , rellenar campos
+				# Alertar cuando se completen determinadas tareas.
+
