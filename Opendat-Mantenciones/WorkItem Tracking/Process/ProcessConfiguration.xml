@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectProcessConfiguration>
+  <TypeFields>
+    <TypeField refname="System.AreaPath" type="Team" />
+    <TypeField refname="Microsoft.VSTS.Scheduling.RemainingWork" type="RemainingWork" format="{0} h" />
+    <TypeField refname="Microsoft.VSTS.Common.StackRank" type="Order" />
+    <TypeField refname="Microsoft.VSTS.Scheduling.Size" type="Effort" />
+    <TypeField refname="Microsoft.VSTS.Common.Discipline" type="Activity" />
+    <TypeField refname="Microsoft.VSTS.Feedback.ApplicationStartInformation" type="ApplicationStartInformation" />
+    <TypeField refname="Microsoft.VSTS.Feedback.ApplicationLaunchInstructions" type="ApplicationLaunchInstructions" />
+    <TypeField refname="Microsoft.VSTS.Feedback.ApplicationType" type="ApplicationType">
+      <TypeFieldValues>
+        <TypeFieldValue value="Aplicación web" type="WebApp" />
+        <TypeFieldValue value="Máquina remota" type="RemoteMachine" />
+        <TypeFieldValue value="Aplicación cliente" type="ClientApp" />
+      </TypeFieldValues>
+    </TypeField>
+  </TypeFields>
+  <PortfolioBacklogs>
+    <PortfolioBacklog category="Opendat.ClienteCategory" pluralName="Clientes" singularName="Cliente">
+      <States>
+      <State value="Activo" type="InProgress" />
+      <State value="Inactivo" type="Proposed" />
+      <State value="Cerrado" type="Complete" />
+      </States>
+      <Columns>
+        <Column refname="System.WorkItemType" width="100" />
+        <Column refname="System.Title" width="400" />
+        <Column refname="System.State" width="100" />
+        <Column refname="Microsoft.VSTS.Common.BusinessValue" width="50" />
+        <Column refname="System.Tags" width="200" />
+      </Columns>
+      <AddPanel>
+        <Fields>
+          <Field refname="System.Title" />
+        </Fields>
+      </AddPanel>
+    </PortfolioBacklog>
+    <PortfolioBacklog category="Opendat.PublicacionCategory" pluralName="Publicaciones" parent="Opendat.ClienteCategory" singularName="Publicación">
+      <States>
+      <State value="Pendiente" type="Proposed" />
+      <State value="En progreso" type="InProgress" />
+      <State value="Cerrada" type="Complete" />
+      </States>
+      <Columns>
+        <Column refname="System.WorkItemType" width="100" />
+        <Column refname="System.Title" width="400" />
+        <Column refname="System.State" width="100" />
+        <Column refname="Microsoft.VSTS.Common.BusinessValue" width="50" />
+        <Column refname="System.Tags" width="200" />
+      </Columns>
+      <AddPanel>
+        <Fields>
+          <Field refname="System.Title" />
+          <Field refname="System.ID" />
+        </Fields>
+      </AddPanel>
+    </PortfolioBacklog>  
+  </PortfolioBacklogs>    
+  <RequirementBacklog category="Microsoft.RequirementCategory"  pluralName="Cambios de Alcance" singularName="Cambio de Alcance" parent="Opendat.PublicacionCategory">
+    <States>
+      <State value="Pendiente" type="Proposed" />
+      <State value="Activo" type="InProgress" />
+      <State value="En revisión" type="InProgress" />
+      <State value="En pruebas" type="InProgress" />
+      <State value="Publicado" type="InProgress" />
+      <State value="Cerrado" type="Complete" />
+        
+    </States>
+    <Columns>
+      <Column refname="System.WorkItemType" width="100" />
+      <Column refname="System.Title" width="400" />
+      <Column refname="System.State" width="100" />
+      <Column refname="Microsoft.VSTS.Scheduling.Size" width="50" />
+      <Column refname="Microsoft.VSTS.CMMI.RequirementType" width="150" />
+      <Column refname="System.IterationPath" width="200" />
+      <Column refname="System.Tags" width="200" />
+        <Column refname="Microsoft.VSTS.Scheduling.StartDate" width="100" />
+        <Column refname="Microsoft.VSTS.Scheduling.FinishDate"  width="100" />
+        
+    </Columns>
+    <AddPanel>
+      <Fields>
+        <Field refname="System.Title" />
+      <!--
+        <Field refname="Microsoft.VSTS.CMMI.RequirementType" />
+      -->
+      </Fields>
+    </AddPanel>
+  </RequirementBacklog>
+  <TaskBacklog category="Microsoft.TaskCategory" pluralName="Tareas" singularName="Tarea">
+    <States>
+      <State value="Pendiente" type="Proposed" />
+      <State value="Activo" type="InProgress" />
+      <State value="Cerrado" type="Complete" />
+    </States>
+    <Columns>
+      <Column refname="System.Title" width="400" />
+      <Column refname="System.State" width="100" />
+      <Column refname="System.AssignedTo" width="100" />
+      <Column refname="Microsoft.VSTS.Scheduling.RemainingWork" width="50" />
+      <Column refname="System.IterationPath" width="300" />
+    </Columns>
+    <AddPanel>
+      <Fields>
+        <Field refname="System.Title" />
+      </Fields>
+    </AddPanel>
+  </TaskBacklog>
+  <BugWorkItems category="Microsoft.BugCategory" pluralName="Errores" singularName="Error">
+    <States>
+      <State value="Propuesta" type="Proposed" />
+      <State value="Activo" type="InProgress" />
+      <State value="Resuelto" type="Resolved" />
+      <State value="Cerrado" type="Complete" />
+    </States>
+  </BugWorkItems>
+  <FeedbackRequestWorkItems category="Microsoft.FeedbackRequestCategory" pluralName="Solicitudes de comentarios" singularName="Solicitud de comentarios">
+    <States>
+      <State value="Activo" type="InProgress" />
+      <State value="Cerrado" type="Complete" />
+    </States>
+  </FeedbackRequestWorkItems>
+  <FeedbackResponseWorkItems category="Microsoft.FeedbackResponseCategory" pluralName="Respuestas a comentarios" singularName="Respuesta a comentarios">
+    <States>
+      <State value="Activo" type="InProgress" />
+      <State value="Cerrado" type="Complete" />
+    </States>
+  </FeedbackResponseWorkItems>
+  <Weekends>
+    <DayOfWeek>Saturday</DayOfWeek>
+    <DayOfWeek>Sunday</DayOfWeek>
+  </Weekends>
+  <WorkItemColors>
+    <WorkItemColor primary="FFFF9D00" secondary="FFD6ECF2" name="Cliente" />
+    <WorkItemColor primary="FF773B93" secondary="FFD6ECF2" name="Publicación" />
+    <WorkItemColor primary="FF009CCC" secondary="FFD6ECF2" name="Requisito" />
+    <!-- <WorkItemColor primary="FF773B93" secondary="FFEEE2F2" name="Característica" /> -->
+    <WorkItemColor primary="FFF2CB1D" secondary="FFF6F5D2" name="Tarea" />
+    <WorkItemColor primary="FFCC293D" secondary="FFFAEAE5" name="Error" />
+    <WorkItemColor primary="FFFF9D00" secondary="FFFCEECF" name="Solicitud de cambio" />
+    <WorkItemColor primary="FFFF9D00" secondary="FFFCEECF" name="Solicitud de revisión de código" />
+    <WorkItemColor primary="FFFF9D00" secondary="FFFCEECF" name="Respuesta de revisión de código" />
+    <WorkItemColor primary="FFFF9D00" secondary="FFFCEECF" name="Solicitud de comentarios" />
+    <WorkItemColor primary="FFFF9D00" secondary="FFFCEECF" name="Respuesta a comentarios" />
+    <WorkItemColor primary="FFFF9D00" secondary="FFFCEECF" name="Problema" />
+    <WorkItemColor primary="FFFF9D00" secondary="FFFCEECF" name="Revisión" />
+    <WorkItemColor primary="FFFF9D00" secondary="FFFCEECF" name="Riesgo" />
+    <WorkItemColor primary="FFFF9D00" secondary="FFFCEECF" name="Pasos compartidos" />
+    <WorkItemColor primary="FFFF9D00" secondary="FFFCEECF" name="Caso de prueba" />
+    <WorkItemColor primary="FFFF9D00" secondary="FFFCEECF" name="Plan de pruebas" />
+    <WorkItemColor primary="FFFF9D00" secondary="FFFCEECF" name="Conjunto de pruebas" />
+    <WorkItemColor primary="FFFF9D00" secondary="FFFCEECF" name="Parámetro compartido" />
+  </WorkItemColors>
+</ProjectProcessConfiguration>

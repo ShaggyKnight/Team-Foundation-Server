@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+  <WORKITEMTYPE name="Revisión">
+    <DESCRIPTION>Este elemento de trabajo realiza un seguimiento de las revisiones y resultados.</DESCRIPTION>
+    <FIELDS>
+      <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension" />
+      <FIELD name="Título" refname="System.Title" type="String" reportable="dimension">
+        <REQUIRED />
+        <HELPTEXT>Breve descripción de la revisión utilizada para diferenciarla en una lista o informe</HELPTEXT>
+      </FIELD>
+      <FIELD name="Asignado a" refname="System.AssignedTo" type="String" reportable="dimension" syncnamechanges="true">
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+        <HELPTEXT>Persona que trabaja actualmente en esta revisión</HELPTEXT>
+      </FIELD>
+      <FIELD name="Historial" refname="System.History" type="History">
+        <HELPTEXT>Hilo de discusión y otra información histórica</HELPTEXT>
+      </FIELD>
+      <FIELD name="Ruta de acceso del área" refname="System.AreaPath" type="TreePath" reportable="dimension">
+        <HELPTEXT>Área del producto a la que esta revisión está asociada</HELPTEXT>
+      </FIELD>
+      <FIELD name="Ruta de acceso de la iteración" refname="System.IterationPath" type="TreePath" reportable="dimension">
+        <HELPTEXT>Iteración del producto a la que esta revisión está asociada</HELPTEXT>
+      </FIELD>
+      <FIELD name="Estado de tarea" refname="System.State" type="String" reportable="dimension">
+        <HELPTEXT>Estado del flujo de trabajo de la revisión</HELPTEXT>
+      </FIELD>
+      <FIELD name="Motivo" refname="System.Reason" type="String" reportable="dimension">
+        <HELPTEXT>Motivo por el que la revisión está en el estado actual</HELPTEXT>
+      </FIELD>
+      <FIELD name="Fecha de modificación" refname="System.ChangedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Modificado por" refname="System.ChangedBy" type="String" reportable="dimension" syncnamechanges="true">
+        <VALIDUSER />
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD name="Fecha de creación" refname="System.CreatedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Creado por" refname="System.CreatedBy" type="String" reportable="dimension" syncnamechanges="true" />
+      <!-- *************** Common Fields ****************   -->
+      <FIELD name="Fecha de cambio de estado" refname="Microsoft.VSTS.Common.StateChangeDate" type="DateTime">
+        <WHENCHANGED field="System.State">
+          <SERVERDEFAULT from="clock" />
+        </WHENCHANGED>
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Fecha de activación" refname="Microsoft.VSTS.Common.ActivatedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Activado por" refname="Microsoft.VSTS.Common.ActivatedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD name="Fecha de resolución" refname="Microsoft.VSTS.Common.ResolvedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Resuelto por" refname="Microsoft.VSTS.Common.ResolvedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD name="Motivo de resolución" refname="Microsoft.VSTS.Common.ResolvedReason" type="String" reportable="dimension" />
+      <FIELD name="Fecha de cierre" refname="Microsoft.VSTS.Common.ClosedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Cerrado por" refname="Microsoft.VSTS.Common.ClosedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <!-- **************** Build Integration Fields *******************************************  -->
+      <FIELD name="Integración de compilación" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
+        <SUGGESTEDVALUES expanditems="true">
+          <LISTITEM value="&lt;Ninguno&gt;" />
+        </SUGGESTEDVALUES>
+        <HELPTEXT>Compilación en la que se completó la revisión</HELPTEXT>
+      </FIELD>
+      <!-- *************** MSF for CMMI PI Fields ****************   -->
+      <FIELD name="Propósito" refname="Microsoft.VSTS.CMMI.Purpose" type="HTML">
+        <REQUIRED />
+        <HELPTEXT>Propósito de la revisión</HELPTEXT>
+      </FIELD>
+      <FIELD name="Comentarios" refname="Microsoft.VSTS.CMMI.Comments" type="HTML">
+        <HELPTEXT>Comentarios de la revisión</HELPTEXT>
+      </FIELD>
+      <FIELD name="Minutos" refname="Microsoft.VSTS.CMMI.Minutes" type="HTML">
+        <HELPTEXT>Actas de la reunión de la revisión</HELPTEXT>
+      </FIELD>
+      <FIELD name="Tipo de reunión" refname="Microsoft.VSTS.CMMI.MeetingType" type="String">
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="Reunión" />
+          <LISTITEM value="Sin conexión" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="Sin conexión" />
+        <HELPTEXT>Tipo de reunión de la revisión</HELPTEXT>
+      </FIELD>
+      <FIELD name="Fecha de la solicitud" refname="Microsoft.VSTS.CMMI.CalledDate" type="DateTime">
+        <HELPTEXT>Fecha y la hora en las que se llamó a la revisión</HELPTEXT>
+      </FIELD>
+      <FIELD name="Solicitada por" refname="Microsoft.VSTS.CMMI.CalledBy" type="String">
+        <VALIDUSER />
+        <HELPTEXT>Persona que llamó a la revisión</HELPTEXT>
+      </FIELD>
+      <FIELD name="Asistente requerido 1" refname="Microsoft.VSTS.CMMI.RequiredAttendee1" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente requerido 2" refname="Microsoft.VSTS.CMMI.RequiredAttendee2" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente requerido 3" refname="Microsoft.VSTS.CMMI.RequiredAttendee3" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente requerido 4" refname="Microsoft.VSTS.CMMI.RequiredAttendee4" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente requerido 5" refname="Microsoft.VSTS.CMMI.RequiredAttendee5" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente requerido 6" refname="Microsoft.VSTS.CMMI.RequiredAttendee6" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente requerido 7" refname="Microsoft.VSTS.CMMI.RequiredAttendee7" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente requerido 8" refname="Microsoft.VSTS.CMMI.RequiredAttendee8" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente opcional 1" refname="Microsoft.VSTS.CMMI.OptionalAttendee1" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente opcional 2" refname="Microsoft.VSTS.CMMI.OptionalAttendee2" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente opcional 3" refname="Microsoft.VSTS.CMMI.OptionalAttendee3" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente opcional 4" refname="Microsoft.VSTS.CMMI.OptionalAttendee4" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente opcional 5" refname="Microsoft.VSTS.CMMI.OptionalAttendee5" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente opcional 6" refname="Microsoft.VSTS.CMMI.OptionalAttendee6" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente opcional 7" refname="Microsoft.VSTS.CMMI.OptionalAttendee7" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente opcional 8" refname="Microsoft.VSTS.CMMI.OptionalAttendee8" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente real 1" refname="Microsoft.VSTS.CMMI.ActualAttendee1" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente real 2" refname="Microsoft.VSTS.CMMI.ActualAttendee2" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente real 3" refname="Microsoft.VSTS.CMMI.ActualAttendee3" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente real 4" refname="Microsoft.VSTS.CMMI.ActualAttendee4" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente real 5" refname="Microsoft.VSTS.CMMI.ActualAttendee5" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente real 6" refname="Microsoft.VSTS.CMMI.ActualAttendee6" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente real 7" refname="Microsoft.VSTS.CMMI.ActualAttendee7" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Asistente real 8" refname="Microsoft.VSTS.CMMI.ActualAttendee8" type="String">
+        <VALIDUSER />
+      </FIELD>
+    </FIELDS>
+    <WORKFLOW>
+      <STATES>
+        <STATE value="Activo">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Resuelto">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
+              <COPY from="field" field="System.Reason" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="System.AssignedTo">
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Cerrado">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+      </STATES>
+      <TRANSITIONS>
+        <TRANSITION from="" to="Activo">
+          <REASONS>
+            <DEFAULTREASON value="Nuevo" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.CMMI.CalledBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.CMMI.CalledDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <FIELD refname="System.AssignedTo">
+              <DEFAULT from="currentuser" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Activo" to="Resuelto">
+          <REASONS>
+            <REASON value="Aceptado con cambios principales" />
+            <DEFAULTREASON value="Aceptado con cambios secundarios" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Resuelto" to="Cerrado">
+          <REASONS>
+            <DEFAULTREASON value="Cambios secundarios completados" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Activo" to="Cerrado">
+          <REASONS>
+            <DEFAULTREASON value="Aceptado (como está)" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Cerrado" to="Activo">
+          <REASONS>
+            <DEFAULTREASON value="Cerrado por error" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <FIELD refname="System.AssignedTo">
+              <COPY from="field" field="Microsoft.VSTS.Common.ClosedBy" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Resuelto" to="Activo">
+          <REASONS>
+            <DEFAULTREASON value="Cambios principales completados" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+      </TRANSITIONS>
+    </WORKFLOW>
+    <FORM>
+      <Layout HideReadOnlyEmptyFields="true" HideControlBorders="true">
+        <Group Margin="(4,0,0,0)">
+          <Column PercentWidth="100">
+            <Control Type="FieldControl" FieldName="System.Title" ControlFontSize="large" EmptyText="&lt;Escriba aquí el título&gt;" LabelPosition="Top" />
+          </Column>
+        </Group>
+        <Group Margin="(10,0,0,0)">
+          <Column PercentWidth="50">
+            <Group Label="Estado">
+              <Column PercentWidth="100">
+                <Control Type="FieldControl" FieldName="System.AssignedTo" Label="Asi&amp;gnado a" LabelPosition="Left" />
+                <Control Type="FieldControl" FieldName="System.State" Label="&amp;Estado" LabelPosition="Left" />
+                <Control Type="FieldControl" FieldName="System.Reason" Label="Motivo" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+          <Column PercentWidth="50">
+            <Group Label="Reunión">
+              <Column PercentWidth="100">
+                <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.CalledBy" Label="Solicitada por" LabelPosition="Left" />
+                <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.CalledDate" Label="Fecha de la solicitud" LabelPosition="Left" />
+                <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.MeetingType" Label="Tipo de reunión" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+        </Group>
+        <Group>
+          <Column PercentWidth="50">
+            <TabGroup>
+              <Tab Label="Propósito">
+                <Control Type="HtmlFieldControl" FieldName="Microsoft.VSTS.CMMI.Purpose" Dock="Fill" LabelPosition="Top" />
+              </Tab>
+              <Tab Label="Minutos">
+                <Control Type="HtmlFieldControl" FieldName="Microsoft.VSTS.CMMI.Minutes" Dock="Fill" LabelPosition="Top" />
+              </Tab>
+              <Tab Label="Comentarios">
+                <Control Type="HtmlFieldControl" FieldName="Microsoft.VSTS.CMMI.Comments" Dock="Fill" LabelPosition="Top" />
+              </Tab>
+              <Tab Label="Asistentes">
+                <Group>
+                  <Column PercentWidth="50">
+                    <Group Label="Requerido">
+                      <Column PercentWidth="100">
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.RequiredAttendee1" Label="Asistente requerido 1" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.RequiredAttendee2" Label="Asistente requerido 2" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.RequiredAttendee3" Label="Asistente requerido 3" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.RequiredAttendee4" Label="Asistente requerido 4" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.RequiredAttendee5" Label="Asistente requerido 5" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.RequiredAttendee6" Label="Asistente requerido 6" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.RequiredAttendee7" Label="Asistente requerido 7" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.RequiredAttendee8" Label="Asistente requerido 8" LabelPosition="Left" />
+                      </Column>
+                    </Group>
+                  </Column>
+                  <Column PercentWidth="50">
+                    <Group Label="Real">
+                      <Column PercentWidth="100">
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.ActualAttendee1" Label="Asistente real 1" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.ActualAttendee2" Label="Asistente real 2" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.ActualAttendee3" Label="Asistente real 3" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.ActualAttendee4" Label="Asistente real 4" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.ActualAttendee5" Label="Asistente real 5" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.ActualAttendee6" Label="Asistente real 6" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.ActualAttendee7" Label="Asistente real 7" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.ActualAttendee8" Label="Asistente real 8" LabelPosition="Left" />
+                      </Column>
+                    </Group>
+                  </Column>
+                </Group>
+                <Group>
+                  <Column PercentWidth="100">
+                    <Group Label="Opcional">
+                      <Column PercentWidth="100">
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.OptionalAttendee1" Label="Asistente opcional 1" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.OptionalAttendee2" Label="Asistente opcional 2" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.OptionalAttendee3" Label="Asistente opcional 3" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.OptionalAttendee4" Label="Asistente opcional 4" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.OptionalAttendee5" Label="Asistente opcional 5" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.OptionalAttendee6" Label="Asistente opcional 6" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.OptionalAttendee7" Label="Asistente opcional 7" LabelPosition="Left" />
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.OptionalAttendee8" Label="Asistente opcional 8" LabelPosition="Left" />
+                      </Column>
+                    </Group>
+                  </Column>
+                </Group>
+              </Tab>
+            </TabGroup>
+          </Column>
+          <Column PercentWidth="50">
+            <TabGroup Margin="(5,0,0,0)">
+              <Tab Label="Historial">
+                <Control Type="WorkItemLogControl" FieldName="System.History" Dock="Fill" LabelPosition="Top" />
+              </Tab>
+              <Tab Label="Datos adjuntos">
+                <Control Type="AttachmentsControl" LabelPosition="Top" />
+              </Tab>
+              <Tab Label="Todos los vínculos">
+                <Control Type="LinksControl" LabelPosition="Top">
+                  <LinksControlOptions>
+                    <LinkColumns>
+                      <LinkColumn RefName="System.ID" />
+                      <LinkColumn RefName="System.WorkItemType" />
+                      <LinkColumn RefName="System.Title" />
+                      <LinkColumn RefName="System.AssignedTo" />
+                      <LinkColumn RefName="System.State" />
+                      <LinkColumn LinkAttribute="System.Links.Comment" />
+                    </LinkColumns>
+                    <WorkItemLinkFilters FilterType="includeAll" />
+                    <ExternalLinkFilters FilterType="includeAll" />
+                    <WorkItemTypeFilters FilterType="includeAll" />
+                  </LinksControlOptions>
+                </Control>
+              </Tab>
+            </TabGroup>
+          </Column>
+        </Group>
+      </Layout>
+    </FORM>
+  </WORKITEMTYPE>
+</Witd:WITD>

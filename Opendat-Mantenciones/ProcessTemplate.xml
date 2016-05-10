@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProcessTemplate>
+  <metadata>
+    <!-- Plantilla de controlde proyectos de mantención para opendat.
+        Creada por Eduardo Tapia para Opendat.
+        @Proyecto de Titulo, Capston Proyect Universidad Catolica del Norte.
+        ªTodos los derechos reservados.
+    -->
+    <name>Control de Mantenciones V3.4</name>
+    <description>Esta plantilla está adaptada para Opendat, es para proyectos formales que requieren un marco de trabajo para la mejora de procesos y un registro de decisiones que se pueda auditar.</description>
+    <version type="27450541-8E31-4150-9947-DC59F998FC01" major="7" minor="19" />
+    <plugins>
+      <plugin name="Microsoft.ProjectCreationWizard.Classification" wizardPage="false" />
+      <plugin name="Microsoft.ProjectCreationWizard.Reporting" wizardPage="false" />
+      <plugin name="Microsoft.ProjectCreationWizard.Portal" wizardPage="true" />
+      <plugin name="Microsoft.ProjectCreationWizard.Groups" wizardPage="false" />
+      <plugin name="Microsoft.ProjectCreationWizard.WorkItemTracking" wizardPage="false" />
+      <plugin name="Microsoft.ProjectCreationWizard.VersionControl" wizardPage="true" />
+      <plugin name="Microsoft.ProjectCreationWizard.TestManagement" wizardPage="false" />
+      <plugin name="Microsoft.ProjectCreationWizard.Build" wizardPage="false" />
+      <plugin name="Microsoft.ProjectCreationWizard.Lab" wizardPage="false" />
+    </plugins>
+  </metadata>
+  <groups>
+    <group id="Classification" description="Definición de la estructura del proyecto." completionMessage="Estructura del proyecto cargada.">
+      <dependencies></dependencies>
+      <taskList filename="Classification\Classification.xml" />
+    </group>
+    <group id="Groups" description="Crear grupos y asignar permisos." completionMessage="Grupos creados y permisos asignados.">
+      <dependencies>
+        <dependency groupId="Classification" />
+      </dependencies>
+      <taskList filename="Groups and Permissions\GroupsandPermissions.xml" />
+    </group>
+    <group id="Portal" description="Crear el sitio del portal del proyecto" completionMessage="Tareas del portal del proyecto completadas.">
+      <dependencies>
+        <dependency groupId="Classification" />
+        <dependency groupId="WorkItemTracking" />
+        <dependency groupId="VersionControl" />
+        <dependency groupId="Reporting" />
+      </dependencies>
+      <taskList filename="Windows SharePoint Services\WssTasks.xml" />
+    </group>
+    <group id="Reporting" description="Cargando informes del proyecto." completionMessage="Tareas de informes del proyecto completadas.">
+      <dependencies>
+        <dependency groupId="Classification" />
+        <dependency groupId="WorkItemTracking" />
+        <dependency groupId="VersionControl" />
+      </dependencies>
+      <taskList filename="Reports\ReportsTasks.xml" />
+    </group>
+    <group id="WorkItemTracking" description="Cargando definiciones de elemento de trabajo." completionMessage="Tareas de seguimiento de elementos de trabajo completadas.">
+      <dependencies>
+        <dependency groupId="Classification" />
+        <dependency groupId="Groups" />
+      </dependencies>
+      <taskList filename="WorkItem Tracking\WorkItems.xml" />
+    </group>
+    <group id="VersionControl" description="Creando control de versiones." completionMessage="Tarea de control de versiones completada.">
+      <dependencies>
+        <dependency groupId="Classification" />
+        <dependency groupId="Groups" />
+        <dependency groupId="WorkItemTracking" />
+      </dependencies>
+      <taskList filename="Version Control\VersionControl.xml" />
+    </group>
+    <group id="Lab" description="Creando laboratorio." completionMessage="Tarea de laboratorio completada.">
+      <dependencies>
+        <dependency groupId="Classification" />
+        <dependency groupId="Groups" />
+        <dependency groupId="WorkItemTracking" />
+        <dependency groupId="Build" />
+      </dependencies>
+      <taskList filename="Lab\Lab.xml" />
+    </group>
+    <group id="TestManagement" description="Cargando configuraciones predeterminadas de administración de pruebas." completionMessage="Configuraciones predeterminadas de administración de pruebas cargadas.">
+      <dependencies>
+        <dependency groupId="Classification" />
+        <dependency groupId="Groups" />
+        <dependency groupId="WorkItemTracking" />
+      </dependencies>
+      <taskList filename="Test Management\TestManagement.xml" />
+    </group>
+    <group id="Build" description="Cargando procesos de compilación predeterminados." completionMessage="Procesos de compilación predeterminados cargados.">
+      <dependencies>
+        <dependency groupId="VersionControl" />
+        <dependency groupId="Groups" />
+      </dependencies>
+      <taskList filename="Build\Build.xml" />
+    </group>
+  </groups>
+</ProcessTemplate>

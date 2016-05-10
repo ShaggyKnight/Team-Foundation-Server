@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+  <WORKITEMTYPE name="Respuesta a comentarios">
+    <DESCRIPTION>Este es un elemento de trabajo secundario cuyo primario debe ser un elemento de trabajo de tipo Solicitud de comentarios. Está asignado al revisor y contiene el estado actual de la revisión para este revisor.</DESCRIPTION>
+    <FIELDS>
+      <!-- ********** Core fields ******************* -->
+      <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension" />
+      <FIELD name="Título" refname="System.Title" type="String" reportable="dimension">
+        <REQUIRED />
+        <HELPTEXT>Resumen de una línea de la respuesta a comentarios</HELPTEXT>
+      </FIELD>
+      <FIELD name="Descripción" refname="System.Description" type="HTML">
+        <HELPTEXT>Respuesta a comentarios de la parte interesada</HELPTEXT>
+      </FIELD>
+      <FIELD name="Asignado a" refname="System.AssignedTo" type="String" reportable="dimension" syncnamechanges="true">
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+        <HELPTEXT>Persona responsable del siguiente conjunto de acciones en los comentarios</HELPTEXT>
+      </FIELD>
+      <FIELD name="Fecha de cierre" refname="Microsoft.VSTS.Common.ClosedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Cerrado por" refname="Microsoft.VSTS.Common.ClosedBy" type="String" reportable="dimension" syncnamechanges="true">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD name="Estado de tarea" refname="System.State" type="String" reportable="dimension">
+        <HELPTEXT>Estado actual de la respuesta a comentarios</HELPTEXT>
+      </FIELD>
+      <FIELD name="Motivo" refname="System.Reason" type="String" reportable="dimension">
+        <HELPTEXT>Motivo por el que la respuesta a comentarios tiene el estado actual</HELPTEXT>
+      </FIELD>
+      <FIELD name="Historial" refname="System.History" type="History">
+        <HELPTEXT>Hilo de discusión y registro automático de cambios</HELPTEXT>
+      </FIELD>
+      <FIELD name="Ruta de acceso del área" refname="System.AreaPath" type="TreePath" reportable="dimension">
+        <HELPTEXT>Área del producto con la que está asociada esta respuesta a comentarios</HELPTEXT>
+      </FIELD>
+      <FIELD name="Ruta de acceso de la iteración" refname="System.IterationPath" type="TreePath" reportable="dimension">
+        <HELPTEXT>Iteración en la que se solicitó esta respuesta a comentarios</HELPTEXT>
+      </FIELD>
+      <FIELD name="Valoración" refname="Microsoft.VSTS.Common.Rating" type="String" reportable="dimension">
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="0 - No valorado" />
+          <LISTITEM value="1 - Insuficiente" />
+          <LISTITEM value="2 - Aceptable" />
+          <LISTITEM value="3 - Bueno" />
+          <LISTITEM value="4 - Muy bueno" />
+          <LISTITEM value="5 - Excelente" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="0 - No valorado" />
+        <HELPTEXT>Valoración global proporcionada como parte de la respuesta a comentarios</HELPTEXT>
+      </FIELD>
+      <FIELD name="Información del sistema" refname="Microsoft.VSTS.TCM.SystemInfo" type="HTML">
+        <HELPTEXT>Contexto de la prueba, proporcionado automáticamente por la infraestructura de prueba</HELPTEXT>
+      </FIELD>
+      <!-- **************** Team Build Integration Fields **************  -->
+      <FIELD name="Integración de compilación" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
+        <SUGGESTEDVALUES expanditems="true">
+          <LISTITEM value="&lt;Ninguno&gt;" />
+        </SUGGESTEDVALUES>
+        <HELPTEXT>Compilación donde se recibió la respuesta a comentarios</HELPTEXT>
+      </FIELD>
+    </FIELDS>
+    <!-- *************** Workflow ****************   -->
+    <WORKFLOW>
+      <STATES>
+        <STATE value="Activo">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <EMPTY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Cerrado">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+      </STATES>
+      <TRANSITIONS>
+        <TRANSITION from="" to="Activo">
+          <REASONS>
+            <DEFAULTREASON value="Nuevo" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="Activo" to="Cerrado">
+          <REASONS>
+            <DEFAULTREASON value="Revisado" />
+          </REASONS>
+          <FIELDS>
+            <!-- Set the closing date -->
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <!-- Set the closing person -->
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <!-- Unassign the workitem -->
+            <FIELD refname="System.AssignedTo">
+              <COPY from="value" value="" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+      </TRANSITIONS>
+    </WORKFLOW>
+    <FORM>
+      <Layout HideReadOnlyEmptyFields="true" HideControlBorders="true">
+        <Group Margin="(0,0,0,5)">
+          <Column PercentWidth="100">
+            <Control FieldName="System.Title" Type="FieldControl" ControlFontSize="large" EmptyText="&lt;Escriba aquí el título&gt;" LabelPosition="Top" />
+          </Column>
+        </Group>
+        <Group>
+          <Column PercentWidth="70">
+            <TabGroup>
+              <Tab Label="Notas">
+                <Control FieldName="System.Description" Type="HtmlFieldControl" Label="Comentarios de parte interesada" LabelPosition="Top" Dock="Fill" />
+              </Tab>
+              <Tab Label="Casos">
+                <Control Type="LinksControl" Name="ChildLinks" Label="Requisitos relacionados con este comentario" LabelPosition="Top">
+                  <LinksControlOptions>
+                    <WorkItemLinkFilters FilterType="include">
+                      <Filter LinkType="System.LinkTypes.Related" />
+                    </WorkItemLinkFilters>
+                    <WorkItemTypeFilters FilterType="include">
+                      <Filter WorkItemType="Requisito" />
+                    </WorkItemTypeFilters>
+                    <ExternalLinkFilters FilterType="excludeAll" />
+                    <LinkColumns>
+                      <LinkColumn RefName="System.Id" />
+                      <LinkColumn RefName="System.WorkItemType" />
+                      <LinkColumn RefName="System.Title" />
+                      <LinkColumn RefName="System.CreatedBy" />
+                      <LinkColumn RefName="System.State" />
+                      <LinkColumn LinkAttribute="System.Links.Comment" />
+                    </LinkColumns>
+                  </LinksControlOptions>
+                </Control>
+              </Tab>
+              <Tab Label="Información del sistema">
+                <Control FieldName="Microsoft.VSTS.TCM.SystemInfo" Type="HtmlFieldControl" Label="Información del sistema" LabelPosition="Top" Dock="Fill" />
+              </Tab>
+              <Tab Label="Todos los vínculos">
+                <Control Type="LinksControl" Name="GeneralLinks" LabelPosition="Top">
+                  <LinksControlOptions>
+                    <LinkColumns>
+                      <LinkColumn RefName="System.ID" />
+                      <LinkColumn RefName="System.Title" />
+                      <LinkColumn RefName="System.AssignedTo" />
+                      <LinkColumn RefName="System.State" />
+                      <LinkColumn LinkAttribute="System.Links.Comment" />
+                    </LinkColumns>
+                    <WorkItemLinkFilters FilterType="includeAll" />
+                    <ExternalLinkFilters FilterType="includeAll" />
+                    <WorkItemTypeFilters FilterType="includeAll" />
+                  </LinksControlOptions>
+                </Control>
+              </Tab>
+              <Tab Label="Datos adjuntos">
+                <Control Type="AttachmentsControl" Label="Datos adjuntos" LabelPosition="Top" Dock="Fill" />
+              </Tab>
+              <Tab Label="Historial">
+                <Control FieldName="System.History" Type="WorkItemLogControl" Label="&amp;Historial" LabelPosition="Top" Dock="Fill" />
+              </Tab>
+            </TabGroup>
+          </Column>
+          <Column PercentWidth="30">
+            <Group Margin="(5,0,0,0)">
+              <Column PercentWidth="100">
+                <Group Label="Estado">
+                  <Column PercentWidth="100">
+                    <Control ReadOnly="True" FieldName="System.CreatedBy" Type="FieldControl" Label="Creado por" LabelPosition="Left" />
+                    <Control FieldName="System.AssignedTo" EmptyText="&lt;Ninguno&gt;" Type="FieldControl" Label="Asi&amp;gnado a" LabelPosition="Left" />
+                    <Control FieldName="System.State" Type="FieldControl" Label="&amp;Estado" LabelPosition="Left" />
+                    <Control FieldName="Microsoft.VSTS.Common.Rating" Type="FieldControl" Label="Valoración" LabelPosition="Left" />
+                  </Column>
+                </Group>
+                <Group Label="Clasificación">
+                  <Column PercentWidth="100">
+                    <Control FieldName="System.AreaPath" Type="WorkItemClassificationControl" Label="Á&amp;rea" LabelPosition="Left" />
+                    <Control FieldName="System.IterationPath" Type="WorkItemClassificationControl" Label="I&amp;teración" LabelPosition="Left" />
+                  </Column>
+                </Group>
+              </Column>
+            </Group>
+          </Column>
+        </Group>
+      </Layout>
+    </FORM>
+  </WORKITEMTYPE>
+</Witd:WITD>

@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+  <WORKITEMTYPE name="Requisito">
+    <DESCRIPTION>Incluye información para realizar un seguimiento del Cambio de Alcance durante el ciclo de vida de MSF for CMMI Process Improvement</DESCRIPTION>
+    <FIELDS>
+      <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension" />
+      <FIELD name="Título" refname="System.Title" type="String" reportable="dimension">
+        <REQUIRED />
+        <HELPTEXT>Breve descripción del Cambio de Alcance</HELPTEXT>
+      </FIELD>
+      <FIELD name="Tipo de requisito" refname="Microsoft.VSTS.CMMI.RequirementType" type="String" reportable="dimension">
+        <REQUIRED />
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="Modificacion de Base de Datos" />
+          <LISTITEM value="Funcional" />
+          <LISTITEM value="Trabajos en Terreno" />
+          <LISTITEM value="Interfaz SGCAS" />
+          <LISTITEM value="Seguridad SGCAS" />
+          <LISTITEM value="Objetivo del negocio" />
+          <LISTITEM value="Modificación Documentos" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="Funcional" />
+      </FIELD>
+      <FIELD name="Asignado a" refname="System.AssignedTo" type="String" reportable="dimension" syncnamechanges="true">
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+        <HELPTEXT>Persona que trabaja actualmente en este requisito</HELPTEXT>
+      </FIELD>
+      <FIELD name="Historial" refname="System.History" type="History">
+        <HELPTEXT>Hilo de discusión y otra información histórica</HELPTEXT>
+      </FIELD>
+      <FIELD name="Ruta de acceso del área" refname="System.AreaPath" type="TreePath" reportable="dimension">
+        <HELPTEXT>Área del producto a la que este requisito está asociado</HELPTEXT>
+      </FIELD>
+      <FIELD name="Ruta de acceso de la iteración" refname="System.IterationPath" type="TreePath" reportable="dimension">
+        <HELPTEXT>Iteración del producto a la que este requisito está asociado</HELPTEXT>
+      </FIELD>
+      <FIELD name="Estado de tarea" refname="System.State" type="String" reportable="dimension">
+        <HELPTEXT>Estado del flujo de trabajo del requisito</HELPTEXT>
+      </FIELD>
+      <FIELD name="Motivo" refname="System.Reason" type="String" reportable="dimension">
+        <HELPTEXT>Motivo por el que el requisito está en el estado actual</HELPTEXT>
+      </FIELD>
+      <FIELD name="Fecha de modificación" refname="System.ChangedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Modificado por" refname="System.ChangedBy" type="String" reportable="dimension" syncnamechanges="true">
+        <VALIDUSER />
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD name="Fecha de creación" refname="System.CreatedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Creado por" refname="System.CreatedBy" type="String" reportable="dimension" syncnamechanges="true" />
+      <FIELD name="Descripción" refname="System.Description" type="HTML">
+        <HELPTEXT>Actividad de usuario o restricción habilitada cuando se implementa, con vínculos a documentos complementarios</HELPTEXT>
+      </FIELD>
+      <FIELD name="Fecha de inicio" refname="Microsoft.VSTS.Scheduling.StartDate" type="DateTime" reportable="dimension">
+        <REQUIRED />
+      </FIELD>
+      <FIELD name="Fecha de fin" refname="Microsoft.VSTS.Scheduling.FinishDate" type="DateTime" reportable="dimension">
+        <REQUIRED />
+      </FIELD>
+      <!-- *************** Common Fields ****************   -->
+      <FIELD name="Fecha de cambio de estado" refname="Microsoft.VSTS.Common.StateChangeDate" type="DateTime">
+        <WHENCHANGED field="System.State">
+          <SERVERDEFAULT from="clock" />
+        </WHENCHANGED>
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Fecha de activación" refname="Microsoft.VSTS.Common.ActivatedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Activado por" refname="Microsoft.VSTS.Common.ActivatedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD name="Fecha de resolución" refname="Microsoft.VSTS.Common.ResolvedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Resuelto por" refname="Microsoft.VSTS.Common.ResolvedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD name="Motivo de resolución" refname="Microsoft.VSTS.Common.ResolvedReason" type="String" reportable="dimension" />
+      <FIELD name="Fecha de cierre" refname="Microsoft.VSTS.Common.ClosedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Cerrado por" refname="Microsoft.VSTS.Common.ClosedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD name="Gravedad" refname="Microsoft.VSTS.Common.Severity" type="String" reportable="dimension">
+        <REQUIRED />
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="1 - Critica" />
+          <LISTITEM value="2 - Alta" />
+          <LISTITEM value="3 - Media" />
+          <LISTITEM value="4 - Baja" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="3 - Media" />
+        <HELPTEXT>Prioridad para incorporar el requisito, en función de los objetivos del negocio</HELPTEXT>
+      </FIELD>
+      <FIELD name="Rango en pila" refname="Microsoft.VSTS.Common.StackRank" type="Double" reportable="dimension">
+        <HELPTEXT>Trabajar primero en los elementos que posean un menor valor de rango en la pila. Establecer en evaluación de errores.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Evaluación QA" refname="Open.VSTS.Common.Triage" type="String" reportable="dimension">
+        <REQUIRED />
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="Pendiente" />
+          <LISTITEM value="Aprovada" />
+          <LISTITEM value="Existen No Conformidades" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="Pendiente" />
+        <HELPTEXT>Situación de clasificación del requisito</HELPTEXT>
+      </FIELD>
+      <FIELD name="Revision de Par" refname="Opendat.VSTS.Common.Triage" type="String" reportable="dimension">
+        <REQUIRED />
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="Pendiente" />
+          <LISTITEM value="Aprobada" />
+          <LISTITEM value="Rechazada" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="Pendiente" />
+        <HELPTEXT>Evaliación de pares, determina si se han cumplido con las normativas impuestas por Opendat a sus desarrolladores.</HELPTEXT>
+      </FIELD>
+      <!-- **************** Build Integration Fields *******************************************  -->
+      <FIELD name="Integración de compilación" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
+        <SUGGESTEDVALUES expanditems="true">
+          <LISTITEM value="&lt;Ninguno&gt;" />
+        </SUGGESTEDVALUES>
+        <HELPTEXT>Compilación en la que se integró el requisito</HELPTEXT>
+      </FIELD>
+      <!-- **************** Scheduling Fields *************************************************  -->
+      <FIELD name="Tamaño" refname="Microsoft.VSTS.Scheduling.Size" type="Double" reportable="measure">
+        <HELPTEXT>Magnitud del trabajo estimado para implementar este requisito</HELPTEXT>
+      </FIELD>
+      <FIELD name="Estimación original" refname="Microsoft.VSTS.Scheduling.OriginalEstimate" type="Double" reportable="measure">
+        <HELPTEXT>Estimación de la cantidad de trabajo (en horas de persona)</HELPTEXT>
+      </FIELD>
+      <FIELD name="Bloqueado" refname="Microsoft.VSTS.CMMI.Blocked" type="String" reportable="dimension">
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="Sí" />
+          <LISTITEM value="No" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="No" />
+      </FIELD>
+      <FIELD name="Re-activado" refname="Opendat.VSTS.CMMI.Committed" type="String">
+        <REQUIRED />
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="Sí" />
+          <LISTITEM value="No" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="No" />
+        <HELPTEXT>¿ha sido reactivado el Cambio de Alcance?</HELPTEXT>
+      </FIELD>
+      <FIELD name="Confirmado" refname="Microsoft.VSTS.CMMI.Committed" type="String">
+        <REQUIRED />
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="Sí" />
+          <LISTITEM value="No" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="No" />
+        <HELPTEXT>¿Se ha confirmado la solicitud?</HELPTEXT>
+      </FIELD>
+      <FIELD name="HTML de evaluación del impacto" refname="Microsoft.VSTS.CMMI.ImpactAssessmentHtml" type="HTML" />
+      <FIELD name="Prueba de aceptación del usuario" refname="Microsoft.VSTS.CMMI.UserAcceptanceTest" type="String">
+        <REQUIRED />
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="Sin errores" />
+          <LISTITEM value="Con errores" />
+          <LISTITEM value="No está listo" />
+          <LISTITEM value="Listo" />
+          <LISTITEM value="Omitido" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="No está listo" />
+      </FIELD>
+      <FIELD name="Experto en la materia 1" refname="Microsoft.VSTS.CMMI.SubjectMatterExpert1" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Experto en la materia 2" refname="Microsoft.VSTS.CMMI.SubjectMatterExpert2" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Experto en la materia 3" refname="Microsoft.VSTS.CMMI.SubjectMatterExpert3" type="String">
+        <VALIDUSER />
+      </FIELD>
+    </FIELDS>
+    <WORKFLOW>
+      <STATES>
+        <STATE value="Pendiente">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <EMPTY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Activo">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="System.AssignedTo">
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="En revisión">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="System.AssignedTo">
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="En pruebas">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
+              <COPY from="field" field="System.Reason" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="System.AssignedTo">
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Publicado">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
+              <COPY from="field" field="System.Reason" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="System.AssignedTo">
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Cerrado">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+      </STATES>
+      <TRANSITIONS>
+        <TRANSITION from="" to="Pendiente">
+          <REASONS>
+            <DEFAULTREASON value="Nuevo" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="System.AssignedTo">
+              <DEFAULT from="currentuser" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Pendiente" to="Activo">
+          <REASONS>
+            <REASON value="Investigar" />
+            <DEFAULTREASON value="Aceptado" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Pendiente" to="Cerrado">
+          <REASONS>
+            <DEFAULTREASON value="Cancelado" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <SERVERDEFAULT from="currentuser" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
+              <SERVERDEFAULT from="currentuser" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Activo" to="Pendiente">
+          <REASONS>
+            <DEFAULTREASON value="Pospuesto" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="Activo" to="En revisión">
+          <REASONS>
+            <DEFAULTREASON value="Listo para revisión" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="En revisión" to="En pruebas">
+          <ACTIONS>
+            <ACTION value="Microsoft.VSTS.Actions.Checkin" />
+          </ACTIONS>
+          <REASONS>
+            <DEFAULTREASON value="Listo para pruebas" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="En revisión" to="Activo">
+          <REASONS>
+            <DEFAULTREASON value="Revisión no superada" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="En pruebas" to="Activo">
+          <REASONS>
+            <DEFAULTREASON value="Pruebas no superadas" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="En pruebas" to="Publicado">
+          <REASONS>
+            <DEFAULTREASON value="Pruebas superadas" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Publicado" to="Activo">
+          <REASONS>
+            <DEFAULTREASON value="Rechazado por cliente" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Publicado" to="En pruebas">
+          <REASONS>
+            <DEFAULTREASON value="Publicado por error" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Publicado" to="Cerrado">
+          <REASONS>
+            <DEFAULTREASON value="En producción" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Cerrado" to="Pendiente">
+          <REASONS>
+            <REASON value="Requiere planificación" />
+            <DEFAULTREASON value="Cerrado por error" />
+          </REASONS>
+        </TRANSITION>
+      </TRANSITIONS>
+    </WORKFLOW>
+    <FORM>
+      <Layout HideReadOnlyEmptyFields="true" HideControlBorders="true">
+        <Group Margin="(0,0,0,5)">
+          <Column PercentWidth="100">
+            <Control Type="FieldControl" FieldName="System.Title" ControlFontSize="large" EmptyText="&lt;Escriba aquí el título&gt;" LabelPosition="Top" />
+          </Column>
+        </Group>
+        <Group>
+          <Column PercentWidth="60">
+            <TabGroup>
+              <Tab Label="Descripción">
+                <Control Type="HtmlFieldControl" FieldName="System.Description" Dock="Fill" LabelPosition="Top" />
+              </Tab>
+              <Tab Label="Análisis">
+                <Control Type="HtmlFieldControl" FieldName="Microsoft.VSTS.CMMI.ImpactAssessmentHtml" Dock="Fill" LabelPosition="Top" />
+              </Tab>
+              <!--
+              <Tab Label="Guiones gráficos">
+                <Control Type="LinksControl" Name="StoryboardsControl">
+                  <LinksControlOptions>
+                    <WorkItemLinkFilters FilterType="excludeAll"/>
+                    <ExternalLinkFilters FilterType="include">
+                      <Filter LinkType="Storyboard"/>
+                    </ExternalLinkFilters>
+                    <LinkColumns>
+                      <LinkColumn RefName="System.Title"/>
+                      <LinkColumn LinkAttribute="System.Links.Comment"/>
+                    </LinkColumns>
+                  </LinksControlOptions>
+                </Control>
+              </Tab>
+            -->
+               
+              <Tab Label="Casos de prueba">
+                <Control Type="LinksControl" Name="TestedBy" LabelPosition="Top">
+                  <LinksControlOptions>
+                    <WorkItemLinkFilters FilterType="include">
+                      <Filter LinkType="Microsoft.VSTS.Common.TestedBy" FilterOn="forwardname" />
+                    </WorkItemLinkFilters>
+                    <WorkItemTypeFilters FilterType="include">
+                      <Filter WorkItemType="Caso de prueba" />
+                    </WorkItemTypeFilters>
+                    <ExternalLinkFilters FilterType="excludeAll" />
+                    <LinkColumns>
+                      <LinkColumn RefName="System.ID" />
+                      <LinkColumn RefName="System.WorkItemType" />
+                      <LinkColumn RefName="System.Title" />
+                      <LinkColumn RefName="System.AssignedTo" />
+                      <LinkColumn RefName="System.State" />
+                      <LinkColumn LinkAttribute="System.Links.Comment" />
+                    </LinkColumns>
+                  </LinksControlOptions>
+                </Control>
+              </Tab>
+                
+                 <!--Implementacion del Cambio de alcance... links a tareas-->
+                <Tab Label="Implementación">
+                <Control Type="LinksControl" Name="Hierarchy" LabelPosition="Top">
+                  <LinksControlOptions>
+                    <WorkItemLinkFilters FilterType="include">
+                      <Filter LinkType="System.LinkTypes.Hierarchy"/>
+                    </WorkItemLinkFilters>
+                    <WorkItemTypeFilters FilterType="include">
+                      <Filter WorkItemType="Tarea" />
+                    </WorkItemTypeFilters>
+                    <ExternalLinkFilters FilterType="excludeAll" />
+                    <LinkColumns>
+                      <LinkColumn RefName="System.ID" />
+                      <LinkColumn RefName="System.WorkItemType" />
+                      <LinkColumn LinkAttribute="System.Links.Comment" />
+                      <LinkColumn RefName="System.Title" />
+                      <LinkColumn RefName="System.AssignedTo" />
+                      <LinkColumn RefName="System.State" />
+                    </LinkColumns>
+                  </LinksControlOptions>
+                </Control>
+              </Tab>
+              <!--
+              <Tab Label="Otros">
+                <Group>
+                  <Column PercentWidth="50">
+                    <Group Label="Compilar y probar">
+                      <Column PercentWidth="100">
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.Build.IntegrationBuild" Label="Integrado en" LabelPosition="Left"/>
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.UserAcceptanceTest" Label="Prueba de aceptación del usuario" LabelPosition="Left"/>
+                      </Column>
+                    </Group>
+                    <Group Label="Esfuerzo (horas)">
+                      <Column PercentWidth="100">
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.Scheduling.OriginalEstimate" Label="Estimación original" LabelPosition="Left"/>
+                      </Column>
+                    </Group>
+                  </Column>
+                  <Column PercentWidth="50">
+                    <Group Label="Expertos en la materia">
+                      <Column PercentWidth="100">
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.SubjectMatterExpert1" Label="Experto en la materia 1" LabelPosition="Left"/>
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.SubjectMatterExpert2" Label="Experto en la materia 2" LabelPosition="Left"/>
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.SubjectMatterExpert3" Label="Experto en la materia 3" LabelPosition="Left"/>
+                      </Column>
+                    </Group>
+                    <Group Label="Programar">
+                      <Column PercentWidth="100">
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.Scheduling.StartDate" Label="Fecha de inicio" LabelPosition="Left" ReadOnly="True"/>
+                        <Control Type="FieldControl" FieldName="Microsoft.VSTS.Scheduling.FinishDate" Label="Fecha de fin" LabelPosition="Left" ReadOnly="True"/>
+                      </Column>
+                    </Group>
+                  </Column>
+                </Group>
+              </Tab>
+              -->
+              <Tab Label="Todos los vínculos">
+                <Control Type="LinksControl" Name="GeneralLinks" LabelPosition="Top">
+                  <LinksControlOptions>
+                    <LinkColumns>
+                      <LinkColumn RefName="System.ID" />
+                      <LinkColumn RefName="System.WorkItemType" />
+                      <LinkColumn LinkAttribute="System.Links.Comment" />
+                      <LinkColumn RefName="System.Title" />
+                      <LinkColumn RefName="System.AssignedTo" />
+                      <LinkColumn RefName="System.State" />
+                    </LinkColumns>
+                    <WorkItemLinkFilters FilterType="includeAll" />
+                    <ExternalLinkFilters FilterType="includeAll" />
+                    <WorkItemTypeFilters FilterType="includeAll" />
+                  </LinksControlOptions>
+                </Control>
+              </Tab>
+              <Tab Label="Datos adjuntos">
+                <Control Type="AttachmentsControl" LabelPosition="Top" />
+              </Tab>
+              <Tab Label="Historial">
+                <Control Type="WorkItemLogControl" FieldName="System.History" Dock="Fill" LabelPosition="Top" />
+              </Tab>
+            </TabGroup>
+          </Column>
+          <Column PercentWidth="40">
+            <Group Margin="(5,0,0,0)">
+              <Column PercentWidth="100">
+                <Group Label="Estado">
+                  <Column PercentWidth="100">
+                    <Control Type="FieldControl" FieldName="System.AssignedTo" Label="Asi&amp;gnado a" LabelPosition="Left" />
+                    <Control Type="FieldControl" FieldName="System.State" Label="&amp;Estado" LabelPosition="Left" />
+                    <Control Type="FieldControl" FieldName="System.Reason" Label="Motivo" LabelPosition="Left" />
+                    <Control Type="FieldControl" FieldName="Open.VSTS.Common.Triage" Label="Evaluación QA" LabelPosition="Left" />
+                  </Column>
+                </Group>
+                <Group Label="Planeación">
+                  <Column PercentWidth="100">
+                    <!--<Control Type="FieldControl" FieldName="Microsoft.VSTS.Scheduling.Size" Label="Tamaño" LabelPosition="Left"/>-->
+                    <Control Type="FieldControl" FieldName="Microsoft.VSTS.Common.Severity" Label="Prioridad" LabelPosition="Left" />
+                    <!-- Agregada la fecha de inicializacion y cierre a la plantilla-->
+                    <Control Type="DateTimeControl" FieldName="Microsoft.VSTS.Scheduling.StartDate" Label="Fecha Inicio" LabelPosition="Left"
+                    Format="Custom"
+                    CustomFormat="dd/mm/yyyy"/>       
+                    <Control Type="DateTimeControl" FieldName="Microsoft.VSTS.Scheduling.FinishDate" Label="Fecha Finalización" LabelPosition="Left" Format="Short" />        
+                    <!-- Fin -->
+                    <!--
+                    <Control Type="FieldControl" FieldName="Microsoft.VSTS.Common.Triage" Label="Evaluación de errores" LabelPosition="Left"/>
+                    -->
+                    
+                    <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.Blocked" Label="Bloqueado" LabelPosition="Left" />
+                    <!--
+                      <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.Committed" Label="Confirmado" LabelPosition="Left"/>
+                    -->
+                  </Column>
+                </Group>
+                <Group Label="Clasificación">
+                  <Column PercentWidth="100">
+                    <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.RequirementType" Label="Tipo" LabelPosition="Left" />
+                    <Control Type="WorkItemClassificationControl" FieldName="System.AreaPath" Label="Á&amp;rea" LabelPosition="Left" />
+                    <Control Type="WorkItemClassificationControl" FieldName="System.IterationPath" Label="I&amp;teración" LabelPosition="Left" />
+                  </Column>
+                </Group>
+              </Column>
+            </Group>
+          </Column>
+        </Group>
+      </Layout>
+    </FORM>
+  </WORKITEMTYPE>
+</Witd:WITD>

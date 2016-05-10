@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+  <WORKITEMTYPE name="Solicitud de comentarios">
+    <DESCRIPTION>Representa el elemento de trabajo maestro para una sesión de comentarios. Los elementos de trabajo secundarios deben crearse del tipo Respuesta a comentarios.</DESCRIPTION>
+    <FIELDS>
+      <!-- ********** Core fields ******************* -->
+      <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension" />
+      <FIELD name="Título" refname="System.Title" type="String" reportable="dimension">
+        <REQUIRED />
+        <HELPTEXT>Resumen de una línea de los comentarios solicitados</HELPTEXT>
+      </FIELD>
+      <FIELD name="Descripción" refname="System.Description" type="HTML">
+        <HELPTEXT>Información orientativa sobre las áreas del producto que deben abarcar los comentarios</HELPTEXT>
+      </FIELD>
+      <FIELD name="Asignado a" refname="System.AssignedTo" type="String" reportable="dimension" syncnamechanges="true">
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+        <HELPTEXT>Persona que solicita los comentarios</HELPTEXT>
+      </FIELD>
+      <FIELD name="Fecha de cierre" refname="Microsoft.VSTS.Common.ClosedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Cerrado por" refname="Microsoft.VSTS.Common.ClosedBy" type="String" reportable="dimension" syncnamechanges="true">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD name="Estado de tarea" refname="System.State" type="String" reportable="dimension">
+        <HELPTEXT>Estado actual de la solicitud de comentarios</HELPTEXT>
+      </FIELD>
+      <FIELD name="Motivo" refname="System.Reason" type="String" reportable="dimension">
+        <HELPTEXT>Motivo por el que la solicitud de comentarios tiene el estado actual</HELPTEXT>
+      </FIELD>
+      <FIELD name="Historial" refname="System.History" type="History">
+        <HELPTEXT>Hilo de discusión y registro automático de cambios</HELPTEXT>
+      </FIELD>
+      <FIELD name="Ruta de acceso del área" refname="System.AreaPath" type="TreePath" reportable="dimension">
+        <HELPTEXT>Área del producto con la que está asociada esta solicitud de comentarios</HELPTEXT>
+      </FIELD>
+      <FIELD name="Ruta de acceso de la iteración" refname="System.IterationPath" type="TreePath" reportable="dimension">
+        <HELPTEXT>Iteración con la que se solicitaron estos comentarios</HELPTEXT>
+      </FIELD>
+      <!-- ********** Application Launch fields ******************* -->
+      <FIELD name="Tipo de aplicación" refname="Microsoft.VSTS.Feedback.ApplicationType" type="String">
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="Aplicación web" />
+          <LISTITEM value="Máquina remota" />
+          <LISTITEM value="Aplicación cliente" />
+          <LISTITEM value="Otros" />
+        </ALLOWEDVALUES>
+        <REQUIRED />
+        <HELPTEXT>Tipo de aplicación sobre el que proporcionar comentarios</HELPTEXT>
+      </FIELD>
+      <FIELD name="Información de inicio de la aplicación" refname="Microsoft.VSTS.Feedback.ApplicationStartInformation" type="PlainText">
+        <HELPTEXT>Ruta de acceso para ejecutar la aplicación</HELPTEXT>
+      </FIELD>
+      <FIELD name="Instrucciones de inicio de la aplicación" refname="Microsoft.VSTS.Feedback.ApplicationLaunchInstructions" type="HTML">
+        <HELPTEXT>Instrucciones para iniciar la aplicación especificada</HELPTEXT>
+      </FIELD>
+      <!-- **************** Team Build Integration Fields **************  -->
+      <FIELD name="Integración de compilación" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
+        <SUGGESTEDVALUES expanditems="true">
+          <LISTITEM value="&lt;Ninguno&gt;" />
+        </SUGGESTEDVALUES>
+        <HELPTEXT>Compilación en la que se solicitaron los comentarios</HELPTEXT>
+      </FIELD>
+    </FIELDS>
+    <!-- *************** Workflow ****************   -->
+    <WORKFLOW>
+      <STATES>
+        <STATE value="Activo">
+          <FIELDS>
+            <FIELD refname="System.AssignedTo">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <EMPTY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Cerrado">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Quitado" />
+      </STATES>
+      <TRANSITIONS>
+        <TRANSITION from="" to="Activo">
+          <REASONS>
+            <DEFAULTREASON value="Nuevo" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="System.AssignedTo">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Activo" to="Cerrado">
+          <REASONS>
+            <DEFAULTREASON value="Cerrado" />
+          </REASONS>
+          <FIELDS>
+            <!-- Set the closing date -->
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <!-- Set the closing person -->
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <!-- Unassign the workitem -->
+            <FIELD refname="System.AssignedTo">
+              <COPY from="value" value="" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Cerrado" to="Activo">
+          <REASONS>
+            <DEFAULTREASON value="Reactivado" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="System.AssignedTo">
+              <COPY from="field" field="Microsoft.VSTS.Common.ClosedBy" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Activo" to="Quitado">
+          <REASONS>
+            <DEFAULTREASON value="Solicitud de comentarios cancelada" />
+          </REASONS>
+        </TRANSITION>
+      </TRANSITIONS>
+    </WORKFLOW>
+    <FORM>
+      <Layout HideReadOnlyEmptyFields="true" HideControlBorders="true">
+        <Group Margin="(0,0,0,5)">
+          <Column PercentWidth="100">
+            <Control FieldName="System.Title" Type="FieldControl" ControlFontSize="large" EmptyText="&lt;Escriba aquí el título&gt;" LabelPosition="Top" />
+          </Column>
+        </Group>
+        <Group>
+          <Column PercentWidth="70">
+            <TabGroup>
+              <Tab Label="Detalles">
+                <Control FieldName="System.Description" Type="HtmlFieldControl" Label="Descripción" LabelPosition="Top" Dock="Fill" />
+              </Tab>
+              <Tab Label="Aplicación">
+                <Group>
+                  <Column PercentWidth="100">
+                    <Control FieldName="Microsoft.VSTS.Feedback.ApplicationType" Type="FieldControl" Label="Tipo" LabelPosition="Left" />
+                    <Control FieldName="Microsoft.VSTS.Feedback.ApplicationStartInformation" Type="FieldControl" Label="Información de inicio" LabelPosition="Left" />
+                    <Control FieldName="Microsoft.VSTS.Feedback.ApplicationLaunchInstructions" Type="HtmlFieldControl" Label="Instrucciones de inicio" LabelPosition="Left" Dock="Fill" />
+                  </Column>
+                </Group>
+              </Tab>
+              <Tab Label="Todos los vínculos">
+                <Control Type="LinksControl" Name="GeneralLinks" LabelPosition="Top">
+                  <LinksControlOptions>
+                    <LinkColumns>
+                      <LinkColumn RefName="System.ID" />
+                      <LinkColumn RefName="System.WorkItemType" />
+                      <LinkColumn RefName="System.Title" />
+                      <LinkColumn RefName="System.AssignedTo" />
+                      <LinkColumn RefName="System.State" />
+                      <LinkColumn LinkAttribute="System.Links.Comment" />
+                    </LinkColumns>
+                    <WorkItemLinkFilters FilterType="includeAll" />
+                    <ExternalLinkFilters FilterType="includeAll" />
+                    <WorkItemTypeFilters FilterType="includeAll" />
+                  </LinksControlOptions>
+                </Control>
+              </Tab>
+              <Tab Label="Historial">
+                <Control FieldName="System.History" Type="WorkItemLogControl" Label="&amp;Historial" LabelPosition="Top" Dock="Fill" />
+              </Tab>
+            </TabGroup>
+          </Column>
+          <Column PercentWidth="30">
+            <Group Margin="(5,0,0,0)">
+              <Column PercentWidth="100">
+                <Group Label="Estado">
+                  <Column PercentWidth="100">
+                    <Control FieldName="System.AssignedTo" EmptyText="&lt;Ninguno&gt;" Type="FieldControl" Label="Asi&amp;gnado a" LabelPosition="Left" />
+                    <Control FieldName="System.State" Type="FieldControl" Label="&amp;Estado" LabelPosition="Left" />
+                  </Column>
+                </Group>
+                <Group Label="Clasificación">
+                  <Column PercentWidth="100">
+                    <Control FieldName="System.AreaPath" Type="WorkItemClassificationControl" Label="Á&amp;rea" LabelPosition="Left" />
+                    <Control FieldName="System.IterationPath" Type="WorkItemClassificationControl" Label="I&amp;teración" LabelPosition="Left" />
+                  </Column>
+                </Group>
+              </Column>
+            </Group>
+          </Column>
+        </Group>
+      </Layout>
+    </FORM>
+  </WORKITEMTYPE>
+</Witd:WITD>
