@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestConfigurations>
+    <TestConfiguration name="Windows 8" description="Sistema operativo predeterminado para las pruebas" state="active" isdefault="true">
+        <TestVariable name="Sistema operativo" value="Windows 8"/>
+    </TestConfiguration>
+</TestConfigurations>

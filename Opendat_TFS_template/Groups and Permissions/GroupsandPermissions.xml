@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tasks>
+  <task id="GroupCreation1" name="Crear grupos y permisos" plugin="Microsoft.ProjectCreationWizard.Groups" completionMessage="Grupos y permisos creados.">
+    <taskXml>
+      <groups>
+        <group name="@defaultTeam">
+          <permissions>
+            <permission name="GENERIC_READ" class="PROJECT" allow="true" />
+          </permissions>
+          <members>
+            <member name="@creator" />
+          </members>
+          <teamSettings areaPath="Área">
+            <iterationPaths backlogPath="Iteración">
+              <iterationPath path="2016\Enero\Semana 1" />
+              <iterationPath path="2016\Enero\Semana 2" />
+              <iterationPath path="2016\Enero\Semana 3" />
+              <iterationPath path="2016\Enero\Semana 4" />
+            </iterationPaths>
+          </teamSettings>
+        </group>
+        <group name="Readers" description="Los miembros de este grupo tienen acceso al proyecto de equipo.">
+          <permissions>
+            <permission name="GENERIC_READ" class="PROJECT" allow="true" />
+            <permission name="VIEW_TEST_RESULTS" class="PROJECT" allow="true" />
+            <permission name="GENERIC_READ" class="CSS_NODE" allow="true" />
+            <permission name="WORK_ITEM_READ" class="CSS_NODE" allow="true" />
+          </permissions>
+        </group>
+        <group name="Colaboradores" description="Los miembros de este grupo pueden agregar, modificar y eliminar elementos dentro del proyecto de equipo.">
+          <permissions>
+            <permission name="GENERIC_READ" class="PROJECT" allow="true" />
+            <permission name="DELETE_TEST_RESULTS" class="PROJECT" allow="true" />
+            <permission name="PUBLISH_TEST_RESULTS" class="PROJECT" allow="true" />
+            <permission name="VIEW_TEST_RESULTS" class="PROJECT" allow="true" />
+            <permission name="GENERIC_READ" class="CSS_NODE" allow="true" />
+            <permission name="WORK_ITEM_READ" class="CSS_NODE" allow="true" />
+            <permission name="WORK_ITEM_WRITE" class="CSS_NODE" allow="true" />
+            <permission name="MANAGE_TEST_PLANS" class="CSS_NODE" allow="true" />
+            <permission name="MANAGE_TEST_SUITES" class="CSS_NODE" allow="true" />
+            <permission name="MANAGE_TEST_ENVIRONMENTS" class="PROJECT" allow="true" />
+            <permission name="MANAGE_TEST_CONFIGURATIONS" class="PROJECT" allow="true" />
+          </permissions>
+          <members>
+            <member name="@defaultTeam" />
+          </members>
+        </group>
+        <group name="Administradores de compilación" description="Los miembros de este grupo pueden crear, modificar y eliminar definiciones de compilación, así como administrar compilaciones en cola y completadas.">
+          <permissions>
+            <permission name="GENERIC_READ" class="PROJECT" allow="true" />
+            <permission name="DELETE_TEST_RESULTS" class="PROJECT" allow="true" />
+            <permission name="PUBLISH_TEST_RESULTS" class="PROJECT" allow="true" />
+            <permission name="VIEW_TEST_RESULTS" class="PROJECT" allow="true" />
+            <permission name="GENERIC_READ" class="CSS_NODE" allow="true" />
+            <permission name="WORK_ITEM_READ" class="CSS_NODE" allow="true" />
+            <permission name="WORK_ITEM_WRITE" class="CSS_NODE" allow="true" />
+            <permission name="MANAGE_TEST_PLANS" class="CSS_NODE" allow="true" />
+            <permission name="MANAGE_TEST_SUITES" class="CSS_NODE" allow="true" />
+            <permission name="MANAGE_TEST_ENVIRONMENTS" class="PROJECT" allow="true" />
+            <permission name="MANAGE_TEST_CONFIGURATIONS" class="PROJECT" allow="true" />
+          </permissions>
+        </group>
+      </groups>
+    </taskXml>
+  </task>
+</tasks>

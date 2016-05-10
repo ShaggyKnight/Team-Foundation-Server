@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tasks>
+  <task id="VersionControlTask" name="Crear área de control de versiones" plugin="Microsoft.ProjectCreationWizard.VersionControl" completionMessage="Tarea de control de versiones completada.">
+    <taskXml>
+      <permission allow="Read, PendChange, Checkin, Label, Lock, ReviseOther, UnlockOther, UndoOther, LabelOther, AdminProjectRights, CheckinOther, Merge, ManageBranch" identity="[$$PROJECTNAME$$]\$$PROJECTADMINGROUP$$" />
+      <permission allow="Read, PendChange, Checkin, Label, Lock, Merge" identity="[$$PROJECTNAME$$]\Colaboradores" />
+      <permission allow="Read, PendChange, Checkin, Label, Lock, Merge" identity="[$$PROJECTNAME$$]\Administradores de compilación" />
+      <permission allow="Read" identity="[$$PROJECTNAME$$]\Readers" />
+      <exclusive_checkout required="false" />
+      <get_latest_on_checkout required="false" />
+      <git>
+        <permission allow="GenericRead, GenericContribute, ForcePush, Administer, CreateBranch, CreateTag, ManageNote" identity="[$$PROJECTNAME$$]\$$PROJECTADMINGROUP$$" />
+        <permission allow="GenericRead, GenericContribute, CreateBranch, CreateTag, ManageNote" identity="[$$PROJECTNAME$$]\Colaboradores" />
+        <permission allow="GenericRead, GenericContribute, CreateBranch, CreateTag, ManageNote" identity="[$$PROJECTNAME$$]\Administradores de compilación" />
+        <permission allow="GenericRead" identity="[$$PROJECTNAME$$]\Readers" />
+      </git>
+    </taskXml>
+  </task>
+</tasks>

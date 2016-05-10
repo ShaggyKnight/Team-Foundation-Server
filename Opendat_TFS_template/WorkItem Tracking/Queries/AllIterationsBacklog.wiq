@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WorkItemQuery Version="1">
+	<Wiql>
+				  SELECT [System.Id],
+					 [System.WorkItemType],
+					 [System.Title],
+					 [System.State],
+					 [System.AssignedTo],
+					 [Microsoft.VSTS.Scheduling.RemainingWork],
+					 [Microsoft.VSTS.Scheduling.CompletedWork],
+					 [Microsoft.VSTS.Common.Priority],
+					 [Microsoft.VSTS.Common.Activity],
+					 [System.IterationPath],
+					 [System.AreaPath] 
+				  FROM WorkItemLinks 
+				 WHERE ([Source].[System.TeamProject] = @project 
+				AND [Source].[System.WorkItemType] = 'Requerimiento') 
+		 		AND ([System.Links.LinkType] = 'System.LinkTypes.Hierarchy-Forward' 
+				OR [System.Links.LinkType] = 'Microsoft.VSTS.Common.TestedBy-Forward') 
+		 		AND ([Target].[System.WorkItemType] &lt;&gt; '') 
+				ORDER BY [Microsoft.VSTS.Common.StackRank],
+					 [System.Id] mode(MayContain)
+	</Wiql>
+</WorkItemQuery>
